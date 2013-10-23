@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+	<head>
+				<TITLE>Design Well</TITLE>
+		<%= favicon_link_tag 'favicon.ico' %>
+		<%= stylesheet_link_tag    'application', media: 'all' %>
+		<%= javascript_include_tag 'application', media: 'all' %>
+	</head>
+	<body>
+		<style type="text/css">
+			@font-face {font-family: "Theserif"; src: url("<%= asset_path('theserifplain.ttf') %>") format("truetype");}
+		</style>
+
+		<div id='vertbar'>
+			<%= image_tag "logo.jpg", {:id => 'logo', :alt => 'Design Well', :title => 'Design Well Logo'} %>
+			<nav id='links'>
+				<h1 class='nav-button'id='pictures'>pictures</h1>
+				<h1 class='nav-button'id='words'>words</h1>
+				<h1 class='nav-button'id='stories'>stories</h1>
+				<h1 class='nav-button'id='about'>about</h1>
+				<h1 class='nav-button'id='contact'>contact</h1>
+			</nav>
+		</div>
+		<div class='stage'>
+		</div>
+
+		<div class='bar'>
+			<div class='thumb-row'>
+				<% @recent.each do |clip| %>
+					<div class='thumbbox'>
+						<%= image_tag clip["thumbnail_large"], {:class => 'thumbnail', :id => clip["id"] }%>
+						<h3><%= clip["title"] %></h3>
+					</div>
+				<% end %>
+			</div>
+		</div>
+		
+
+
+			<!-- <iframe src="http://player.vimeo.com/video/<%= @recent.first["id"] %>"
+						width="800" height="450" style="border: 0px;" 
+						webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
+			</iframe> -->
+		
+		
+
+	</body>
+</html>

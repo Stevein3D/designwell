@@ -35,6 +35,7 @@ end
 # API for vimeo account
   gem 'vimeo'
 
+  gem 'thin'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -1,0 +1,103 @@
+/*@font-face {
+    font-family: "Theserif";
+    src: url('theserifplain.ttf');
+    src: url('theserifplain.ttf') format('truetype');
+}*/
+body{
+	height: 100%;
+	background-image: url('test.jpg');
+}
+h1{
+	font-family: Georgia;
+	color: white;
+	font-size: 20px;
+	/*margin: 0 20px;*/
+	/*display: inline;*/
+	/*padding-left: 10px;*/
+	cursor: pointer;	
+	text-align: center;
+}
+h3{
+	font-size: 18px;
+	color: white;
+	text-align: center;
+	margin: 0px auto;
+}
+/*.stage{
+	height: 400px;
+	width: auto;
+	background-color: black;
+	margin-left: 130px;
+}*/
+.bar{
+	background-color: rgba(255,255,255,.4);
+	border-top: 2px solid rgba(0,0,0,.8);
+	border-bottom: 2px solid rgba(0,0,0,.8);
+	margin-left: 132px;
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+	height: 186px;
+	bottom: 55px;
+}
+.thumb-row{
+	margin-left: 8px;
+}
+.thumbbox{
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 16px;
+	padding: 0 5px;
+}
+.thumbnail{
+	height: 124px;
+	width: 220px;
+	border: solid 2px rgba(0,0,0,.8);
+	background-color: white;
+	cursor: pointer;
+}
+#logo{
+	width:90px;
+	margin: 10px 20px;
+	display: inline-block;
+	vertical-align: middle;
+
+}
+#vertbar{
+	height: auto;
+	width: 130px;
+	background-color: rgba(0,0,0,.5);
+	border-right: 2px solid rgba(0,0,0,.8); 
+	position: absolute;
+}
+#links{
+	bottom: 50px;
+	position: absolute;
+}
+.nav-button{
+	width: 130px;
+	height: 30px;
+	margin: 5px auto;
+	line-height: 30px;
+	vertical-align: middle;
+	border-top: 2px solid rgba(0,0,0,.8);
+	border-bottom: 2px solid rgba(0,0,0,.8);
+}
+
+/***********Hover States*************/
+#pictures:hover{
+	background-color: rgba(245,33,37,.6); 
+}
+#words:hover{
+	background-color: rgba(250,95,91,.6);
+}
+#stories:hover{
+	background-color: rgba(250,136,133,.6);
+}
+#about:hover{
+	background-color: rgba(184,70,67,.6);
+}
+#contact:hover{
+	background-color: rgba(159,16,12,.6);
+}
