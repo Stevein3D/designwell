@@ -4,6 +4,7 @@
     src: url('theserifplain.ttf') format('truetype');
 }*/
 body{
+	width: 100%;
 	height: 100%;
 	background-image: url('test.jpg');
 }
@@ -11,24 +12,117 @@ h1{
 	font-family: Georgia;
 	color: white;
 	font-size: 20px;
-	/*margin: 0 20px;*/
-	/*display: inline;*/
-	/*padding-left: 10px;*/
+	cursor: pointer;
+}
+h2{
+	font-family: Georgia;
+	font-size: 16px;
+	color: black;
 	cursor: pointer;	
-	text-align: center;
 }
 h3{
+	font-family: Georgia;
 	font-size: 18px;
 	color: white;
 	text-align: center;
 	margin: 0px auto;
 }
-/*.stage{
-	height: 400px;
-	width: auto;
+
+
+/* ==========================================================================
+   Side Nav Bar
+   ========================================================================== */
+
+#logo{
+	width:90px;
+	margin: 10px 20px;
+	display: inline-block;
+	vertical-align: middle;
+}
+#vertbar{
+	height: auto;
+	width: 130px;
+	background-color: rgba(0,0,0,.5);
+	border-right: 2px solid rgba(0,0,0,.8); 
+	position: absolute;
+}
+#links{
+	bottom: 30px;
+	position: absolute;
+}
+.nav-button{
+	width: 120px;
+	height: 30px;
+	padding-left: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	line-height: 30px;
+	vertical-align: middle;
+	text-align: left;
+	border-top: 2px solid rgba(0,0,0,.8);
+	border-bottom: 2px solid rgba(0,0,0,.8);
+	border-right: 2px solid rgba(0,0,0,.8);
+	/*z-index: 1;*/
+}
+.sub-menu{
+	background-color: rgba(255,255,255,.6);
+	margin-top: -5px;
+	display: none;
+
+}
+.sub-cat{
+	width: 110px;
+	height: 25px;
+	padding-left: 20px;
+	margin: 0 auto;
+	line-height: 25px;
+	text-align: left;
+	vertical-align: middle;
+	border-bottom: 1px solid rgba(0,0,0,.8);
+	border-right: 1px solid rgba(0,0,0,.8);
+}
+
+/* ==========================================================================
+   Hover States
+   ========================================================================== */
+.sub-cat:hover{
 	background-color: black;
+	color: white;
+}
+.category:hover #pictures{
+	background-color: rgba(245,33,37,.6); 
+}
+.category:hover #words{
+	background-color: rgba(250,95,91,.6);
+}
+.category:hover #stories{
+	background-color: rgba(250,136,133,.6);
+}
+.category:hover #about{
+	background-color: rgba(184,70,67,.6);
+}
+.category:hover #contact{
+	background-color: rgba(159,16,12,.6);
+}
+
+/* ==========================================================================
+   Main Stage
+   ========================================================================== */
+
+#main-stage{
 	margin-left: 130px;
-}*/
+	width: 100%;
+	height: 400px;
+	background-color: white;
+}
+#video-stage{
+	margin: auto;
+	width: 400px;
+	height: 225px;
+	background-color: black;
+
+}
+
 .bar{
 	background-color: rgba(255,255,255,.4);
 	border-top: 2px solid rgba(0,0,0,.8);
@@ -38,7 +132,7 @@ h3{
 	z-index: -1;
 	width: 100%;
 	height: 186px;
-	bottom: 55px;
+	bottom: 35px;
 }
 .thumb-row{
 	margin-left: 8px;
@@ -56,48 +150,4 @@ h3{
 	border: solid 2px rgba(0,0,0,.8);
 	background-color: white;
 	cursor: pointer;
-}
-#logo{
-	width:90px;
-	margin: 10px 20px;
-	display: inline-block;
-	vertical-align: middle;
-
-}
-#vertbar{
-	height: auto;
-	width: 130px;
-	background-color: rgba(0,0,0,.5);
-	border-right: 2px solid rgba(0,0,0,.8); 
-	position: absolute;
-}
-#links{
-	bottom: 50px;
-	position: absolute;
-}
-.nav-button{
-	width: 130px;
-	height: 30px;
-	margin: 5px auto;
-	line-height: 30px;
-	vertical-align: middle;
-	border-top: 2px solid rgba(0,0,0,.8);
-	border-bottom: 2px solid rgba(0,0,0,.8);
-}
-
-/***********Hover States*************/
-#pictures:hover{
-	background-color: rgba(245,33,37,.6); 
-}
-#words:hover{
-	background-color: rgba(250,95,91,.6);
-}
-#stories:hover{
-	background-color: rgba(250,136,133,.6);
-}
-#about:hover{
-	background-color: rgba(184,70,67,.6);
-}
-#contact:hover{
-	background-color: rgba(159,16,12,.6);
 }

@@ -3,24 +3,65 @@
 				<TITLE>Design Well</TITLE>
 		<%= favicon_link_tag 'favicon.ico' %>
 		<%= stylesheet_link_tag    'application', media: 'all' %>
-		<%= javascript_include_tag 'application', media: 'all' %>
 	</head>
 	<body>
-		<style type="text/css">
-			@font-face {font-family: "Theserif"; src: url("<%= asset_path('theserifplain.ttf') %>") format("truetype");}
-		</style>
-
 		<div id='vertbar'>
 			<%= image_tag "logo.jpg", {:id => 'logo', :alt => 'Design Well', :title => 'Design Well Logo'} %>
+			<!-- <nav id='links'>
+				<ul class='category'>
+					<li class='nav-button'id='pictures'><h1 >pictures</h1>
+						<ul class='sub-menu'>
+							<li class='sub-menu-item'><h2>titles</h2></li>
+							<li class='sub-menu-item'><h2>montage</h2></li>
+							<li class='sub-menu-item'><h2>animation</h2></li>
+						</ul>
+					</li>
+				</ul>
+			</nav> -->
+
 			<nav id='links'>
-				<h1 class='nav-button'id='pictures'>pictures</h1>
-				<h1 class='nav-button'id='words'>words</h1>
-				<h1 class='nav-button'id='stories'>stories</h1>
-				<h1 class='nav-button'id='about'>about</h1>
-				<h1 class='nav-button'id='contact'>contact</h1>
+				<div class='category'>
+					<h1 class='nav-button'id='pictures'>pictures</h1>
+					<div class='sub-menu'>
+						<h2 class='sub-cat'>titles</h2>
+						<h2 class='sub-cat'>montage</h2>
+						<h2 class='sub-cat'>animation</h2>
+					</div>
+				</div>
+				<div class='category'>		
+					<h1 class='nav-button'id='words'>words</h1>
+					<div class='sub-menu'>
+						<h2 class='sub-cat'>titles</h2>
+						<h2 class='sub-cat'>montage</h2>
+						<h2 class='sub-cat'>animation</h2>
+					</div>
+				</div>
+				<div class='category'>
+					<h1 class='nav-button'id='stories'>stories</h1>
+					<div class='sub-menu'>
+						<h2 class='sub-cat'>titles</h2>
+						<h2 class='sub-cat'>montage</h2>
+						<h2 class='sub-cat'>animation</h2>
+					</div>
+				</div>
+				<div class='category'>
+					<h1 class='nav-button'id='about'>about</h1>
+					<div class='sub-menu'>
+						<h2 class='sub-cat'>titles</h2>
+						<h2 class='sub-cat'>montage</h2>
+						<h2 class='sub-cat'>animation</h2>
+					</div>
+				</div>
+				<div class='category'>
+					<h1 class='nav-button'id='contact'>contact</h1>
+				</div>
 			</nav>
 		</div>
-		<div class='stage'>
+
+		<div id='main-stage'>
+			<div id='video-stage'>
+			</div>
+
 		</div>
 
 		<div class='bar'>
@@ -33,15 +74,12 @@
 				<% end %>
 			</div>
 		</div>
-		
 
-
-			<!-- <iframe src="http://player.vimeo.com/video/<%= @recent.first["id"] %>"
-						width="800" height="450" style="border: 0px;" 
-						webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
-			</iframe> -->
-		
-		
+		// <script type="text/javascript">
+		// 	$('#pictures').click(function(){
+  //   			$('.sub-menu').toggle('fast','linear');
+  // 			});
+		// </script>
 
 	</body>
 </html>
