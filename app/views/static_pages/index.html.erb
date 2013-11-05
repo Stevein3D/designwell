@@ -2,22 +2,73 @@
 	<head>
 				<TITLE>Design Well</TITLE>
 		<%= favicon_link_tag 'favicon.ico' %>
-		<%= stylesheet_link_tag    'application', media: 'all' %>
 	</head>
 	<body>
+		<div class='sidebar'>
+			<%= image_tag "logo.jpg", {:id => 'logo', :alt => 'Design Well', :title => 'Design Well Logo'} %>
+
+			<nav id='links'>
+				<div class='category'>
+					<h1 class='nav-button'id='pictures'>pictures</h1>
+					<div class='sub-menu'>
+						<h2 class='sub-cat'>titles</h2>
+						<h2 class='sub-cat'>montage</h2>
+						<h2 class='sub-cat'>animation</h2>
+					</div>
+				</div>
+				<div class='category'>		
+					<h1 class='nav-button'id='words'>words</h1>
+					<div class='sub-menu'>
+						<h2 class='sub-cat'>titles</h2>
+						<h2 class='sub-cat'>montage</h2>
+						<h2 class='sub-cat'>animation</h2>
+					</div>
+				</div>
+				<div class='category'>
+					<h1 class='nav-button'id='stories'>stories</h1>
+					<div class='sub-menu'>
+						<h2 class='sub-cat'>titles</h2>
+						<h2 class='sub-cat'>montage</h2>
+						<h2 class='sub-cat'>animation</h2>
+					</div>
+				</div>
+				<div class='category'>
+					<h1 class='nav-button'id='about'>about</h1>
+					<div class='sub-menu'>
+						<h2 class='sub-cat'>titles</h2>
+						<h2 class='sub-cat'>montage</h2>
+						<h2 class='sub-cat'>animation</h2>
+					</div>
+				</div>
+				<div class='category'>
+					<h1 class='nav-button'id='contact'>contact</h1>
+				</div>
+			</nav>
+		</div>
+		<div class='action-zone'>
+			<div class='video-stage'>
+				<iframe src="http://player.vimeo.com/video/<%= @recent.first["id"] %>"
+						width="768" height="432" style="border: 0px;" 
+						webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
+				</iframe>
+			</div>
+			<div class='blurb'>
+				<p>Text about the video would go here.  Text about the video would go here.  Text about the video would go here.</p>
+			</div>
+		</div>
+		<div class='sample-bar'>
+			<div class='thumb-row'>
+				<% @recent.each do |clip| %>
+					<div class='thumbbox'>
+						<%= image_tag clip["thumbnail_large"], {:class => 'thumbnail', :id => clip["id"] }%>
+						<h3><%= clip["title"] %></h3>
+					</div>
+				<% end %>
+			</div>
+		</div>
+		<!-- <div id='container'>
 		<div id='vertbar'>
 			<%= image_tag "logo.jpg", {:id => 'logo', :alt => 'Design Well', :title => 'Design Well Logo'} %>
-			<!-- <nav id='links'>
-				<ul class='category'>
-					<li class='nav-button'id='pictures'><h1 >pictures</h1>
-						<ul class='sub-menu'>
-							<li class='sub-menu-item'><h2>titles</h2></li>
-							<li class='sub-menu-item'><h2>montage</h2></li>
-							<li class='sub-menu-item'><h2>animation</h2></li>
-						</ul>
-					</li>
-				</ul>
-			</nav> -->
 
 			<nav id='links'>
 				<div class='category'>
@@ -58,13 +109,17 @@
 			</nav>
 		</div>
 
-		<div id='main-stage'>
-			<div id='video-stage'>
+		<div class='main-stage'>
+			<div class='video-stage'>
+				<iframe src="http://player.vimeo.com/video/<%= @recent.first["id"] %>"
+						width="640" height="360" style="border: 0px;" 
+						webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
+				</iframe>
 			</div>
 
 		</div>
 
-		<div class='bar'>
+		<div class='sample-bar'>
 			<div class='thumb-row'>
 				<% @recent.each do |clip| %>
 					<div class='thumbbox'>
@@ -75,11 +130,6 @@
 			</div>
 		</div>
 
-		// <script type="text/javascript">
-		// 	$('#pictures').click(function(){
-  //   			$('.sub-menu').toggle('fast','linear');
-  // 			});
-		// </script>
-
+	</div> -->
 	</body>
 </html>
