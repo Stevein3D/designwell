@@ -3,6 +3,8 @@ Designwell::Application.routes.draw do
   root :to => "static_pages#index"
 
   get "/index" => "static_pages#index", :as => :index
+
+  get "/test" => "static_pages#test", :as => :test
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

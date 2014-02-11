@@ -2,106 +2,47 @@
 	<head>
 				<TITLE>Design Well</TITLE>
 		<%= favicon_link_tag 'favicon.ico' %>
+		<link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
+
 		<div class='sidebar'>
 			<%= image_tag "logo.jpg", {:id => 'logo', :alt => 'Design Well', :title => 'Design Well Logo'} %>
 
 			<nav id='links'>
 				<div class='category'>
-					<h1 class='nav-button'id='pictures'>pictures</h1>
+					<h1 class='nav-button'id='pixels'>pixels</h1>
 					<div class='sub-menu'>
 						<h2 class='sub-cat'>titles</h2>
-						<h2 class='sub-cat'>montage</h2>
+						<h2 class='sub-cat'>b-roll</h2>
 						<h2 class='sub-cat'>animation</h2>
 					</div>
 				</div>
 				<div class='category'>		
-					<h1 class='nav-button'id='words'>words</h1>
+					<h1 class='nav-button'id='paper'>paper</h1>
 					<div class='sub-menu'>
-						<h2 class='sub-cat'>titles</h2>
-						<h2 class='sub-cat'>montage</h2>
-						<h2 class='sub-cat'>animation</h2>
+						<h2 class='sub-cat'>posters+keyart</h2>
+						<h2 class='sub-cat'>packaging</h2>
+						<h2 class='sub-cat'>collateral</h2>
 					</div>
 				</div>
 				<div class='category'>
-					<h1 class='nav-button'id='stories'>stories</h1>
+					<h1 class='nav-button'id='facts'>facts</h1>
 					<div class='sub-menu'>
-						<h2 class='sub-cat'>titles</h2>
-						<h2 class='sub-cat'>montage</h2>
-						<h2 class='sub-cat'>animation</h2>
+						<h2 class='sub-cat'>blog</h2>
+						<h2 class='sub-cat'>clients</h2>
+						<h2 class='sub-cat'>affiliations</h2>
 					</div>
 				</div>
 				<div class='category'>
-					<h1 class='nav-button'id='about'>about</h1>
+					<h1 class='nav-button'id='folks'>folks</h1>
 					<div class='sub-menu'>
-						<h2 class='sub-cat'>titles</h2>
-						<h2 class='sub-cat'>montage</h2>
-						<h2 class='sub-cat'>animation</h2>
+						<h2 class='sub-cat'>bios</h2>
+						<h2 class='sub-cat'>legacy</h2>
 					</div>
 				</div>
 				<div class='category'>
-					<h1 class='nav-button'id='contact'>contact</h1>
-				</div>
-			</nav>
-		</div>
-		<div class='action-zone'>
-			<div class='video-stage'>
-				<iframe src="http://player.vimeo.com/video/<%= @recent.first["id"] %>"
-						width="768" height="432" style="border: 0px;" 
-						webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
-				</iframe>
-			</div>
-			<div class='blurb'>
-				<p>Text about the video would go here.  Text about the video would go here.  Text about the video would go here.</p>
-			</div>
-		</div>
-		<div class='sample-bar'>
-			<div class='thumb-row'>
-				<% @recent.each do |clip| %>
-					<div class='thumbbox'>
-						<%= image_tag clip["thumbnail_large"], {:class => 'thumbnail', :id => clip["id"] }%>
-						<h3><%= clip["title"] %></h3>
-					</div>
-				<% end %>
-			</div>
-		</div>
-		<!-- <div id='container'>
-		<div id='vertbar'>
-			<%= image_tag "logo.jpg", {:id => 'logo', :alt => 'Design Well', :title => 'Design Well Logo'} %>
-
-			<nav id='links'>
-				<div class='category'>
-					<h1 class='nav-button'id='pictures'>pictures</h1>
-					<div class='sub-menu'>
-						<h2 class='sub-cat'>titles</h2>
-						<h2 class='sub-cat'>montage</h2>
-						<h2 class='sub-cat'>animation</h2>
-					</div>
-				</div>
-				<div class='category'>		
-					<h1 class='nav-button'id='words'>words</h1>
-					<div class='sub-menu'>
-						<h2 class='sub-cat'>titles</h2>
-						<h2 class='sub-cat'>montage</h2>
-						<h2 class='sub-cat'>animation</h2>
-					</div>
-				</div>
-				<div class='category'>
-					<h1 class='nav-button'id='stories'>stories</h1>
-					<div class='sub-menu'>
-						<h2 class='sub-cat'>titles</h2>
-						<h2 class='sub-cat'>montage</h2>
-						<h2 class='sub-cat'>animation</h2>
-					</div>
-				</div>
-				<div class='category'>
-					<h1 class='nav-button'id='about'>about</h1>
-					<div class='sub-menu'>
-						<h2 class='sub-cat'>titles</h2>
-						<h2 class='sub-cat'>montage</h2>
-						<h2 class='sub-cat'>animation</h2>
-					</div>
+					<h1 class='nav-button'id='reel'>reel</h1>
 				</div>
 				<div class='category'>
 					<h1 class='nav-button'id='contact'>contact</h1>
@@ -109,20 +50,47 @@
 			</nav>
 		</div>
 
-		<div class='main-stage'>
-			<div class='video-stage'>
+		<div id='stage'>
+
+			<div class='xxx'>
 				<iframe src="http://player.vimeo.com/video/<%= @recent.first["id"] %>"
 						width="640" height="360" style="border: 0px;" 
 						webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
 				</iframe>
 			</div>
+			<div class='abc'>
+				
+			</div>
+			<div class='def'>
+				<p>This area can be used as the description box for all videos and photos.  Or a place to speak to the audience about your services and expertise.</p>
+				<p>2013 - design well</p>
+			</div>
 
+			<a href="test.html">alt</a>
+			<!-- <div class='cycle-slideshow' 
+				data-cycle-slides='img'
+				data-cycle-speed='1000'
+				data-cycle-fx='scrollHorz' >
+				<%= image_tag "splash1.jpg", {:class => 'splash first'} %>
+				<%= image_tag "splash2.jpg", {:class => 'splash'} %>
+				<%= image_tag "splash3.jpg", {:class => 'splash'} %>
+			</div> -->
+			<!-- <div class='video-stage'>
+				<iframe src="http://player.vimeo.com/video/<%= @recent.first["id"] %>"
+						width="768" height="432" style="border: 0px;" 
+						webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
+				</iframe>
+				<div class='blurb'>
+					<h4>Text about the video would go here.  Text about the video would go here.  Text about the video would go here.</h4>
+				</div>
+			</div> -->
 		</div>
+		
 
 		<div class='sample-bar'>
 			<div class='thumb-row'>
 				<% @recent.each do |clip| %>
-					<div class='thumbbox'>
+					<div class='thumb-box' id="<%= clip["id"]%>">
 						<%= image_tag clip["thumbnail_large"], {:class => 'thumbnail', :id => clip["id"] }%>
 						<h3><%= clip["title"] %></h3>
 					</div>
@@ -130,6 +98,5 @@
 			</div>
 		</div>
 
-	</div> -->
 	</body>
 </html>

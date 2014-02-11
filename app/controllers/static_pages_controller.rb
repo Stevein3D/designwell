@@ -3,5 +3,8 @@ class StaticPagesController < ApplicationController
   	@user = Vimeo::Simple::User.info("designwell")
     @recent = Vimeo::Simple::Album.videos("2526793")
   end
-
+  def test
+  	@user = Vimeo::Simple::User.info("designwell")
+    @recent = Vimeo::Simple::Album.videos("2526793")
+  end
 end
