@@ -20,14 +20,14 @@
 }
 body{
 	width: 100%;
-	/*background-image: url('bg4.jpg');*/
+	background-image: url('bg4.jpg');
 	background-size: 100%;
 }
 h1{
-	/*font-family: "Neutrabold",Verdana,Tahoma;*/
 	font-family: 'Crete Round', serif;
 	color: white;
-	font-size: 20px;
+	font-size: 16px;
+	line-height: 30px;
 	cursor: pointer;
 }
 h2{
@@ -66,7 +66,7 @@ p{
    ========================================================================== */
 
 .sidebar{
-	width: 130px;
+	width: 150px;
 	height: 800px;
 	text-align: center;
 	background-color: rgba(0,0,0,.5);
@@ -75,7 +75,7 @@ p{
 }
 #logo{
 	width:100px;
-	/*margin-top: 10px;*/
+	margin-top: 10px;
 	display: inline-block;
 	vertical-align: middle;
 }
@@ -87,10 +87,10 @@ p{
 	border-bottom: 2px solid rgba(0,0,0,.8);*/
 }
 .nav-button{
-	width: 120px;
+	width: 148px;
 	height: 30px;
 	margin: 4px 0 0 0;
-	padding-right: 10px;
+	padding-right: 2px;
 	/*line-height: 25px;*/
 	vertical-align: middle;
 	text-align: right;
@@ -109,7 +109,7 @@ p{
 	border-bottom: 2px solid rgba(0,0,0,.8);
 }
 .sub-cat{
-	width: 115px;
+	width: 135px;
 	height: 20px;
 	margin: 0 0;
 	padding-right: 15px;
