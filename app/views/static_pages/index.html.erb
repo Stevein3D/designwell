@@ -5,13 +5,20 @@
 		<link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-
+		<style type="text/css">
+  			html{
+    			background: url(<%= randomized_background_image %>) no-repeat center center fixed;
+    			width: 100%;
+				background-size: 100%; 
+  				}
+		</style>
+		<div class="container">
 		<div class='sidebar'>
 			<%= image_tag "logo.jpg", {:id => 'logo', :alt => 'Design Well', :title => 'Design Well Logo'} %>
 
 			<nav id='links'>
 				<div class='category'>
-					<h1 class='nav-button'id='moving'>moving graphics</h1>
+					<h1 class='nav-button'id='moving'>motion</h1>
 					<div class='sub-menu'>
 						<h2 class='sub-cat'>titles</h2>
 						<h2 class='sub-cat'>animation</h2>
@@ -19,7 +26,7 @@
 					</div>
 				</div>
 				<div class='category'>		
-					<h1 class='nav-button'id='print'>print graphics</h1>
+					<h1 class='nav-button'id='print'>print</h1>
 					<div class='sub-menu'>
 						<h2 class='sub-cat'>posters</h2>
 						<h2 class='sub-cat'>packaging</h2>
@@ -45,21 +52,22 @@
 		</div>
 
 		<div id='stage'>
-
-			<div class='xxx'>
+			<div class='playback'>
 				<iframe src="http://player.vimeo.com/video/<%= @recent.first["id"] %>"
-						width="640" height="360" style="border: 0px;" 
+						width="720" height="405" style="border: 0px;" 
 						webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
 				</iframe>
 			</div>
-			<div class='abc'>
-				
+			<div class='words'><p>Joe has worked as a visual storyteller for 30 years, in print as art director, editor and journalist, and on screen as writer, director, and animator.</p></div>
+			<div class='sample-bar'>
+					<% @recent.each do |clip| %>
+						<div class='thumb-box' id="<%= clip["id"]%>">
+							<%= image_tag clip["thumbnail_large"], {:class => 'thumbnail', :id => clip["id"] }%>
+							<div class='description'><h3><%= clip["title"] %></h3></div>
+						</div>
+						
+					<% end %>
 			</div>
-			<div class='def'>
-				<p>This area can be used as the description box for all videos and photos.  Or a place to speak to the audience about your services and expertise.</p>
-				<p>2013 - design well</p>
-			</div>
-
 			<!-- <div class='cycle-slideshow' 
 				data-cycle-slides='img'
 				data-cycle-speed='1000'
@@ -68,28 +76,10 @@
 				<%= image_tag "splash2.jpg", {:class => 'splash'} %>
 				<%= image_tag "splash3.jpg", {:class => 'splash'} %>
 			</div> -->
-			<!-- <div class='video-stage'>
-				<iframe src="http://player.vimeo.com/video/<%= @recent.first["id"] %>"
-						width="768" height="432" style="border: 0px;" 
-						webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
-				</iframe>
-				<div class='blurb'>
-					<h4>Text about the video would go here.  Text about the video would go here.  Text about the video would go here.</h4>
-				</div>
-			</div> -->
 		</div>
 		
 
-		<div class='sample-bar'>
-			<div class='thumb-row'>
-				<% @recent.each do |clip| %>
-					<div class='thumb-box' id="<%= clip["id"]%>">
-						<%= image_tag clip["thumbnail_large"], {:class => 'thumbnail', :id => clip["id"] }%>
-						<h3><%= clip["title"] %></h3>
-					</div>
-				<% end %>
-			</div>
+		
 		</div>
-
 	</body>
 </html>

@@ -8,25 +8,15 @@
 
 /*.action-zone div						{display: none;}
 .action-zone div.first					{display: block;}*/
-
-.midnav{
-	position: absolute;
-	height: 100px;
-	width: 100px;
-	left: 50%;
-	top: 50%;
-	margin-left: -50px;
-	margin-top: -50px;
-}
 body{
 	width: 100%;
-	background-image: url('bg4.jpg');
+	/*background-image: url('bg7.PNG');*/
 	background-size: 100%;
 }
 h1{
 	font-family: 'Crete Round', serif;
 	color: white;
-	font-size: 16px;
+	font-size: 18px;
 	line-height: 30px;
 	cursor: pointer;
 }
@@ -41,8 +31,6 @@ h3{
 	font-size: 16px;
 	color: white;
 	text-align: center;
-	/*padding-top: 10px;*/
-	margin: 0 15px;
 }
 h4{
 	font-family: 'Crete Round', serif;
@@ -55,22 +43,22 @@ h4{
 p{
 	font-family: 'Crete Round', serif;
 	color: white;
-	font-size: 18px;
-	line-height: 20px;
-	padding: 0 2px;
+	font-size: 16px;
+	line-height: 24px;
+	padding: 0 12px;
+	margin-top: -2px;
 }
 
 
 /* ==========================================================================
    Side Nav Bar
    ========================================================================== */
-
 .sidebar{
-	width: 150px;
+	width: 130px;
 	height: 800px;
 	text-align: center;
 	background-color: rgba(0,0,0,.5);
-	border-right: 2px solid rgba(0,0,0,.8);
+	/*border-right: 2px solid rgba(0,0,0,.8);*/
 	float: left;
 }
 #logo{
@@ -78,19 +66,21 @@ p{
 	margin-top: 10px;
 	display: inline-block;
 	vertical-align: middle;
+	cursor: pointer;
 }
 #links{
-	bottom: 140px;
+	bottom: 150px;
 	position: absolute;
-	padding: 1px 0;
+	padding: 1px 0 0 0;
 	/*border-top: 2px solid rgba(0,0,0,.8);
 	border-bottom: 2px solid rgba(0,0,0,.8);*/
 }
 .nav-button{
-	width: 148px;
+	width: 118px;
 	height: 30px;
-	margin: 4px 0 0 0;
-	padding-right: 2px;
+	margin: 4px 0 0 0px;
+	padding-top: 2px;
+	padding-right: 10px;
 	/*line-height: 25px;*/
 	vertical-align: middle;
 	text-align: right;
@@ -103,20 +93,16 @@ p{
 	color: white;
 }
 .sub-menu{
-	background-color: rgba(255,255,255,.6);
 	display: none;
-	margin: 4px 0;
-	border-bottom: 2px solid rgba(0,0,0,.8);
 }
 .sub-cat{
-	width: 135px;
+	width: 115px;
 	height: 20px;
-	margin: 0 0;
+	margin: 3px 0;
 	padding-right: 15px;
 	text-align: right;
-	/*line-height: 25px;*/
 	vertical-align: middle;
-	border-top: 2px solid rgba(0,0,0,.8);
+	background-color: rgba(255,255,255,.6);
 }
 
 /* ==========================================================================
@@ -129,120 +115,74 @@ p{
 .nav-button:hover{
 	background-color: rgba(0,0,0,.8); 
 }
-.thumb-box:hover .thumbnail{
-	border: solid 2px white;
+.thumb-box:hover .description{
+	background-color: rgba(0,0,0,1);
 }
 
 /* ==========================================================================
    Main Stage
    ========================================================================== */
-.stripe{
-	background-color: rgba(0,104,233,1);
-	width: 100px;
-	height: 700px;
-}
-/*.stripe:hover{
-	background-color: rgba(0,104,233,1);
-	transition: all .5s ease-in;
-	transition: all .5s ease-out;
-}*/
-.xxx{
+.playback{
 	background-color: rgba(0,0,0,.5);
-	margin-left: 10px;
-	margin-top: 10px;
-	width: 640px;
-	height: 360px;
+	margin: 20px auto 10px auto;
+	width: 720px;
+	height: 405px;
 	padding: 5px;
-	border: solid black 2px;
+	/*border: solid black 2px;*/
 }
-.abc{
+.words{
 	background-color: rgba(0,0,0,.5);
-	margin-left: 10px;
-	margin-top: 10px;
-	width: 200px;
-	height: 120px;
-	border: solid black 2px;
-	float: left;
+	margin: 10px auto 0 auto;
+	width: 720px;
+	height: 60px;
+	padding: 5px;
 }
-.def{
-	background-color: rgba(0,0,0,.5);
-	margin-left: 10px;
-	margin-top: 10px;
-	width: 436px;
-	height: 120px;
-	border: solid black 2px;
-	float: left;	
+.container{
+	width: 1000px;
+	overflow: auto;
 }
 #stage{
-	
+	width: 870px;
+	display: inline-block;
 	text-align: center;
 	float: left;
 	overflow: hidden;
 }
-#spotlight{
-	/*background-color: blue;*/
-	border-bottom: solid 2px black;
-	width: 100%;
-	height: 70%;
-	float: left;
-}
-#blurb{
-	/*background-color: green;*/
-	border-bottom: solid 2px black;
-	width: 100%;
-	height: 10%;
-	float: left;
-}
-#choices{
-	background-color: yellow;
-	width: 100%;
-	height: 20%;
-	float: left;
-}
 #slideshow{
 	width: 100%;
-}
-.splash{
-	/*max-width: 100%;*/
-	/*position: absolute;*/
-}
-
-.video-stage{
-		margin-top: 20px;
-		/*display: none;*/
-
-}
-.blurb{
-	width: 768px;
-	height: 60px;
-	background-color: rgba(0,0,0,.5);
-	text-align: center;
-	margin: -4px auto 0 auto;
 }
 .sample-bar{
 	width: 100%;
 	height: 140px;
-	margin-left: 132px;
 	text-align: center;
-	/*background-color: rgba(0,0,0,.5);
-	border-top: 2px solid rgba(0,0,0,.8);*/
-	/*border-bottom: 2px solid rgba(0,0,0,.8);*/
-	position: absolute;
 	float: left;
-	bottom: 0;
-	display: none;
-	z-index: 10;
+	/*margin-left: 152px;*/
+	/*position: absolute;*/
+	/*bottom: 50px;*/
+	/*display: none;
+	z-index: 10;*/
 }
 .thumb-box{
 	display: inline-block;
 	text-align: center;
 	vertical-align: middle;
-	margin-top: 10px;
-	padding: 0 5px;
+	/*border:2px solid rgba(0,0,0,.5);*/
+	background-color: rgba(0,0,0,.5);
+	margin: 10px 7px;
+	padding: 5px 3px 2px 3px;
 }
 .thumbnail{
-	width: 165px;
-	height: 93px;
-	border: solid 2px rgba(0,0,0,.8);
+	width: 192px;
+	height: 115px;
+	/*border: solid 2px rgba(0,0,0,.8);*/
 	cursor: pointer;
+}
+.description{
+	width: 192px;
+	height: 115px;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	background-color: rgba(0,0,0,0);
+	margin: -108px 0 0 -196px;
 }

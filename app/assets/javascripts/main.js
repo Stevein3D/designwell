@@ -17,17 +17,13 @@ $(document).ready(function(){
        var winWidth = $(window).width();
        $sideBar.height(height);
        $slide.width((winWidth - 2) - sideWidth);
-       $stage.width((winWidth - 2) - sideWidth);
+       // $stage.width((winWidth - 2) - sideWidth);
        $stage.height(height);
        $sampleBar.width((winWidth - 2) - sideWidth);
 
     }).trigger('resize'); //on page load
 
   });
-
-$('.stripe').click(function(){
-  $(this).fadeToggle('slow','swing');
-});
 //    var $splashSet = $(".splash-set");
 // $splashSet.find("img:gt(0)").hide();
 // setTimeout(Rotate, 3000);
