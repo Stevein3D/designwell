@@ -53,22 +53,41 @@
 
 		<div id='stage'>
 			<div class='playback'>
-				<iframe src="http://player.vimeo.com/video/<%= @recent.first["id"] %>"
+				<iframe src="http://player.vimeo.com/video/<%= @title.first["id"] %>"
 						width="720" height="405" style="border: 0px;" 
 						webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
 				</iframe>
 			</div>
-			<div class='words'><p>Joe has worked as a visual storyteller for 30 years, in print as art director, editor and journalist, and on screen as writer, director, and animator.</p></div>
-			<div class='sample-bar'>
-					<% @recent.each do |clip| %>
-						<div class='thumb-box' id="<%= clip["id"]%>">
-							<%= image_tag clip["thumbnail_large"], {:class => 'thumbnail', :id => clip["id"] }%>
-							<div class='description'><h3><%= clip["title"] %></h3></div>
-						</div>
-						
+			<div class='words'>
+				<p>Joe has worked as a visual storyteller for 30 years, in print as art director, editor and journalist, and on screen as writer, director, and animator.</p>
+			</div>
+			<!-- <div class= 'center'>
+     
+			</div> -->
+			<div class='videos-container'>
+			<a href=# class ='nav-arrow' id= 'prev'><%= image_tag 'left.png'%></a>
+			
+			<div class="videos">
+			
+			<!-- <%= link_to (image_tag "left.png"), {:target => '_blank', :class =>'left', :id =>'prev'} %> -->
+			<div class='cycle-slideshow'
+				data-cycle-fx=carousel
+				data-cycle-carousel-visible=3
+				data-cycle-slides=".thumbnail"
+    			data-cycle-timeout=0
+    			data-cycle-next="#next"
+    			data-cycle-prev="#prev">
+					<% @title.each do |clip| %>
+							<%= image_tag clip["thumbnail_large"], {:class => 'thumbnail', :id => clip["id"], :description => clip["description"]}%>
+							<!-- <div class='title'><h3><%= clip["title"] %></h3></div> -->
 					<% end %>
 			</div>
-			<!-- <div class='cycle-slideshow' 
+			</div>
+				<a href=# class ='nav-arrow' id='next'><%= image_tag 'right.png'%></a>
+			
+			</div>
+		</div>
+		<!-- <div class='cycle-slideshow' 
 				data-cycle-slides='img'
 				data-cycle-speed='1000'
 				data-cycle-fx='scrollHorz' >
@@ -76,9 +95,6 @@
 				<%= image_tag "splash2.jpg", {:class => 'splash'} %>
 				<%= image_tag "splash3.jpg", {:class => 'splash'} %>
 			</div> -->
-		</div>
-		
-
 		
 		</div>
 	</body>

@@ -1,10 +1,9 @@
 class StaticPagesController < ApplicationController
   def index
   	@user = Vimeo::Simple::User.info("designwell")
-    @recent = Vimeo::Simple::Channel.videos("682871")
+    @title = Vimeo::Simple::Channel.videos("682861")
+    @animation = Vimeo::Simple::Channel.videos("682882")
+    @montage = Vimeo::Simple::Channel.videos("682871")
   end
-  def test
-  	@user = Vimeo::Simple::User.info("designwell")
-    @recent = Vimeo::Simple::Album.videos("2526793")
-  end
+  
 end

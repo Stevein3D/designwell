@@ -16,7 +16,7 @@ $(document).ready(function(){
        var sideWidth = $('.sidebar').width();
        var winWidth = $(window).width();
        $sideBar.height(height);
-       $slide.width((winWidth - 2) - sideWidth);
+       // $slide.width((winWidth - 2) - sideWidth);
        // $stage.width((winWidth - 2) - sideWidth);
        $stage.height(height);
        $sampleBar.width((winWidth - 2) - sideWidth);
@@ -74,11 +74,13 @@ $('.splash').click(function(){
    Play selected video
    ========================================================================== */
 
-  $('.thumb-box').click(function(){
-          var $url = $(this).attr('id');
-          // var $description = $(this).attr()
-          $('iframe').attr('src',"http://player.vimeo.com/video/" + $url + "?autoplay=1");
-        });
+    $('.thumbnail').click(function(){
+                var $url = $(this).attr('id');
+                var $brief = $(this).attr('description');
+                // var $description = $(this).attr()
+                $('iframe').attr('src',"http://player.vimeo.com/video/" + $url + "?autoplay=1");
+                $('div.words p').text($brief);
+            });
 
 
 

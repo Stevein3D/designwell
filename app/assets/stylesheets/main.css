@@ -2,12 +2,6 @@
     font-family: "Theserif";
     src: url('theserifplain.ttf') format('truetype');
 }*/
-.cycle-slideshow                              { margin:0 auto 5px auto; } /*for the jQuery cycle plug in*/
-.cycle-slideshow img                          { display:none; width: 100%; cursor: pointer;}
-.cycle-slideshow img.first                    { display:block;}
-
-/*.action-zone div						{display: none;}
-.action-zone div.first					{display: block;}*/
 body{
 	width: 100%;
 	/*background-image: url('bg7.PNG');*/
@@ -122,6 +116,18 @@ p{
 /* ==========================================================================
    Main Stage
    ========================================================================== */
+.container{
+	width: 1000px;
+	overflow: auto;
+}
+#stage{
+	width: 870px;
+	display: inline-block;
+	text-align: center;
+	float: left;
+	overflow: hidden;
+}
+
 .playback{
 	background-color: rgba(0,0,0,.5);
 	margin: 20px auto 10px auto;
@@ -137,47 +143,41 @@ p{
 	height: 60px;
 	padding: 5px;
 }
-.container{
-	width: 1000px;
-	overflow: auto;
-}
-#stage{
-	width: 870px;
+.videos-container{
 	display: inline-block;
-	text-align: center;
-	float: left;
-	overflow: hidden;
+	margin: 0 auto;
+	width: 730px;
 }
-#slideshow{
-	width: 100%;
-}
-.sample-bar{
-	width: 100%;
-	height: 140px;
-	text-align: center;
-	float: left;
-	/*margin-left: 152px;*/
-	/*position: absolute;*/
-	/*bottom: 50px;*/
-	/*display: none;
-	z-index: 10;*/
-}
-.thumb-box{
-	display: inline-block;
-	text-align: center;
-	vertical-align: middle;
-	/*border:2px solid rgba(0,0,0,.5);*/
+.nav-arrow{
 	background-color: rgba(0,0,0,.5);
-	margin: 10px 7px;
-	padding: 5px 3px 2px 3px;
+	margin-top: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	float: left;
 }
+.videos{
+	width: 606px;
+	height: 115px;
+	background-color: rgba(0,0,0,.5);
+	margin: 10px auto 0 auto;
+	padding: 5px 22px;
+	text-align: center;
+	float: left;
+}
+.cycle-slideshow{
+	text-align: center;
+	margin: 0 auto;
+	/*float: left;*/
+}
+
 .thumbnail{
 	width: 192px;
 	height: 115px;
-	/*border: solid 2px rgba(0,0,0,.8);*/
+	margin: 0 5px;
 	cursor: pointer;
 }
-.description{
+
+/*.title{
 	width: 192px;
 	height: 115px;
 	display: inline-block;
@@ -185,4 +185,10 @@ p{
 	vertical-align: middle;
 	background-color: rgba(0,0,0,0);
 	margin: -108px 0 0 -196px;
+}*/
+.splash{
+	width: 200px;
+}
+.description{
+	display: none;
 }
