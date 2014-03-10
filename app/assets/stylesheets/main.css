@@ -4,7 +4,7 @@
 }*/
 body{
 	width: 100%;
-	/*background-image: url('bg7.PNG');*/
+	background-color: rgb(100,100,100);
 	background-size: 100%;
 }
 h1{
@@ -207,7 +207,7 @@ p{
 .photo-stage{
 	background-color: rgba(0,0,0,.5);
 	margin: 10px auto;
-	width: 432px;
+	width: 768px;
 	height: 432px;
 	padding: 5px; 
 }
