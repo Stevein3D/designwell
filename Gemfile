@@ -35,6 +35,9 @@ end
 # API for vimeo account
   gem 'vimeo'
 
+# API for flickr
+  gem 'flickraw'
+
   gem 'thin'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

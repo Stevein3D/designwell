@@ -73,15 +73,25 @@ $('.splash').click(function(){
 /* ==========================================================================
    Play selected video
    ========================================================================== */
+  
+  $('.thumbnail').click(function(){
+      var $url = $(this).attr('id');
+      var $brief = $(this).attr('description');
+      var $title = $(this).attr('title');
 
-    $('.thumbnail').click(function(){
-                var $url = $(this).attr('id');
-                var $brief = $(this).attr('description');
-                // var $description = $(this).attr()
-                $('iframe').attr('src',"http://player.vimeo.com/video/" + $url + "?autoplay=1");
-                $('div.words p').text($brief);
-            });
+      $('iframe').attr('src',"http://player.vimeo.com/video/" + $url + "?autoplay=1");
+      $('div.words p').text($brief);
+      $('h3').text($title);
+  });
 
+  $('#print').click(function(){
+    $('#motion-container').fadeOut(300);
+    $('#print-container').delay(300).fadeIn(600);
+  });
 
+  $('#motion').click(function(){
+    $('#print-container').fadeOut(300);
+    $('#motion-container').delay(300).fadeIn(600);
+  });
 
 });

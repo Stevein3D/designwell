@@ -39,6 +39,7 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.1)
+    flickraw (0.9.7)
     hike (1.2.3)
     httparty (0.11.0)
       multi_json (~> 1.0)
@@ -128,6 +129,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  flickraw
   jbuilder (~> 1.2)
   jquery-rails
   pg
