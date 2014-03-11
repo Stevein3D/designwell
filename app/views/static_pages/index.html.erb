@@ -54,80 +54,83 @@
 		<div id='stage'>
 
 			<div id='motion-container'>
-			<div class='playback'>
-				<iframe src="http://player.vimeo.com/video/<%= @title.first["id"] %>"
+				<div class='playback'>
+					<iframe src="http://player.vimeo.com/video/<%= @title.first["id"] %>"
 						width="768" height="432" style="border: 0px;" 
 						webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
-				</iframe>
-			</div>
-			<div class='words'>
-				<h3><%= @title.first["title"]%></h3>
-				<p>Joe has worked as a visual storyteller for 30 years, in print as art director, editor and journalist, and on screen as writer, director, and animator.</p>
-			</div>
-	
-			<div class='videos-container'>
-				<a href=# class ='nav-arrow-left' id='next'></a>
-				
-				<div class="videos" id='titles'>
-					<div class='cycle-slideshow'
-						data-cycle-fx=carousel
-						data-cycle-carousel-visible=3
-						data-cycle-slides=".thumbnail"
-    					data-cycle-timeout=0
-    					data-cycle-next="#next"
-    					data-cycle-prev="#prev">
+					</iframe>
+				</div>
+				<div class='words'>
+					<h3><%= @title.first["title"]%></h3>
+					<p>Joe has worked as a visual storyteller for 30 years, in print as art director, editor and journalist, and on screen as writer, director, and animator.</p>
+				</div>
+				<div class='video-container'>
+					
+					<div class='video-category' id='titles'>
+						<a href=# class ='nav-arrow-left' id='titles-next'></a>
+						<div class="videos">
+							<div class='cycle-slideshow'
+								data-cycle-fx=carousel
+								data-cycle-carousel-visible=3
+								data-cycle-slides=".thumbnail"
+    							data-cycle-timeout=0
+    							data-cycle-next="#titles-next"
+    							data-cycle-prev="#titles-prev">
+								<div class="cycle-pager"></div>
 
-    					<div class="cycle-pager"></div>
+								<% @title.each do |clip| %>
+									<%= image_tag clip["thumbnail_large"], {:class => "thumbnail", :id => clip["id"], :description => clip["description"], :title => clip["title"]}%>
+								<% end %>
+							</div>
+						</div>
+						<a href=# class ='nav-arrow-right' id='titles-prev'></a>
+					</div>
+					
+					<div class='video-category' id='montage'>
+						<a href=# class ='nav-arrow-left' id='montage-next'></a>
+						<div class="videos">
+							<div class='cycle-slideshow'
+								data-cycle-fx=carousel
+								data-cycle-carousel-visible=3
+								data-cycle-slides=".thumbnail"
+    							data-cycle-timeout=0
+    							data-cycle-next="#montage-next"
+    							data-cycle-prev="#montage-prev">
+								<div class="cycle-pager"></div>
 
-						<% @title.each do |clip| %>
-							<%= image_tag clip["thumbnail_large"], {:class => "thumbnail", :id => clip["id"], :description => clip["description"], :title => clip["title"]}%>
-							<!-- <div class='title'><h3><%= clip["title"] %></h3></div> -->
-						<% end %>
+								<% @montage.each do |clip| %>
+									<%= image_tag clip["thumbnail_large"], {:class => "thumbnail", :id => clip["id"], :description => clip["description"], :title => clip["title"]}%>
+								<% end %>
+							</div>
+						</div>
+						<a href=# class ='nav-arrow-right' id='montage-prev'></a>
+					</div>
+
+					<div class='video-category' id='animation'>
+						<a href=# class ='nav-arrow-left' id='animation-next'></a>
+						<div class="videos">
+							<div class='cycle-slideshow'
+								data-cycle-fx=carousel
+								data-cycle-carousel-visible=3
+								data-cycle-slides=".thumbnail"
+    							data-cycle-timeout=0
+    							data-cycle-next="#animation-next"
+    							data-cycle-prev="#animation-prev">
+								<div class="cycle-pager"></div>
+
+								<% @animation.each do |clip| %>
+									<%= image_tag clip["thumbnail_large"], {:class => "thumbnail", :id => clip["id"], :description => clip["description"], :title => clip["title"]}%>
+								<% end %>
+							</div>
+						</div>
+						<a href=# class ='nav-arrow-right' id='animation-prev'></a>
 					</div>
 				</div>
-
-				<div class="videos" id='animation'>
-					<div class='cycle-slideshow'
-						data-cycle-fx=carousel
-						data-cycle-carousel-visible=3
-						data-cycle-slides=".thumbnail"
-    					data-cycle-timeout=0
-    					data-cycle-next="#next"
-    					data-cycle-prev="#prev">
-
-    					<div class="cycle-pager"></div>
-
-						<% @animation.each do |clip| %>
-							<%= image_tag clip["thumbnail_large"], {:class => 'thumbnail', :id => clip["id"], :description => clip["description"], :title => clip["title"]}%>
-							<!-- <div class='title'><h3><%= clip["title"] %></h3></div> -->
-						<% end %>
-					</div>
-				</div>
-
-				<div class="videos" id='montage'>
-					<div class='cycle-slideshow'
-						data-cycle-fx=carousel
-						data-cycle-carousel-visible=3
-						data-cycle-slides=".thumbnail"
-    					data-cycle-timeout=0
-    					data-cycle-next="#next"
-    					data-cycle-prev="#prev">
-
-    					<div class="cycle-pager"></div>
-
-						<% @montage.each do |clip| %>
-							<%= image_tag clip["thumbnail_large"], {:class => 'thumbnail', :id => clip["id"], :description => clip["description"], :title => clip["title"]}%>
-							<!-- <div class='title'><h3><%= clip["title"] %></h3></div> -->
-						<% end %>
-					</div>
-				</div>
-				<a href=# class ='nav-arrow-right' id='prev'></a>
 			</div>
 		</div>
 
 		<div id='print-container'>
 			<div class='photo-stage'>
-				
 			</div>	
 		</div>
 
@@ -136,18 +139,15 @@
 		<script>
       		$(function(){
         		$('#titles-button').click(function(){
-          			$('#titles, #animation, #montage, .nav-arrow-right, .nav-arrow-left').fadeOut(300);
-          			$('.nav-arrow-right, .nav-arrow-left').delay(300).fadeIn(600);
+          			$('#titles, #animation, #montage').fadeOut(300);
           			$('#titles').delay(300).fadeIn(600);
         		});
 				$('#animation-button').click(function(){
-          			$('#titles, #animation, #montage, .nav-arrow-right, .nav-arrow-left').fadeOut(300);
-          			$('.nav-arrow-right, .nav-arrow-left').delay(300).fadeIn(600);
+          			$('#titles, #animation, #montage').fadeOut(300);
           			$('#animation').delay(300).fadeIn(600);
         		});
         		$('#montage-button').click(function(){
-          			$('#titles, #animation, #montage, .nav-arrow-right, .nav-arrow-left').fadeOut(300);
-          			$('.nav-arrow-right, .nav-arrow-left').delay(300).fadeIn(600);
+          			$('#titles, #animation, #montage').fadeOut(300);
           			$('#montage').delay(300).fadeIn(600);
         		});
       		});
