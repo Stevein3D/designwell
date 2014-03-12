@@ -8,47 +8,25 @@ $(document).ready(function(){
 
     var $sideBar = $('.sidebar');
     var $stage = $('#stage');
-    var $sampleBar = $('.sample-bar');
     var $slide = $('#slideshow');
+    var $container = $('#container')
 
     var $window = $(window).on('resize', function(){
-       var height = $(this).height();
+       var winHeight = $(this).height();
        var sideWidth = $('.sidebar').width();
-       var winWidth = $(window).width();
-       $sideBar.height(height);
-       // $slide.width((winWidth - 2) - sideWidth);
-       // $stage.width((winWidth - 2) - sideWidth);
-       $stage.height(height);
-       $sampleBar.width((winWidth - 2) - sideWidth);
+       var winWidth = $(this).width();
+       $container.height(winHeight);
+       $sideBar.height(winHeight);
+       $stage.height(winHeight);
 
     }).trigger('resize'); //on page load
 
   });
-//    var $splashSet = $(".splash-set");
-// $splashSet.find("img:gt(0)").hide();
-// setTimeout(Rotate, 3000);
 
-// function Rotate() {
-//     var $current = $splashSet.find("img:visible");
-//     var $next = $current.next();
-//     if ($next.length == 0) $next = $splashSet.find("img:eq(0)");
-//     $current.hide();
-//     $next.slideDown(600);
-//     setTimeout(Rotate, 3000);
-// }
 $('.splash').click(function(){
   $('#slideshow').cycle('toggle');
 });
 
-// $('#pixels').click(function() {
-//     $('.action-zone').cycle(0);
-//     return false;
-// });
- 
-// $('#paper').click(function() {
-//     $('.action-zone').cycle(1);
-//     return false;
-// });
 /* ==========================================================================
    Menu and submenu animations
    ========================================================================== */
@@ -73,7 +51,7 @@ $('.splash').click(function(){
 /* ==========================================================================
    Play selected video
    ========================================================================== */
-  
+
   $('.thumbnail').click(function(){
       var $url = $(this).attr('id');
       var $brief = $(this).attr('description');

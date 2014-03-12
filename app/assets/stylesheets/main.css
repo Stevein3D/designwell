@@ -5,7 +5,7 @@
 body{
 	width: 100%;
 	background-color: rgb(100,100,100);
-	background-size: 100%;
+	/*background-size: 100%;*/
 }
 h1{
 	font-family: 'Crete Round', serif;
@@ -39,17 +39,23 @@ p{
 	padding: 0 15px;
 	margin-top: 0;
 }
-
+#container{
+	width: 1000px;
+	margin: 0 auto;
+	height: 500px;
+	overflow: auto;
+	text-align: center;
+}
 
 /* ==========================================================================
    Side Nav Bar
    ========================================================================== */
+
 .sidebar{
 	width: 130px;
 	height: 800px;
 	text-align: center;
 	background-color: rgba(0,0,0,.5);
-	/*border-right: 2px solid rgba(0,0,0,.8);*/
 	float: left;
 }
 #logo{
@@ -63,8 +69,6 @@ p{
 	top: 457px;
 	position: absolute;
 	padding: 1px 0 0 0;
-	/*border-top: 2px solid rgba(0,0,0,.8);
-	border-bottom: 2px solid rgba(0,0,0,.8);*/
 }
 .nav-button{
 	width: 120px;
@@ -72,12 +76,9 @@ p{
 	margin: 4px 0 0 0px;
 	padding-top: 2px;
 	padding-right: 10px;
-	/*line-height: 25px;*/
 	vertical-align: middle;
 	text-align: right;
 	background-color: rgba(0,0,0,0);
-	/*border-top: 2px solid rgba(0,0,0,.8);
-	border-bottom: 2px solid rgba(0,0,0,.8);*/
 }
 .focusbutton{
 	background-color: rgba(0,0,0,1);
@@ -124,10 +125,6 @@ p{
 /* ==========================================================================
    Main Stage
    ========================================================================== */
-.container{
-	width: 1000px;
-	overflow: auto;
-}
 #stage{
 	width: 803px;
 	display: inline-block;
@@ -167,7 +164,7 @@ p{
 .video-category{
 	text-align: center;
 	background-color: rgba(0,0,0,.5);
-	margin: 5px 5px 5px 6px;
+	margin: 5px 5px;
 	width: 768px;
 	height: 125px;
 }
@@ -188,7 +185,7 @@ p{
 	width: 40px;
 	height: 115px;
 	background-image: url('left_sprite.png') ;
-	margin-left: 4px;
+	margin-left: 5px;
 	padding: 5px 0;
 	float: left;
 }
