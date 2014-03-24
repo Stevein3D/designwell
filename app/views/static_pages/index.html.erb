@@ -29,9 +29,9 @@
 					<div class='category'>		
 						<h1 class='nav-button'id='print'>print</h1>
 						<div class='sub-menu'>
-							<h2 class='sub-cat'>posters</h2>
-							<h2 class='sub-cat'>packaging</h2>
-							<h2 class='sub-cat'>collateral</h2>
+							<h2 class='sub-cat' id='posters-button'>posters</h2>
+							<h2 class='sub-cat' id='packaging-button'>packaging</h2>
+							<h2 class='sub-cat' id='collateral-button'>collateral</h2>
 						</div>
 					</div>
 					<div class='category'>
@@ -58,7 +58,7 @@
 
 					<div class='playback'>
 						<iframe src="http://player.vimeo.com/video/<%= @title.first["id"] %>"
-							width="784" height="441" style="border: 0px;" 
+							width="768" height="432" style="border: 0px;" 
 							webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
 						</iframe>
 					</div>
@@ -68,16 +68,17 @@
 						<p>Joe has worked as a visual storyteller for 30 years, in print as art director, editor and journalist, and on screen as writer, director, and animator.</p>
 					</div>
 
-					<div class='video-container'>
+					<div class='thumbs-container'>
 
-						<div class='video-category' id='titles'>
-							<a href=# class ='nav-arrow-left' id='titles-next'></a>
-							<div class="videos">
+						<div class='thumbs-category' id='titles'>
+							<a href=# class ='nav-arrow-left' id='titles-prev'></a>
+							<div class="thumbs">
 								<div class='cycle-slideshow'
 								data-cycle-fx=carousel
 								data-cycle-carousel-visible=3
 								data-cycle-slides=".thumbnail"
 								data-cycle-timeout=0
+								data-cycle-pager-template="<span></span>"
 								data-cycle-next="#titles-next"
 								data-cycle-prev="#titles-prev">
 								<div class="cycle-pager"></div>
@@ -87,17 +88,18 @@
 								<% end %>
 								</div>
 							</div>
-							<a href=# class ='nav-arrow-right' id='titles-prev'></a>
+							<a href=# class ='nav-arrow-right' id='titles-next'></a>
 						</div>
 					
-						<div class='video-category' id='montage'>
-							<a href=# class ='nav-arrow-left' id='montage-next'></a>
-							<div class="videos">
+						<div class='thumbs-category' id='montage'>
+							<a href=# class ='nav-arrow-left' id='montage-prev'></a>
+							<div class="thumbs">
 								<div class='cycle-slideshow'
 								data-cycle-fx=carousel
 								data-cycle-carousel-visible=3
 								data-cycle-slides=".thumbnail"
 								data-cycle-timeout=0
+								data-cycle-pager-template="<span></span>"
 								data-cycle-next="#montage-next"
 								data-cycle-prev="#montage-prev">
 								<div class="cycle-pager"></div>
@@ -107,26 +109,27 @@
 								<% end %>
 								</div>
 							</div>
-							<a href=# class ='nav-arrow-right' id='montage-prev'></a>
+							<a href=# class ='nav-arrow-right' id='montage-next'></a>
 						</div>
 
-						<div class='video-category' id='animation'>
-							<a href=# class ='nav-arrow-left' id='animation-next'></a>
-							<div class="videos">
+						<div class='thumbs-category' id='animation'>
+							<a href=# class ='nav-arrow-left' id='animation-prev'></a>
+							<div class="thumbs">
 								<div class='cycle-slideshow'
 									data-cycle-fx=carousel
 									data-cycle-carousel-visible=3
 									data-cycle-slides=".thumbnail"
 									data-cycle-timeout=0
+									data-cycle-pager-template="<span></span>"
 									data-cycle-next="#animation-next"
 									data-cycle-prev="#animation-prev">
 									<div class="cycle-pager"></div>
 
 									<% @animation.each do |clip| %>
-										<%= image_tag clip["thumbnail_large"], {:class => "thumbnail", :id => clip["id"], :description => clip["description"], :title => clip["title"], :alt => clip["title"]}%>
+										<%= image_tag clip["thumbnail_large"], {:class => "thumbnail", :id => clip["id"],:style => "max-height: 115px;", :description => clip["description"], :title => clip["title"], :alt => clip["title"]}%>
 									<% end %>
 								</div>
-								<a href=# class ='nav-arrow-right' id='animation-prev'></a>
+								<a href=# class ='nav-arrow-right' id='animation-next'></a>
 							</div>
 						</div>
 					</div>
@@ -134,19 +137,60 @@
 
 				<div id='print-container'>
 					<div class='photo-stage'>
+						<img src="<%= FlickRaw.url_b(@poster.photo{}.first) %>" style="max-height: 432px;" onload="OnImageLoad(event);"/>
+					</div>
 
-						
-						<% @collateral.photo{}.each do |photo| %>
-							<%= image_tag FlickRaw.url_m(photo), {:class => "thumbnail", :id => photo["id"], :description => photo["description"], :title => photo["title"], :alt => photo["title"]}%>
-						<% end %>
-							
-						
-							
-						
-					
-						
-						
-						
+					<div class='words'>
+						<h3><%= @poster.photo{}.first["title"]%></h3>
+						<p><%= @poster.photo{}.first["title"]%></p>
+					</div>
+
+					<div class='thumbs-container'>
+
+						<div class='thumbs-category' id='posters'>
+							<a href=# class ='nav-arrow-left' id='posters-prev'></a>
+							<div class="thumbs">
+								<div class='cycle-slideshow'
+								data-cycle-fx=carousel
+								data-cycle-carousel-visible=3
+								data-cycle-slides=".photo-thumb"
+								data-cycle-timeout=0
+								data-cycle-pager-template="<span></span>"
+								data-cycle-next="#posters-next"
+								data-cycle-prev="#posters-prev">
+								<div class="cycle-pager"></div>
+
+								<% @poster.photo{}.each do |photo| %>
+									<%= image_tag FlickRaw.url_m(photo), {:class => "photo-thumb", :id => photo["id"], :description => photo["description"], :title => photo["title"], :alt => photo["title"]}%>
+								<% end %>
+								</div>
+							</div>
+							<a href=# class ='nav-arrow-right' id='posters-next'></a>
+						</div>
+
+						<div class='thumbs-category' id='collateral'>
+							<a href=# class ='nav-arrow-left' id='collateral-prev'></a>
+							<div class="thumbs">
+								<div class='cycle-slideshow'
+								data-cycle-fx=carousel
+								data-cycle-carousel-visible=3
+								data-cycle-slides=".photo-thumb"
+								data-cycle-timeout=0
+								data-cycle-pager-template="<span></span>"
+								data-cycle-next="#collateral-next"
+								data-cycle-prev="#collateral-prev">
+								<div class="cycle-pager"></div>
+
+								<% @collateral.photo{}.each do |photo| %>
+									<%= image_tag FlickRaw.url_m(photo), {:class => "photo-thumb", :id => photo["id"], :description => photo["description"], :title => photo["title"], :alt => photo["title"]}%>
+								<% end %>
+								</div>
+							</div>
+							<a href=# class ='nav-arrow-right' id='collateral-next'></a>
+						</div>
+											
+					</div>
+									
 					</div>	
 				</div>		
 			</div>
@@ -167,6 +211,18 @@
         		$('#montage-button').click(function(){
           			$('#titles, #animation, #montage').fadeOut(300);
           			$('#montage').delay(300).fadeIn(600);
+        		});
+        		$('#posters-button').click(function(){
+          			$('#posters, #packaging, #collateral').fadeOut(300);
+          			$('#posters').delay(300).fadeIn(600);
+        		});
+        		$('#packaging-button').click(function(){
+          			$('#posters, #packaging, #collateral').fadeOut(300);
+          			$('#packaging').delay(300).fadeIn(600);
+        		});
+        		$('#collateral-button').click(function(){
+          			$('#posters, #packaging, #collateral').fadeOut(300);
+          			$('#collateral').delay(300).fadeIn(600);
         		});
       		});
     	</script>
