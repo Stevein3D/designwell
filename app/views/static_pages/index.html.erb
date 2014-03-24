@@ -58,7 +58,7 @@
 
 					<div class='playback'>
 						<iframe src="http://player.vimeo.com/video/<%= @title.first["id"] %>"
-							width="768" height="432" style="border: 0px;" 
+							width="784" height="441" style="border: 0px;" 
 							webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
 						</iframe>
 					</div>
@@ -83,7 +83,7 @@
 								<div class="cycle-pager"></div>
 
 								<% @title.each do |clip| %>
-									<%= image_tag clip["thumbnail_large"], {:class => "thumbnail", :id => clip["id"], :description => clip["description"], :title => clip["title"]}%>
+									<%= image_tag clip["thumbnail_large"], {:class => "thumbnail", :id => clip["id"], :description => clip["description"], :title => clip["title"], :alt => clip["title"]}%>
 								<% end %>
 								</div>
 							</div>
@@ -103,7 +103,7 @@
 								<div class="cycle-pager"></div>
 
 								<% @montage.each do |clip| %>
-									<%= image_tag clip["thumbnail_large"], {:class => "thumbnail", :id => clip["id"], :description => clip["description"], :title => clip["title"]}%>
+									<%= image_tag clip["thumbnail_large"], {:class => "thumbnail", :id => clip["id"], :description => clip["description"], :title => clip["title"], :alt => clip["title"]}%>
 								<% end %>
 								</div>
 							</div>
@@ -123,7 +123,7 @@
 									<div class="cycle-pager"></div>
 
 									<% @animation.each do |clip| %>
-										<%= image_tag clip["thumbnail_large"], {:class => "thumbnail", :id => clip["id"], :description => clip["description"], :title => clip["title"]}%>
+										<%= image_tag clip["thumbnail_large"], {:class => "thumbnail", :id => clip["id"], :description => clip["description"], :title => clip["title"], :alt => clip["title"]}%>
 									<% end %>
 								</div>
 								<a href=# class ='nav-arrow-right' id='animation-prev'></a>
@@ -133,7 +133,21 @@
 				</div>
 
 				<div id='print-container'>
-					<div class='photo-stage'></div>	
+					<div class='photo-stage'>
+
+						
+						<% @collateral.photo{}.each do |photo| %>
+							<%= image_tag FlickRaw.url_m(photo), {:class => "thumbnail", :id => photo["id"], :description => photo["description"], :title => photo["title"], :alt => photo["title"]}%>
+						<% end %>
+							
+						
+							
+						
+					
+						
+						
+						
+					</div>	
 				</div>		
 			</div>
 		</div>
@@ -159,3 +173,5 @@
 		
 	</body>
 </html>
+
+
