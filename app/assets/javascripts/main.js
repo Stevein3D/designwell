@@ -114,9 +114,9 @@ function ScaleImage(srcwidth, srcheight, targetwidth, targetheight, fLetterBox) 
    ========================================================================== */
 
   $('.thumbnail').click(function(){
-      var $url = $(this).attr('id');
-      var $brief = $(this).attr('description');
-      var $title = $(this).attr('title');
+      var $url = $(this).children('img').attr('id');
+      var $brief = $(this).children('img').attr('description');
+      var $title = $(this).children('img').attr('title');
 
       $('iframe').attr('src',"http://player.vimeo.com/video/" + $url + "?autoplay=1");
       $('div.words p').text($brief);

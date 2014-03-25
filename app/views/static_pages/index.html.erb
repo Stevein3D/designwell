@@ -65,7 +65,7 @@
 
 					<div class='words'>
 						<h3><%= @title.first["title"]%></h3>
-						<p>Joe has worked as a visual storyteller for 30 years, in print as art director, editor and journalist, and on screen as writer, director, and animator.</p>
+						<p><%= @title.first["description"] %></p>
 					</div>
 
 					<div class='thumbs-container'>
@@ -84,8 +84,11 @@
 								<div class="cycle-pager"></div>
 
 								<% @title.each do |clip| %>
-									<%= image_tag clip["thumbnail_large"], {:class => "thumbnail", :id => clip["id"], :description => clip["description"], :title => clip["title"], :alt => clip["title"]}%>
-								<% end %>
+									<div class="thumbnail">
+									<%= image_tag clip["thumbnail_large"], {:id => clip["id"], :description => clip["description"], :title => clip["title"], :alt => clip["title"]}%>
+									<!-- <div class="caption"><h4><%=clip["title"]%></h4></div> -->
+									</div>
+									<% end %>
 								</div>
 							</div>
 							<a href=# class ='nav-arrow-right' id='titles-next'></a>
@@ -137,7 +140,9 @@
 
 				<div id='print-container'>
 					<div class='photo-stage'>
-						<img src="<%= FlickRaw.url_b(@poster.photo{}.first) %>" style="max-height: 432px;" onload="OnImageLoad(event);"/>
+						<div class='dark-box'>
+							<img src="<%= FlickRaw.url_b(@poster.photo{}.first) %>" style="max-height: 432px;" onload="OnImageLoad(event);"/>
+						</div>
 					</div>
 
 					<div class='words'>
@@ -153,7 +158,7 @@
 								<div class='cycle-slideshow'
 								data-cycle-fx=carousel
 								data-cycle-carousel-visible=3
-								data-cycle-slides=".photo-thumb"
+								data-cycle-slides=".thumb-box"
 								data-cycle-timeout=0
 								data-cycle-pager-template="<span></span>"
 								data-cycle-next="#posters-next"
@@ -161,7 +166,9 @@
 								<div class="cycle-pager"></div>
 
 								<% @poster.photo{}.each do |photo| %>
+									<div class='thumb-box'>
 									<%= image_tag FlickRaw.url_m(photo), {:class => "photo-thumb", :id => photo["id"], :description => photo["description"], :title => photo["title"], :alt => photo["title"]}%>
+									</div>
 								<% end %>
 								</div>
 							</div>
@@ -174,7 +181,7 @@
 								<div class='cycle-slideshow'
 								data-cycle-fx=carousel
 								data-cycle-carousel-visible=3
-								data-cycle-slides=".photo-thumb"
+								data-cycle-slides=".thumb-box"
 								data-cycle-timeout=0
 								data-cycle-pager-template="<span></span>"
 								data-cycle-next="#collateral-next"
@@ -182,7 +189,9 @@
 								<div class="cycle-pager"></div>
 
 								<% @collateral.photo{}.each do |photo| %>
-									<%= image_tag FlickRaw.url_m(photo), {:class => "photo-thumb", :id => photo["id"], :description => photo["description"], :title => photo["title"], :alt => photo["title"]}%>
+									<div class='thumb-box'>
+										<%= image_tag FlickRaw.url_m(photo), {:class => "photo-thumb", :id => photo["id"], :description => photo["description"], :title => photo["title"], :alt => photo["title"]}%>
+									</div>
 								<% end %>
 								</div>
 							</div>

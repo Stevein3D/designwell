@@ -29,6 +29,21 @@ h3{
 	margin: 0 auto;
 	text-align: center;
 }
+h4{
+	font-family: 'Crete Round', serif;
+	font-size: 14px;
+	color: white;
+	cursor: pointer;	
+	
+}
+.caption{
+	width: 192px;
+	height: 115px;
+	background-color: rgba(0,0,0,.5);
+	text-align: center;
+	z-index: 1000;
+	margin-top: -135px;
+}
 p{
 	font-family: 'Crete Round', serif;
 	background-color: rgba(0,0,0,.5);
@@ -43,7 +58,7 @@ p{
 	width: 1000px;
 	margin: 0 auto;
 	height: 500px;
-	overflow: auto;
+	overflow: hidden;
 	text-align: center;
 }
 
@@ -59,7 +74,7 @@ p{
 	float: left;
 }
 #logo{
-	width:110px;
+	width:90px;
 	margin-top: 15px;
 	display: inline-block;
 	vertical-align: middle;
@@ -132,7 +147,18 @@ p{
 	float: left;
 	overflow: hidden;
 }
-
+#motion-container{
+	width: 870px;
+	padding-bottom: 20px;
+	float: left;
+	overflow: hidden;
+}
+#print-container{
+	width: 870px;
+	padding-bottom: 20px;
+	float: left;
+	overflow: hidden;
+}
 .playback{
 	background-color: rgba(0,0,0,.5);
 	margin: 15px auto 10px auto;
@@ -210,12 +236,23 @@ p{
 	margin: 0 8px;
 	cursor: pointer;
 }
+.thumbnail img{
+	width: 192px;
+	height: 115px;
+	/*position: absolute;*/
+	z-index: -10;
+}
 #print-container{
 	display: none;
 }
 /*#motion-container{
 	white-space: nowrap;
 }*/
+.dark-box{
+	background-color: rgba(0,0,0,.5);
+	width: 768px;
+	height: 432px;
+}
 .photo-stage{
 	background-color: rgba(0,0,0,.5);
 	overflow: hidden;
@@ -225,10 +262,15 @@ p{
 	height: 432px;
 	padding: 5px; 
 }
-.photo-thumb{
+.thumb-box{
 	width: 192px;
 	height: 115px;
 	margin: 0 8px;
+	overflow: hidden;
+}
+.photo-thumb{
+	width: 192px;
+	margin-top: -20px;
 	cursor: pointer;
 }
 /* set border-box so that percents can be used for width, padding, etc (personal preference) */
@@ -246,7 +288,7 @@ p{
 }*/
 .cycle-pager span { 
     width: 20px; height: 20px; 
-    display: inline-block; background-color: rgba(255,255,255,.6); border: 2px solid rgba(0,0,0,.5); cursor: pointer; margin:20px 2px 0 2px; 
+    display: inline-block; background-color: rgba(255,255,255,.8); border: 2px solid rgba(0,0,0,.5); cursor: pointer; margin:20px 2px 0 2px; 
 }
 .cycle-pager span.cycle-pager-active {background-color: rgba(0,0,0,.5);}
 .cycle-pager > * { cursor: pointer;}
