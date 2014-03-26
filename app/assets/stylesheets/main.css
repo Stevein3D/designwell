@@ -140,13 +140,13 @@ p{
 /* ==========================================================================
    Main Stage
    ========================================================================== */
-#stage{
+/*#stage{
 	width: 870px;
 	display: inline-block;
 	text-align: center;
 	float: left;
 	overflow: hidden;
-}
+}*/
 #motion-container{
 	width: 870px;
 	padding-bottom: 20px;
@@ -158,6 +158,9 @@ p{
 	padding-bottom: 20px;
 	float: left;
 	overflow: hidden;
+}
+#about-container{
+	
 }
 .playback{
 	background-color: rgba(0,0,0,.5);
@@ -270,7 +273,7 @@ p{
 }
 .photo-thumb{
 	width: 192px;
-	margin-top: -20px;
+	/*margin-top: -20px;*/
 	cursor: pointer;
 }
 /* set border-box so that percents can be used for width, padding, etc (personal preference) */

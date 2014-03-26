@@ -119,8 +119,18 @@ function ScaleImage(srcwidth, srcheight, targetwidth, targetheight, fLetterBox) 
       var $title = $(this).children('img').attr('title');
 
       $('iframe').attr('src',"http://player.vimeo.com/video/" + $url + "?autoplay=1");
-      $('div.words p').text($brief);
-      $('h3').text($title);
+      $('div.video-brief p').text($brief);
+      $('div.video-brief h3').text($title);
+  });
+
+  $('.thumb-box').click(function(){
+      var $url = $(this).children('img').attr('src');
+      var $brief = $(this).children('img').attr('description');
+      var $title = $(this).children('img').attr('title');
+
+      $('.dark-box img').attr('src',$url);
+      $('div.photo-brief p').text($brief);
+      $('div.photo-brief h3').text($title);
   });
 
   $('#print').click(function(){

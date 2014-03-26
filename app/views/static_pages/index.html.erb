@@ -52,7 +52,6 @@
 				</nav>
 			</div>
 
-			<div id='stage'>
 
 				<div id='motion-container'>
 
@@ -63,7 +62,7 @@
 						</iframe>
 					</div>
 
-					<div class='words'>
+					<div class='words video-brief'>
 						<h3><%= @title.first["title"]%></h3>
 						<p><%= @title.first["description"] %></p>
 					</div>
@@ -83,11 +82,11 @@
 								data-cycle-prev="#titles-prev">
 								<div class="cycle-pager"></div>
 
-								<% @title.each do |clip| %>
-									<div class="thumbnail">
-									<%= image_tag clip["thumbnail_large"], {:id => clip["id"], :description => clip["description"], :title => clip["title"], :alt => clip["title"]}%>
+									<% @title.each do |clip| %>
+										<div class="thumbnail">
+											<%= image_tag clip["thumbnail_large"], {:id => clip["id"], :description => clip["description"], :title => clip["title"], :alt => clip["title"]}%>
 									<!-- <div class="caption"><h4><%=clip["title"]%></h4></div> -->
-									</div>
+										</div>
 									<% end %>
 								</div>
 							</div>
@@ -108,8 +107,11 @@
 								<div class="cycle-pager"></div>
 
 								<% @montage.each do |clip| %>
-									<%= image_tag clip["thumbnail_large"], {:class => "thumbnail", :id => clip["id"], :description => clip["description"], :title => clip["title"], :alt => clip["title"]}%>
-								<% end %>
+										<div class="thumbnail">
+											<%= image_tag clip["thumbnail_large"], {:id => clip["id"], :description => clip["description"], :title => clip["title"], :alt => clip["title"]}%>
+									<!-- <div class="caption"><h4><%=clip["title"]%></h4></div> -->
+										</div>
+									<% end %>
 								</div>
 							</div>
 							<a href=# class ='nav-arrow-right' id='montage-next'></a>
@@ -129,11 +131,14 @@
 									<div class="cycle-pager"></div>
 
 									<% @animation.each do |clip| %>
-										<%= image_tag clip["thumbnail_large"], {:class => "thumbnail", :id => clip["id"],:style => "max-height: 115px;", :description => clip["description"], :title => clip["title"], :alt => clip["title"]}%>
+										<div class="thumbnail">
+											<%= image_tag clip["thumbnail_large"], {:id => clip["id"], :description => clip["description"], :title => clip["title"], :alt => clip["title"]}%>
+									<!-- <div class="caption"><h4><%=clip["title"]%></h4></div> -->
+										</div>
 									<% end %>
 								</div>
-								<a href=# class ='nav-arrow-right' id='animation-next'></a>
 							</div>
+							<a href=# class ='nav-arrow-right' id='animation-next'></a>
 						</div>
 					</div>
 				</div>
@@ -145,9 +150,9 @@
 						</div>
 					</div>
 
-					<div class='words'>
+					<div class='words photo-brief'>
 						<h3><%= @poster.photo{}.first["title"]%></h3>
-						<p><%= @poster.photo{}.first["title"]%></p>
+						<p><%= @posterInfo.description%></p>
 					</div>
 
 					<div class='thumbs-container'>
@@ -167,7 +172,7 @@
 
 								<% @poster.photo{}.each do |photo| %>
 									<div class='thumb-box'>
-									<%= image_tag FlickRaw.url_m(photo), {:class => "photo-thumb", :id => photo["id"], :description => photo["description"], :title => photo["title"], :alt => photo["title"]}%>
+									<%= image_tag FlickRaw.url_b(photo), {:class => "photo-thumb", :id => photo["id"],:title => photo["title"], :description => flickr.photos.getInfo(:photo_id => photo["id"]).description, :alt => photo["title"]}%>
 									</div>
 								<% end %>
 								</div>
@@ -190,7 +195,7 @@
 
 								<% @collateral.photo{}.each do |photo| %>
 									<div class='thumb-box'>
-										<%= image_tag FlickRaw.url_m(photo), {:class => "photo-thumb", :id => photo["id"], :description => photo["description"], :title => photo["title"], :alt => photo["title"]}%>
+									<%= image_tag FlickRaw.url_b(photo), {:class => "photo-thumb", :id => photo["id"],:title => photo["title"], :description => flickr.photos.getInfo(:photo_id => photo["id"]).description, :alt => photo["title"]}%>
 									</div>
 								<% end %>
 								</div>
@@ -200,10 +205,12 @@
 											
 					</div>
 									
+					</div>
+					<div id="about-container">
+						
+
 					</div>	
 				</div>		
-			</div>
-		</div>
 
 		
 
