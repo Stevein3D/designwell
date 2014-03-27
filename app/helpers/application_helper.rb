@@ -1,6 +1,13 @@
 module ApplicationHelper
+	require "flickraw"
 	def randomized_background_image
-  	  images = ["assets/bg1.PNG", "assets/bg2.PNG", "assets/bg3.PNG", "assets/bg4.PNG", "assets/bg5.PNG", "assets/bg6.PNG"]
+  	  images = []
+  	  @background.photo{}.each do |url|
+  	  	i = FlickRaw.url_b(url) 
+  	  	images << i
+  	  end
   	  images[rand(images.size)]
 	end
 end
+
+@background 
