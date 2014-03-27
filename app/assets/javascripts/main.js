@@ -7,7 +7,6 @@ $(document).ready(function(){
 	$(function(){
 
     var $sideBar = $('.sidebar');
-    var $stage = $('#stage');
     var $slide = $('#slideshow');
     var $container = $('#container')
 
@@ -17,7 +16,6 @@ $(document).ready(function(){
        var winWidth = $(this).width();
        $container.height(winHeight);
        $sideBar.height(winHeight);
-       $stage.height(winHeight);
 
     }).trigger('resize'); //on page load
 
@@ -26,7 +24,19 @@ $(document).ready(function(){
 $('.splash').click(function(){
   $('#slideshow').cycle('toggle');
 });
-function OnImageLoad(evt) {
+
+//Add Title to images with only "alt"
+
+$(function() {
+  $('img').each( function() {
+    var o = $(this);
+    if( ! o.attr('title') && o.attr('alt') ) o.attr('title', o.attr('alt') );
+  });
+});
+
+//Resizes images to fit their container
+
+$(function OnImageLoad(evt) {
 
     var img = evt.currentTarget;
 
@@ -44,9 +54,9 @@ function OnImageLoad(evt) {
     img.height = result.height;
     $(img).css("left", result.targetleft);
     $(img).css("top", result.targettop);
-}
+});
 
-function ScaleImage(srcwidth, srcheight, targetwidth, targetheight, fLetterBox) {
+$(function ScaleImage(srcwidth, srcheight, targetwidth, targetheight, fLetterBox) {
 
     var result = { width: 0, height: 0, fScaleToTargetWidth: true };
 
@@ -85,8 +95,8 @@ function ScaleImage(srcwidth, srcheight, targetwidth, targetheight, fLetterBox) 
     result.targettop = Math.floor((targetheight - result.height) / 2);
 
     return result;
-}
-
+});
+  
 
 /* ==========================================================================
    Menu and submenu animations
@@ -110,9 +120,31 @@ function ScaleImage(srcwidth, srcheight, targetwidth, targetheight, fLetterBox) 
   });
 
 /* ==========================================================================
-   Play selected video
+   Update thumbnails for selected subcategory
    ========================================================================== */
 
+$('#titles-button').click(function(){
+    $('#titles, #animation, #montage').fadeOut(300);
+    $('#titles').delay(300).fadeIn(600);
+  });
+  $('#animation-button').click(function(){
+    $('#titles, #animation, #montage').fadeOut(300);
+    $('#animation').delay(300).fadeIn(600);
+  });
+  $('#montage-button').click(function(){
+    $('#titles, #animation, #montage').fadeOut(300);
+    $('#montage').delay(300).fadeIn(600);
+  });
+
+  $('#posters-button').click(function(){
+    $('#posters, #packaging, #collateral').fadeOut(300);
+    $('#posters').delay(300).fadeIn(600);
+  });  
+
+/* ==========================================================================
+   Update stage with selected video or picture
+   ========================================================================== */
+  
   $('.thumbnail').click(function(){
       var $url = $(this).children('img').attr('id');
       var $brief = $(this).children('img').attr('description');
@@ -120,7 +152,7 @@ function ScaleImage(srcwidth, srcheight, targetwidth, targetheight, fLetterBox) 
 
       $('iframe').attr('src',"http://player.vimeo.com/video/" + $url + "?autoplay=1");
       $('div.video-brief p').text($brief);
-      $('div.video-brief h3').text($title);
+      $('div.category-title h3').text($title);
   });
 
   $('.thumb-box').click(function(){
@@ -133,14 +165,24 @@ function ScaleImage(srcwidth, srcheight, targetwidth, targetheight, fLetterBox) 
       $('div.photo-brief h3').text($title);
   });
 
+
+/* ==========================================================================
+   Change category view
+   ========================================================================== */
+
   $('#print').click(function(){
-    $('#motion-container').fadeOut(300);
+    $('#motion-container, #about-container').fadeOut(300);
     $('#print-container').delay(300).fadeIn(600);
   });
 
   $('#motion').click(function(){
-    $('#print-container').fadeOut(300);
+    $('#print-container, #about-container').fadeOut(300);
     $('#motion-container').delay(300).fadeIn(600);
+  });
+
+  $('#about').click(function(){
+    $('#print-container, #motion-container').fadeOut(300);
+    $('#about-container').delay(300).fadeIn(600);
   });
 
 });

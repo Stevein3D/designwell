@@ -22,10 +22,10 @@ h2{
 }
 h3{
 	font-family: 'Crete Round', serif;
-	font-size: 18px;
+	font-size: 22px;
 	background-color: rgba(0,0,0,.5);
 	color: white;
-	padding: 2px 0;
+	padding: 6px 0;
 	margin: 0 auto;
 	text-align: center;
 }
@@ -46,12 +46,9 @@ h4{
 }
 p{
 	font-family: 'Crete Round', serif;
-	background-color: rgba(0,0,0,.5);
 	color: white;
-	font-size: 15px;
+	font-size: 17px;
 	line-height: 25px;
-	height: 60px;
-	padding: 0 15px;
 	margin-top: 0;
 }
 #container{
@@ -81,7 +78,7 @@ p{
 	cursor: pointer;
 }
 #links{
-	top: 457px;
+	top: 335px;
 	position: absolute;
 	padding: 1px 0 0 0;
 }
@@ -95,10 +92,6 @@ p{
 	text-align: right;
 	background-color: rgba(0,0,0,0);
 }
-.focusbutton{
-	background-color: rgba(0,0,0,1);
-	color: white;
-}
 .sub-menu{
 	display: none;
 }
@@ -111,12 +104,27 @@ p{
 	vertical-align: middle;
 	background-color: rgba(255,255,255,.6);
 }
+.focusbutton{
+	background-color: rgba(0,0,0,.8);
+	color: white;
+}
+#social{
+	top: 580px;
+	margin: 50px 0 50px 20px;
+	width: 100px;
+	text-align: right;
+	position: absolute;
+}
+.social-button{
+	width: 30px;
+	margin: 1px 1px;
+}
 
 /* ==========================================================================
    Hover States
    ========================================================================== */
 .sub-cat:hover{
-	background-color: rgba(0,0,0,.5);
+	background-color: rgba(0,0,0,.8);
 	color: white;
 }
 .nav-button:hover{
@@ -137,16 +145,11 @@ p{
 .nav-arrow-right:active{
 	background-position: -40px 0;
 }
+
 /* ==========================================================================
    Main Stage
    ========================================================================== */
-/*#stage{
-	width: 870px;
-	display: inline-block;
-	text-align: center;
-	float: left;
-	overflow: hidden;
-}*/
+
 #motion-container{
 	width: 870px;
 	padding-bottom: 20px;
@@ -158,22 +161,27 @@ p{
 	padding-bottom: 20px;
 	float: left;
 	overflow: hidden;
+	display: none;
 }
 #about-container{
-	
+	width: 870px;
+	padding-bottom: 20px;
+	float: left;
+	overflow: hidden;
+	display: none;
 }
-.playback{
+.category-title{
 	background-color: rgba(0,0,0,.5);
-	margin: 15px auto 10px auto;
+	margin: 15px auto 0 auto;
 	width: 768px;
-	height: 432px;
+	height: 40px;
 	padding: 5px;
 }
 .words{
 	background-color: rgba(0,0,0,.5);
 	margin: 10px auto 0 auto;
 	width: 768px;
-	height: 87px;
+	height: 70px;
 	padding: 5px;
 	/*border: solid rgba(0,0,0,.4) 5px;*/
 }
@@ -188,6 +196,42 @@ p{
 }
 #packaging{
 	display: none;
+}
+
+.nav-arrow-left{
+	width: 40px;
+	height: 115px;
+	background-image: url('left_sprite.png') ;
+	margin-left: 5px;
+	padding: 5px 0;
+	float: left;
+}
+
+.nav-arrow-right{
+	width: 40px;
+	height: 115px;
+	background-image: url('right_sprite.png');
+	margin-right: 5px;
+	padding: 5px 0;
+	float: left;
+}
+/* ==========================================================================
+   Motion specific
+   ========================================================================== */
+
+.playback{
+	background-color: rgba(0,0,0,.5);
+	margin: 10px auto 10px auto;
+	width: 768px;
+	height: 432px;
+	padding: 5px;
+}
+.video-brief{
+	background-color: rgba(0,0,0,.5);
+	margin: 0 auto;
+	width: 718px;
+	height: 65px;
+	padding: 5px 25px 0 25px;
 }
 .thumbs-container{
 	background-color: rgba(0,0,0,.5);
@@ -216,23 +260,6 @@ p{
 	margin: 0 auto;
 	/*float: left;*/
 }
-.nav-arrow-left{
-	width: 40px;
-	height: 115px;
-	background-image: url('left_sprite.png') ;
-	margin-left: 5px;
-	padding: 5px 0;
-	float: left;
-}
-
-.nav-arrow-right{
-	width: 40px;
-	height: 115px;
-	background-image: url('right_sprite.png');
-	margin-right: 5px;
-	padding: 5px 0;
-	float: left;
-}
 .thumbnail{
 	width: 192px;
 	height: 115px;
@@ -245,17 +272,11 @@ p{
 	/*position: absolute;*/
 	z-index: -10;
 }
-#print-container{
-	display: none;
-}
-/*#motion-container{
-	white-space: nowrap;
-}*/
-.dark-box{
-	background-color: rgba(0,0,0,.5);
-	width: 768px;
-	height: 432px;
-}
+
+/* ==========================================================================
+   Print specific
+   ========================================================================== */
+
 .photo-stage{
 	background-color: rgba(0,0,0,.5);
 	overflow: hidden;
@@ -264,6 +285,11 @@ p{
 	width: 768px;
 	height: 432px;
 	padding: 5px; 
+}
+.dark-box{
+	background-color: rgba(0,0,0,.5);
+	width: 768px;
+	height: 432px;
 }
 .thumb-box{
 	width: 192px;
@@ -276,6 +302,20 @@ p{
 	/*margin-top: -20px;*/
 	cursor: pointer;
 }
+
+/* ==========================================================================
+   About specific
+   ========================================================================== */
+
+.affiliations-container{
+	background-color: rgba(0,0,0,.5);
+	width: 768px;
+	height: 600px;
+	float: left;
+	overflow: hidden;
+	margin: 15px 51px;
+}
+
 /* set border-box so that percents can be used for width, padding, etc (personal preference) */
 .cycle-slideshow, .cycle-slideshow * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
