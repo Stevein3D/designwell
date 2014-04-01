@@ -140,6 +140,10 @@ $('#titles-button').click(function(){
     $('#posters, #packaging, #collateral').fadeOut(300);
     $('#posters').delay(300).fadeIn(600);
   });  
+  $('#collateral-button').click(function(){
+    $('#posters, #packaging, #collateral').fadeOut(300);
+    $('#collateral').delay(300).fadeIn(600);
+  });
 
 /* ==========================================================================
    Update stage with selected video or picture
@@ -152,7 +156,7 @@ $('#titles-button').click(function(){
 
       $('iframe').attr('src',"http://player.vimeo.com/video/" + $url + "?autoplay=1");
       $('div.video-brief p').text($brief);
-      $('div.category-title h3').text($title);
+      $('div.shadow-box h3').text($title);
   });
 
   $('.thumb-box').click(function(){
@@ -162,7 +166,7 @@ $('#titles-button').click(function(){
 
       $('.dark-box img').attr('src',$url);
       $('div.photo-brief p').text($brief);
-      $('div.photo-brief h3').text($title);
+      $('div.shadow-box h3').text($title);
   });
 
 
@@ -170,19 +174,19 @@ $('#titles-button').click(function(){
    Change category view
    ========================================================================== */
 
-  $('#print').click(function(){
-    $('#motion-container, #about-container').fadeOut(300);
-    $('#print-container').delay(300).fadeIn(600);
-  });
+  // $('#print').click(function(){
+  //   $('#motion-container, #about-container').fadeOut(300);
+  //   $('#print-container').delay(300).fadeIn(600);
+  // });
 
-  $('#motion').click(function(){
-    $('#print-container, #about-container').fadeOut(300);
-    $('#motion-container').delay(300).fadeIn(600);
-  });
+  // $('#motion').click(function(){
+  //   $('#print-container, #about-container').fadeOut(300);
+  //   $('#motion-container').delay(300).fadeIn(600);
+  // });
 
-  $('#about').click(function(){
-    $('#print-container, #motion-container').fadeOut(300);
-    $('#about-container').delay(300).fadeIn(600);
-  });
+  // $('#about').click(function(){
+  //   $('#print-container, #motion-container').fadeOut(300);
+  //   $('#about-container').delay(300).fadeIn(600);
+  // });
 
 });

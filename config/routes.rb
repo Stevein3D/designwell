@@ -4,7 +4,9 @@ Designwell::Application.routes.draw do
 
   get "/index" => "static_pages#index", :as => :index
 
-  get "/test" => "static_pages#test", :as => :test
+  get "/print" => "photos#print", :as => :print
+  get "/about" => "about#about", :as => :about
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
