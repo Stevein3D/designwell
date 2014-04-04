@@ -18,7 +18,8 @@ h2{
 	font-family: 'Crete Round', serif;
 	font-size: 14px;
 	color: auto;
-	cursor: pointer;	
+	cursor: pointer;
+	
 }
 h3{
 	font-family: 'Crete Round', serif;
@@ -29,17 +30,14 @@ h3{
 h4{
 	font-family: 'Crete Round', serif;
 	font-size: 14px;
-	color: white;
-	cursor: pointer;	
+	color: rgba(255,255,255,0);
+	padding-top: 20px;
+	-webkit-transition: opacity .2s ease-in-out;
+  	-moz-transition: opacity .2s ease-in-out;
+  	-ms-transition: opacity .2s ease-in-out;
+  	-o-transition: opacity .2s ease-in-out;
+  	transition: opacity .2s ease-in-out;
 	
-}
-.caption{
-	width: 192px;
-	height: 115px;
-	background-color: rgba(0,0,0,.5);
-	text-align: center;
-	z-index: 1000;
-	margin-top: -135px;
 }
 p{
 	font-family: 'Crete Round', serif;
@@ -48,16 +46,6 @@ p{
 	line-height: 25px;
 	margin-top: 0;
 }
-a{
-	text-decoration: none;
-}
-#container{
-	width: 1000px;
-	margin: 0 auto;
-	height: 500px;
-	overflow: hidden;
-	text-align: center;
-}
 
 /* ==========================================================================
    Side Nav Bar
@@ -65,7 +53,7 @@ a{
 
 .sidebar{
 	width: 130px;
-	height: 800px;
+	min-height: 800px;
 	text-align: center;
 	background-color: rgba(0,0,0,.5);
 	float: left;
@@ -145,11 +133,23 @@ a{
 .nav-arrow-right:active{
 	background-position: -40px 0;
 }
-
+.thumbnail:hover img{
+  	opacity: .1;
+}
+.thumbnail:hover h4{
+	color: rgba(255,255,255,1);
+}
 /* ==========================================================================
    Main Stage
    ========================================================================== */
-
+#container{
+	width: 1000px;
+	min-height: 800px;
+	margin: 0 auto;
+	height: 500px;
+	overflow: hidden;
+	text-align: center;
+}
 #motion-container{
 	width: 870px;
 	padding-bottom: 20px;
@@ -161,12 +161,14 @@ a{
 	padding-bottom: 20px;
 	float: left;
 	overflow: hidden;
+	display: none;
 }
 #about-container{
 	width: 870px;
 	padding-bottom: 20px;
 	float: left;
 	overflow: hidden;
+	display: none;
 }
 .category-title{
 	background-color: rgba(0,0,0,.5);
@@ -204,7 +206,7 @@ a{
 
 .nav-arrow-left{
 	width: 40px;
-	height: 115px;
+	height: 108px;
 	background-image: url('left_sprite.png') ;
 	margin-left: 5px;
 	padding: 5px 0;
@@ -213,7 +215,7 @@ a{
 
 .nav-arrow-right{
 	width: 40px;
-	height: 115px;
+	height: 108px;
 	background-image: url('right_sprite.png');
 	margin-right: 5px;
 	padding: 5px 0;
@@ -242,18 +244,18 @@ a{
 	display: inline-block;
 	margin: 10px auto;
 	width: 778px;
-	height: 135px;
+	height: 128px;
 }
 .thumbs-category{
 	text-align: center;
 	background-color: rgba(0,0,0,.5);
 	margin: 5px 5px;
 	width: 768px;
-	height: 125px;
+	height: 118px;
 }
 .thumbs{
 	width: 624px;
-	height: 115px;
+	height: 108px;
 	padding: 5px 0;
 	text-align: center;
 	margin: 0 27px;
@@ -266,17 +268,30 @@ a{
 }
 .thumbnail{
 	width: 192px;
-	height: 115px;
+	height: 108px;
+	/*background-color: black;*/
 	margin: 0 8px;
 	cursor: pointer;
 }
 .thumbnail img{
 	width: 192px;
-	height: 115px;
-	/*position: absolute;*/
-	z-index: -10;
+	height: 108px;
+	-webkit-transition: opacity .2s ease-in-out;
+  	-moz-transition: opacity .2s ease-in-out;
+  	-ms-transition: opacity .2s ease-in-out;
+  	-o-transition: opacity .2s ease-in-out;
+  	transition: opacity .2s ease-in-out;
 }
-
+.caption{
+	width: 192px;
+	height: 108px;
+	background-color: black;
+	text-align: center;
+	white-space: normal;
+	overflow: hidden;
+	padding: 0 5px;
+	margin-top: -113px;
+}
 /* ==========================================================================
    Print specific
    ========================================================================== */
@@ -304,13 +319,12 @@ a{
 }
 .thumb-box{
 	width: 192px;
-	height: 115px;
+	height: 108px;
 	margin: 0 8px;
 	overflow: hidden;
 }
 .photo-thumb{
 	width: 192px;
-	/*margin-top: -20px;*/
 	cursor: pointer;
 }
 
@@ -321,8 +335,14 @@ a{
 .affiliations-container{
 	background-color: rgba(0,0,0,.5);
 	width: 768px;
-	height: 800px;
+	/*height: 800px;*/
 	margin: 15px auto 0 auto;
+}
+.title-box{
+	background-color: rgba(0,0,0,.5);
+	padding: 6px 0;
+	margin: 0 auto;
+	text-align: center;
 }
 .company{
 	background-color: rgba(0,0,0,.5);

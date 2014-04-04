@@ -25,7 +25,7 @@
 						</div>
 					</div>
 					<div class='category'>		
-						<a href="print.html"><h1 class='nav-button'id='print'>print</h1></a>
+						<h1 class='nav-button'id='print'>print</h1>
 						<div class='sub-menu'>
 							<h2 class='sub-cat' id='posters-button'>posters</h2>
 							<h2 class='sub-cat' id='packaging-button'>packaging</h2>
@@ -33,7 +33,7 @@
 						</div>
 					</div>
 					<div class='category'>
-						<a href="about.html"><h1 class='nav-button'id='about'>about us</h1></a>
+						<h1 class='nav-button'id='about'>about us</h1>
 						<div class='sub-menu'>
 							<h2 class='sub-cat'>blog</h2>
 							<h2 class='sub-cat'>staff</h2>
@@ -97,7 +97,7 @@
 								<% @title.each do |clip| %>
 									<div class="thumbnail">
 										<%= image_tag clip["thumbnail_large"], {:id => clip["id"], :description => clip["description"], :title => clip["title"], :alt => clip["title"]}%>
-										<!-- <div class="caption"><h4><%=clip["title"]%></h4></div> -->
+										<div class="caption"><h4><%=clip["title"]%></h4></div>
 									</div>
 								<% end %>
 							</div>
@@ -121,7 +121,7 @@
 								<% @montage.each do |clip| %>
 									<div class="thumbnail">
 										<%= image_tag clip["thumbnail_large"], {:id => clip["id"], :description => clip["description"], :title => clip["title"], :alt => clip["title"]}%>
-										<!-- <div class="caption"><h4><%=clip["title"]%></h4></div> -->
+										<div class="caption"><h4><%=clip["title"]%></h4></div>
 									</div>
 								<% end %>
 							</div>
@@ -145,7 +145,7 @@
 								<% @animation.each do |clip| %>
 									<div class="thumbnail">
 										<%= image_tag clip["thumbnail_large"], {:id => clip["id"], :description => clip["description"], :title => clip["title"], :alt => clip["title"]}%>
-										<!-- <div class="caption"><h4><%=clip["title"]%></h4></div> -->
+										<div class="caption"><h4><%=clip["title"]%></h4></div>
 									</div>
 								<% end %>
 							</div>
@@ -153,6 +153,107 @@
 						<a href=# class ='nav-arrow-right' id='animation-next'></a>
 					</div>
 				</div>
+			</div>
+
+			<div id='print-container'>
+				<div class='category-title'>
+					<div class="shadow-box">
+						<h3><%= @poster.photo{}.first["title"]%></h3>
+					</div>
+				</div>
+				<div class='photo-stage'>
+					<div class='dark-box'>
+						<img src="<%= FlickRaw.url_b(@poster.photo{}.first) %>" style="max-height: 432px;" onload="OnImageLoad(evt);"/>
+					</div>
+				</div>
+
+				<div class='words'>
+					<div class="photo-brief">
+						<p><%= @posterInfo.description%></p>
+					</div>
+				</div>
+
+				<div class='thumbs-container'>
+
+					<div class='thumbs-category' id='posters'>
+						<a href=# class ='nav-arrow-left' id='posters-prev'></a>
+						<div class="thumbs">
+							<div class='cycle-slideshow'
+							data-cycle-fx=carousel
+							data-cycle-carousel-visible=3
+							data-cycle-slides=".thumb-box"
+							data-cycle-timeout=0
+							data-cycle-pager-template="<span></span>"
+							data-cycle-next="#posters-next"
+							data-cycle-prev="#posters-prev">
+								<div class="cycle-pager"></div>
+
+								<% @poster.photo{}.each do |photo| %>
+									<div class='thumb-box'>
+										<%= image_tag FlickRaw.url_b(photo), {:class => "photo-thumb", :id => photo["id"],:title => photo["title"], :description => flickr.photos.getInfo(:photo_id => photo["id"]).description, :alt => photo["title"]}%>
+									</div>
+								<% end %>
+							</div>
+						</div>
+						<a href=# class ='nav-arrow-right' id='posters-next'></a>
+					</div>
+
+					<div class='thumbs-category' id='collateral'>
+						<a href=# class ='nav-arrow-left' id='collateral-prev'></a>
+						<div class="thumbs">
+							<div class='cycle-slideshow'
+							data-cycle-fx=carousel
+							data-cycle-carousel-visible=3
+							data-cycle-slides=".thumb-box"
+							data-cycle-timeout=0
+							data-cycle-pager-template="<span></span>"
+							data-cycle-next="#collateral-next"
+							data-cycle-prev="#collateral-prev">
+								<div class="cycle-pager"></div>
+
+								<% @collateral.photo{}.each do |photo| %>
+									<div class='thumb-box'>
+										<%= image_tag FlickRaw.url_b(photo), {:class => "photo-thumb", :id => photo["id"],:title => photo["title"], :description => flickr.photos.getInfo(:photo_id => photo["id"]).description, :alt => photo["title"]}%>
+									</div>
+								<% end %>
+							</div>
+						</div>
+						<a href=# class ='nav-arrow-right' id='collateral-next'></a>
+					</div>					
+				</div>
+			</div>
+
+			<div id="about-container">
+				<div class="affiliations-container">
+					<div class='category-title'>
+						<div class="title-box">
+							<h3><%=@organization.title%></h3>
+					</div>
+				</div>
+					<% @organization.photo{}.each do |photo| %>
+						<%= link_to "http://www." + flickr.photos.getInfo(:photo_id => photo["id"]).description + "", :target => "_blank"  do%>
+								<div class="company">
+									<%= image_tag FlickRaw.url_m(photo), {:class => "company-logo", :id => photo["id"],:title => photo["title"], :description => flickr.photos.getInfo(:photo_id => photo["id"]).description, :alt => photo["title"]}%>
+								<div class="company-description">
+									<h3><%= photo["title"]%></h3>
+								</div>
+								</div>
+						<% end %>
+					<% end %>
+					<% @supporter.photo{}.each do |photo| %>
+						<%= link_to "http://www." + flickr.photos.getInfo(:photo_id => photo["id"]).description + "", :target => "_blank"  do%>
+								<div class="company">
+									<%= image_tag FlickRaw.url_m(photo), {:class => "company-logo", :id => photo["id"],:title => photo["title"], :description => flickr.photos.getInfo(:photo_id => photo["id"]).description, :alt => photo["title"]}%>
+								<div class="company-description">
+									<h3><%= photo["title"]%></h3>
+								</div>
+								</div>
+						<% end %>
+					<% end %>
+				</div>	
+
+				
+
 			</div>
 
 	</body>
