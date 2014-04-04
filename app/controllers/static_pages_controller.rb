@@ -18,8 +18,7 @@ class StaticPagesController < ApplicationController
     @posterInfo = flickr.photosets.getInfo(:photoset_id => "72157635482932841")
 
     #About
-    @organization = flickr.photosets.getPhotos(:photoset_id => "72157643215739244")
-    @supporter = flickr.photosets.getPhotos(:photoset_id => "72157643372566545")
+    @affiliation = flickr.photosets.getPhotos(:photoset_id => "72157643215739244")
   end
 
 
