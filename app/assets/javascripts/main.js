@@ -145,6 +145,15 @@ $('#titles-button').click(function(){
     $('#collateral').delay(300).fadeIn(600);
   });
 
+  $('#clients-button').click(function(){
+    $('#blog, #staff, #clients, #affiliations').fadeOut(300);
+    $('#clients').delay(300).fadeIn(600);
+  });
+  $('#affiliations-button').click(function(){
+    $('#blog, #staff, #clients, #affiliations').fadeOut(300);
+    $('#affiliations').delay(300).fadeIn(600);
+  });
+
 /* ==========================================================================
    Update stage with selected video or picture
    ========================================================================== */

@@ -24,6 +24,7 @@ h2{
 h3{
 	font-family: 'Crete Round', serif;
 	font-size: 18px;
+	line-height: 20px;
 	color: white;
 	margin: 0 auto;
 }
@@ -37,7 +38,13 @@ h4{
   	-ms-transition: opacity .2s ease-in-out;
   	-o-transition: opacity .2s ease-in-out;
   	transition: opacity .2s ease-in-out;
-	
+}
+h5{
+	font-family: 'Crete Round', serif;
+	font-size: 16px;
+	line-height: 20px;
+	color: white;
+	margin: 0 auto;
 }
 p{
 	font-family: 'Crete Round', serif;
@@ -106,6 +113,7 @@ p{
 .social-button{
 	width: 30px;
 	margin: 1px 1px;
+	border: 2px solid rgba(0,0,0,0);
 }
 
 /* ==========================================================================
@@ -114,6 +122,9 @@ p{
 .sub-cat:hover{
 	background-color: rgba(0,0,0,.8);
 	color: white;
+}
+.social-button:hover{
+	border: 2px solid rgba(0,0,0,.5);
 }
 .nav-button:hover{
 	background-color: rgba(0,0,0,.8); 
@@ -138,6 +149,9 @@ p{
 }
 .thumbnail:hover h4{
 	color: rgba(255,255,255,1);
+}
+.company:hover{
+	border: 2px solid rgba(0,0,0,.5);
 }
 /* ==========================================================================
    Main Stage
@@ -179,7 +193,7 @@ p{
 }
 .shadow-box{
 	background-color: rgba(0,0,0,.5);
-	padding: 6px 0;
+	padding: 10px 0;
 	margin: 0 auto;
 	text-align: center;
 }
@@ -191,19 +205,9 @@ p{
 	padding: 5px;
 	/*border: solid rgba(0,0,0,.4) 5px;*/
 }
-#animation{
+#animation, #montage, #collateral, #packaging, #affiliations{
 	display: none;
 }
-#montage{
-	display: none;
-}
-#collateral{
-	display: none;
-}
-#packaging{
-	display: none;
-}
-
 .nav-arrow-left{
 	width: 40px;
 	height: 108px;
@@ -333,23 +337,28 @@ p{
    ========================================================================== */
 
 .affiliations-container{
-	background-color: rgba(0,0,0,.5);
-	width: 768px;
-	/*height: 800px;*/
+	/*background-color: rgba(0,0,0,.5);*/
+	width: 778px;
 	margin: 15px auto 0 auto;
 }
 .title-box{
 	background-color: rgba(0,0,0,.5);
-	padding: 6px 0;
+	padding: 10px 0;
 	margin: 0 auto;
 	text-align: center;
 }
+.company-box{
+	margin: 8px auto;
+	width: 778px;
+	height: 800px;
+}
 .company{
 	background-color: rgba(0,0,0,.5);
-	width: 758px;
+	width: 379px;
 	height: 70px;
-	margin: 5px 0 5px 5px;
+	margin: 3px;
 	float: left;
+	border: 2px solid rgba(0,0,0,0);
 }
 .company-logo{
 	width: 60px;
@@ -357,7 +366,7 @@ p{
 	float: left;
 }
 .company-description{
-	margin: 20px 0 0 20px;
+	margin: 25px 0 0 15px;
 	float: left;
 }
 /* set border-box so that percents can be used for width, padding, etc (personal preference) */

@@ -19,6 +19,7 @@ class StaticPagesController < ApplicationController
 
     #About
     @affiliation = flickr.photosets.getPhotos(:photoset_id => "72157643215739244")
+    @client = flickr.photosets.getPhotos(:photoset_id => "72157643680136583")
   end
 
 
