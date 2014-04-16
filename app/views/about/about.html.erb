@@ -6,82 +6,49 @@
 	</head>
 	<body>
 
-		<style type="text/css">
-  			#container{background: url(<%= randomized_background_image %>); background-size: 100%;}
-		</style>
-
-		<div id='container'>
-			<div class='sidebar'>
-
-				<%= image_tag "logo.jpg",:id => 'logo', :alt => 'Design Well'%>
-
-				<nav id='links'>
-					<div class='category'>
-						<a href="index.html"><h1 class='nav-button'id='motion'>motion</h1></a>
-						<div class='sub-menu'>
-							<h2 class='sub-cat' id='titles-button'>titles</h2>
-							<h2 class='sub-cat' id='animation-button'>animation</h2>
-							<h2 class='sub-cat' id='montage-button'>montage</h2>
+			
+				<div class="clients-container" id="clients">
+					<div class='category-title'>
+						<div class="title-box">
+							<h3>Clients</h3>
 						</div>
 					</div>
-					<div class='category'>		
-						<a href="print.html"><h1 class='nav-button'id='print'>print</h1></a>
-						<div class='sub-menu'>
-							<h2 class='sub-cat' id='posters-button'>posters</h2>
-							<h2 class='sub-cat' id='packaging-button'>packaging</h2>
-							<h2 class='sub-cat' id='collateral-button'>collateral</h2>
-						</div>
-					</div>
-					<div class='category'>
-						<h1 class='nav-button'id='about'>about us</h1>
-						<div class='sub-menu'>
-							<h2 class='sub-cat'>blog</h2>
-							<h2 class='sub-cat'>staff</h2>
-							<h2 class='sub-cat'>clients</h2>
-							<h2 class='sub-cat' id='affiliations-button'>affiliations</h2>
-						</div>
-					</div>
-					<div class='category'>
-						<h1 class='nav-button'id='reel'>reel</h1>
-					</div>
-					<div class='category'>
-						<h1 class='nav-button'id='contact'>contact</h1>
-					</div>
-				</nav>
-				<nav id='social'>
-						<%=link_to image_tag('facebook.png', :class =>'social-button', :alt => "Designwell Facebook"), "https://www.facebook.com/pages/Designwell/312746815515386", :target => "_blank"  %>
-						<%=link_to image_tag('meetup.png', :class =>'social-button', :alt => "Documentary Filmmakers' Collective"), "http://www.meetup.com/Documentary-Filmmaker-Collective/events/171960672/", :target => "_blank"  %>
-						<%=link_to image_tag('google.png', :class =>'social-button', :alt => 'Designwell Google+'), "https://plus.google.com/u/0/110719905620721134053/plusones", :target => "_blank"  %>
-						<%=link_to image_tag('vimeo.png', :class =>'social-button', :alt => 'Designwell Vimeo'), "https://vimeo.com/designwell", :target => "_blank"  %>
-						<%=link_to image_tag('youtube.png', :class =>'social-button', :alt => 'Designwell Youtube'), "https://www.youtube.com/channel/UCpR1l6w9Ghk7WZ-54YHRd2A/feed", :target => "_blank"  %>
-						<%=link_to image_tag('imdb.png', :class =>'social-button', :alt => 'Designwell IMDB'), "http://www.imdb.com/name/nm3379200/?ref_=fn_al_nm_1", :target => "_blank"  %>
-					</nav>
-
-			</div>
-
-
-			<div id="about-container">
-				<div class='category-title'>
-					<div class="shadow-box">
-						<h3>Affiliations</h3>
-					</div>
-				</div>
-				<div class="affiliations-container">
-					<% @affiliations.photo{}.each do |photo| %>
-						<%= link_to "http://www." + flickr.photos.getInfo(:photo_id => photo["id"]).description + "", :target => "_blank"  do%>
-								<div class="company">
-									<%= image_tag FlickRaw.url_m(photo), {:class => "company-logo", :id => photo["id"],:title => photo["title"], :description => flickr.photos.getInfo(:photo_id => photo["id"]).description, :alt => photo["title"]}%>
-								<div class="company-description">
-									<h3><%= photo["title"]%></h3>
-								</div>
-								</div>
+					<div class="company-box">
+						<% @client.photo{}.each do |photo| %>
+							<%= link_to "http://www." + flickr.photos.getInfo(:photo_id => photo["id"]).description + "", :target => "_blank"  do%>
+									<div class="company">
+										<%= image_tag FlickRaw.url_m(photo), {:class => "company-logo", :id => photo["id"],:title => photo["title"], :description => flickr.photos.getInfo(:photo_id => photo["id"]).description, :alt => photo["title"]}%>
+										<div class="company-description">
+											<h5><%= photo["title"]%></h5>
+										</div>
+									</div>
+							<% end %>
 						<% end %>
-					<% end %>
+					</div>
+					
+				</div>
+
+				<div class="affiliations-container" id="affiliations">
+					<div class='category-title'>
+						<div class="title-box">
+							<h3>Affiliations</h3>
+						</div>
+					</div>
+					<div class="company-box">
+						<% @affiliation.photo{}.each do |photo| %>
+							<%= link_to "http://www." + flickr.photos.getInfo(:photo_id => photo["id"]).description + "", :target => "_blank"  do%>
+									<div class="company">
+										<%= image_tag FlickRaw.url_m(photo), {:class => "company-logo", :id => photo["id"],:title => photo["title"], :description => flickr.photos.getInfo(:photo_id => photo["id"]).description, :alt => photo["title"]}%>
+										<div class="company-description">
+											<h5><%= photo["title"]%></h5>
+										</div>
+									</div>
+							<% end %>
+						<% end %>
+					</div>
+					
 				</div>	
 
-				
-
-			</div>
 
 		
 

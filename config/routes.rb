@@ -2,7 +2,7 @@ Designwell::Application.routes.draw do
 
   root :to => "static_pages#index"
 
-  get "/index" => "static_pages#index", :as => :index
+  # get "/index" => "static_pages#index", :as => :index
 
   get "/print" => "photos#print", :as => :print
   get "/about" => "about#about", :as => :about

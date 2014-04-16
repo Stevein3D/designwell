@@ -7,11 +7,12 @@ class PhotosController < ApplicationController
 
   def print
   	#Print sub-categories
-	@collateral = flickr.photosets.getPhotos(:photoset_id => "72157641487232383")
+	  @collateral = flickr.photosets.getPhotos(:photoset_id => "72157641487232383")
     @poster = flickr.photosets.getPhotos(:photoset_id => "72157635482932841")
     @posterInfo = flickr.photosets.getInfo(:photoset_id => "72157635482932841")
 
-    #Background selection
+    render :layout => false
   end
+
 
 end

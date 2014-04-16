@@ -197,5 +197,5 @@ $('#titles-button').click(function(){
     $('#print-container, #motion-container').fadeOut(300);
     $('#about-container').delay(300).fadeIn(600);
   });
-
+  
 });

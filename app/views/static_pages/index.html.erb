@@ -67,7 +67,7 @@
 					</div>
 				</div>
 				<div class='playback'>
-					<iframe src="http://player.vimeo.com/video/<%= @title.first["id"] %>"
+					<iframe class='butt' src="http://player.vimeo.com/video/<%= @title.first["id"] %>"
 						width="768" height="432" style="border: 0px;" 
 						webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
 					</iframe>
@@ -156,118 +156,27 @@
 			</div>
 
 			<div id='print-container'>
-				<div class='category-title'>
-					<div class="shadow-box">
-						<h3><%= @poster.photo{}.first["title"]%></h3>
-					</div>
-				</div>
-				<div class='photo-stage'>
-					<div class='dark-box'>
-						<img src="<%= FlickRaw.url_b(@poster.photo{}.first) %>" style="max-height: 432px;" onload="OnImageLoad(evt);"/>
-					</div>
-				</div>
+			
 
-				<div class='words'>
-					<div class="photo-brief">
-						<p><%= @posterInfo.description%></p>
-					</div>
-				</div>
-
-				<div class='thumbs-container'>
-
-					<div class='thumbs-category' id='posters'>
-						<a href=# class ='nav-arrow-left' id='posters-prev'></a>
-						<div class="thumbs">
-							<div class='cycle-slideshow'
-							data-cycle-fx=carousel
-							data-cycle-carousel-visible=3
-							data-cycle-slides=".thumb-box"
-							data-cycle-timeout=0
-							data-cycle-pager-template="<span></span>"
-							data-cycle-next="#posters-next"
-							data-cycle-prev="#posters-prev">
-								<div class="cycle-pager"></div>
-
-								<% @poster.photo{}.each do |photo| %>
-									<div class='thumb-box'>
-										<%= image_tag FlickRaw.url_b(photo), {:class => "photo-thumb", :id => photo["id"],:title => photo["title"], :description => flickr.photos.getInfo(:photo_id => photo["id"]).description, :alt => photo["title"]}%>
-									</div>
-								<% end %>
-							</div>
-						</div>
-						<a href=# class ='nav-arrow-right' id='posters-next'></a>
-					</div>
-
-					<div class='thumbs-category' id='collateral'>
-						<a href=# class ='nav-arrow-left' id='collateral-prev'></a>
-						<div class="thumbs">
-							<div class='cycle-slideshow'
-							data-cycle-fx=carousel
-							data-cycle-carousel-visible=3
-							data-cycle-slides=".thumb-box"
-							data-cycle-timeout=0
-							data-cycle-pager-template="<span></span>"
-							data-cycle-next="#collateral-next"
-							data-cycle-prev="#collateral-prev">
-								<div class="cycle-pager"></div>
-
-								<% @collateral.photo{}.each do |photo| %>
-									<div class='thumb-box'>
-										<%= image_tag FlickRaw.url_b(photo), {:class => "photo-thumb", :id => photo["id"],:title => photo["title"], :description => flickr.photos.getInfo(:photo_id => photo["id"]).description, :alt => photo["title"]}%>
-									</div>
-								<% end %>
-							</div>
-						</div>
-						<a href=# class ='nav-arrow-right' id='collateral-next'></a>
-					</div>					
-				</div>
 			</div>
-
+				<script type="text/javascript">
+					$.ajax({
+				    url: "/print",
+				    cache: false,
+				    success: function(html){$("#print-container").append(html);}
+					});
+				</script>
 			<div id="about-container">
-				<div class="clients-container" id="clients">
-					<div class='category-title'>
-						<div class="title-box">
-							<h3>Clients</h3>
-						</div>
-					</div>
-					<div class="company-box">
-						<% @client.photo{}.each do |photo| %>
-							<%= link_to "http://www." + flickr.photos.getInfo(:photo_id => photo["id"]).description + "", :target => "_blank"  do%>
-									<div class="company">
-										<%= image_tag FlickRaw.url_m(photo), {:class => "company-logo", :id => photo["id"],:title => photo["title"], :description => flickr.photos.getInfo(:photo_id => photo["id"]).description, :alt => photo["title"]}%>
-										<div class="company-description">
-											<h5><%= photo["title"]%></h5>
-										</div>
-									</div>
-							<% end %>
-						<% end %>
-					</div>
-					
-				</div>
-
-				<div class="affiliations-container" id="affiliations">
-					<div class='category-title'>
-						<div class="title-box">
-							<h3>Affiliations</h3>
-						</div>
-					</div>
-					<div class="company-box">
-						<% @affiliation.photo{}.each do |photo| %>
-							<%= link_to "http://www." + flickr.photos.getInfo(:photo_id => photo["id"]).description + "", :target => "_blank"  do%>
-									<div class="company">
-										<%= image_tag FlickRaw.url_m(photo), {:class => "company-logo", :id => photo["id"],:title => photo["title"], :description => flickr.photos.getInfo(:photo_id => photo["id"]).description, :alt => photo["title"]}%>
-										<div class="company-description">
-											<h5><%= photo["title"]%></h5>
-										</div>
-									</div>
-							<% end %>
-						<% end %>
-					</div>
-					
-				</div>	
 
 			</div>
 
+			<!-- <script language="javascript" type="text/javascript">
+				$(function(){
+    				$('#print').click(function(){      
+        				$('iframe').delay(600).attr('src',"http://player.vimeo.com/video/<%= @title.first["id"]%>?autoplay=0");
+    				});
+				});
+			</script> -->
 
 
 	</body>
