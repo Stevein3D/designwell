@@ -30,9 +30,10 @@ h3{
 }
 h4{
 	font-family: 'Crete Round', serif;
-	font-size: 14px;
+	font-size: 4px;
+	letter-spacing: 1px;
 	color: rgba(255,255,255,0);
-	padding-top: 20px;
+	/*padding-top: 20px;*/
 	-webkit-transition: opacity .2s ease-in-out;
   	-moz-transition: opacity .2s ease-in-out;
   	-ms-transition: opacity .2s ease-in-out;
@@ -80,8 +81,8 @@ p{
 .nav-button{
 	width: 120px;
 	height: 30px;
-	margin: 4px 0 0 0px;
-	padding-top: 2px;
+	margin: 6px 0 0 0px;
+	/*padding-top: 2px;*/
 	padding-right: 10px;
 	vertical-align: middle;
 	text-align: right;
@@ -93,7 +94,7 @@ p{
 .sub-cat{
 	width: 115px;
 	height: 20px;
-	margin: 3px 0;
+	margin: 4px 0 0 0;
 	padding-right: 15px;
 	text-align: right;
 	vertical-align: middle;
@@ -149,6 +150,14 @@ p{
 }
 .thumbnail:hover h4{
 	color: rgba(255,255,255,1);
+	font-size: 14px;
+}
+.thumb-box:hover img{
+  	opacity: .1;
+}
+.thumb-box:hover h4{
+	color: rgba(255,255,255,1);
+	font-size: 14px;
 }
 .company:hover{
 	border: 2px solid rgba(0,0,0,.5);
@@ -204,6 +213,14 @@ p{
 	height: 70px;
 	padding: 5px;
 	/*border: solid rgba(0,0,0,.4) 5px;*/
+}
+.overlay{
+	width: 192px;
+	text-align: center;
+	top: 20px;
+	/*margin: -75px auto 0 auto;*/
+	position: absolute;
+	white-space: pre-line;
 }
 #animation, #montage, #collateral, #packaging, #affiliations{
 	display: none;
@@ -273,8 +290,11 @@ p{
 .thumbnail{
 	width: 192px;
 	height: 108px;
-	/*background-color: black;*/
+	background-color: black;
+	text-align: center;
+	overflow: hidden;
 	margin: 0 8px;
+	position: relative;
 	cursor: pointer;
 }
 .thumbnail img{
@@ -286,16 +306,16 @@ p{
   	-o-transition: opacity .2s ease-in-out;
   	transition: opacity .2s ease-in-out;
 }
-.caption{
+/*.caption{
 	width: 192px;
 	height: 108px;
 	background-color: black;
 	text-align: center;
 	white-space: normal;
 	overflow: hidden;
-	padding: 0 5px;
+	padding: 20px 10px 0 10px;
 	margin-top: -113px;
-}
+}*/
 /* ==========================================================================
    Print specific
    ========================================================================== */
@@ -324,8 +344,21 @@ p{
 .thumb-box{
 	width: 192px;
 	height: 108px;
-	margin: 0 8px;
+	background-color: black;
+	text-align: center;
 	overflow: hidden;
+	margin: 0 8px;
+	position: relative;
+	cursor: pointer;
+}
+.thumb-box img{
+	max-width: 192px;
+	overflow: hidden;
+	-webkit-transition: opacity .2s ease-in-out;
+  	-moz-transition: opacity .2s ease-in-out;
+  	-ms-transition: opacity .2s ease-in-out;
+  	-o-transition: opacity .2s ease-in-out;
+  	transition: opacity .2s ease-in-out;
 }
 .photo-thumb{
 	width: 192px;

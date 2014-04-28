@@ -5,7 +5,8 @@ class AboutController < ApplicationController
   	FlickRaw.shared_secret="cd47d71ba69e9219"
 
   def about
-    @affiliations = flickr.photosets.getPhotos(:photoset_id => "72157643215739244")
+    @affiliation = flickr.photosets.getPhotos(:photoset_id => "72157643215739244")
+    @client = flickr.photosets.getPhotos(:photoset_id => "72157643680136583")
   end
 
 end

@@ -8,6 +8,7 @@ class PhotosController < ApplicationController
   def print
   	#Print sub-categories
 	  @collateral = flickr.photosets.getPhotos(:photoset_id => "72157641487232383")
+    @packaging = flickr.photosets.getPhotos(:photoset_id => "72157644043465101")
     @poster = flickr.photosets.getPhotos(:photoset_id => "72157635482932841")
     @posterInfo = flickr.photosets.getInfo(:photoset_id => "72157635482932841")
 

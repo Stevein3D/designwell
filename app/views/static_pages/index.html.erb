@@ -67,7 +67,7 @@
 					</div>
 				</div>
 				<div class='playback'>
-					<iframe class='butt' src="http://player.vimeo.com/video/<%= @title.first["id"] %>"
+					<iframe id="nowPlaying" src="http://player.vimeo.com/video/<%= @title.first["id"] %>"
 						width="768" height="432" style="border: 0px;" 
 						webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
 					</iframe>
@@ -97,7 +97,7 @@
 								<% @title.each do |clip| %>
 									<div class="thumbnail">
 										<%= image_tag clip["thumbnail_large"], {:id => clip["id"], :description => clip["description"], :title => clip["title"], :alt => clip["title"]}%>
-										<div class="caption"><h4><%=clip["title"]%></h4></div>
+										<h4 class="overlay"><%=clip["title"]%></h4>
 									</div>
 								<% end %>
 							</div>
@@ -121,7 +121,7 @@
 								<% @montage.each do |clip| %>
 									<div class="thumbnail">
 										<%= image_tag clip["thumbnail_large"], {:id => clip["id"], :description => clip["description"], :title => clip["title"], :alt => clip["title"]}%>
-										<div class="caption"><h4><%=clip["title"]%></h4></div>
+										<h4 class="overlay"><%=clip["title"]%></h4>
 									</div>
 								<% end %>
 							</div>
@@ -145,7 +145,7 @@
 								<% @animation.each do |clip| %>
 									<div class="thumbnail">
 										<%= image_tag clip["thumbnail_large"], {:id => clip["id"], :description => clip["description"], :title => clip["title"], :alt => clip["title"]}%>
-										<div class="caption"><h4><%=clip["title"]%></h4></div>
+										<h4 class="overlay"><%=clip["title"]%></h4>
 									</div>
 								<% end %>
 							</div>

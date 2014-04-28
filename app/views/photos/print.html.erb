@@ -13,7 +13,7 @@
 				</div>
 				<div class='photo-stage'>
 					<div class='dark-box'>
-						<img src="<%= FlickRaw.url_b(@poster.photo{}.first) %>" style="max-height: 432px;" onload="OnImageLoad(evt);"/>
+						<img src="<%= FlickRaw.url_b(@poster.photo{}.first) %>" style="max-height: 432px;"/>
 					</div>
 				</div>
 
@@ -28,7 +28,7 @@
 					<div class='thumbs-category' id='posters'>
 						<a href=# class ='nav-arrow-left' id='posters-prev'></a>
 						<div class="thumbs">
-							<div class='cycle-slideshow'
+							<div class='slideshow'
 							data-cycle-fx=carousel
 							data-cycle-carousel-visible=3
 							data-cycle-slides=".thumb-box"
@@ -41,17 +41,42 @@
 								<% @poster.photo{}.each do |photo| %>
 									<div class='thumb-box'>
 										<%= image_tag FlickRaw.url_b(photo), {:class => "photo-thumb", :id => photo["id"],:title => photo["title"], :description => flickr.photos.getInfo(:photo_id => photo["id"]).description, :alt => photo["title"]}%>
+										<h4 class="overlay"><%=photo["title"]%></h4>
 									</div>
 								<% end %>
 							</div>
 						</div>
 						<a href=# class ='nav-arrow-right' id='posters-next'></a>
 					</div>
+					
+					<div class='thumbs-category' id='packaging'>
+						<a href=# class ='nav-arrow-left' id='packaging-prev'></a>
+						<div class="thumbs">
+							<div class='slideshow'
+							data-cycle-fx=carousel
+							data-cycle-carousel-visible=3
+							data-cycle-slides=".thumb-box"
+							data-cycle-timeout=0
+							data-cycle-pager-template="<span></span>"
+							data-cycle-next="#packaging-next"
+							data-cycle-prev="#packaging-prev">
+								<div class="cycle-pager"></div>
+
+								<% @packaging.photo{}.each do |photo| %>
+									<div class='thumb-box'>
+										<%= image_tag FlickRaw.url_b(photo), {:class => "photo-thumb", :id => photo["id"],:title => photo["title"], :description => flickr.photos.getInfo(:photo_id => photo["id"]).description, :alt => photo["title"]}%>
+										<h4 class="overlay"><%=photo["title"]%></h4>
+									</div>
+								<% end %>
+							</div>
+						</div>
+						<a href=# class ='nav-arrow-right' id='packaging-next'></a>
+					</div>
 
 					<div class='thumbs-category' id='collateral'>
 						<a href=# class ='nav-arrow-left' id='collateral-prev'></a>
 						<div class="thumbs">
-							<div class='cycle-slideshow'
+							<div class='slideshow'
 							data-cycle-fx=carousel
 							data-cycle-carousel-visible=3
 							data-cycle-slides=".thumb-box"
@@ -64,6 +89,7 @@
 								<% @collateral.photo{}.each do |photo| %>
 									<div class='thumb-box'>
 										<%= image_tag FlickRaw.url(photo), {:class => "photo-thumb", :id => photo["id"],:title => photo["title"], :description => flickr.photos.getInfo(:photo_id => photo["id"]).description, :alt => photo["title"]}%>
+										<h4 class="overlay"><%=photo["title"]%></h4>
 									</div>
 								<% end %>
 							</div>
@@ -72,6 +98,19 @@
 					</div>					
 				</div>
 
+				<script type="text/javascript">
+						$(".slideshow").cycle();
+
+						$('.thumb-box').click(function(){
+      						var $url = $(this).children('img').attr('src');
+      						var $brief = $(this).children('img').attr('description');
+      						var $title = $(this).children('img').attr('title');
+
+      						$('.dark-box img').attr('src',$url);
+      						$('div.photo-brief p').text($brief);
+      						$('div.shadow-box h3').text($title);
+  						});
+					</script>
 
 
 	</body>
