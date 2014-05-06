@@ -50,11 +50,26 @@ h5{
 p{
 	font-family: 'Crete Round', serif;
 	color: white;
-	font-size: 17px;
-	line-height: 25px;
-	margin-top: 0;
+	font-size: 15px;
+	letter-spacing: 1px;
 }
-
+.splash-box{
+	margin: 60px auto 0 auto;
+	width: 778px;
+	height: 442px;
+}
+.splash{
+	background-color: rgba(0,0,0,.5);
+	margin: 10px auto;
+	width: 768px;
+	height: 432px;
+	cursor: pointer;
+	padding: 5px;
+}
+.splash img{
+	max-width: 768px;
+	max-height: 432px;
+}
 /* ==========================================================================
    Side Nav Bar
    ========================================================================== */
@@ -173,11 +188,18 @@ p{
 	overflow: hidden;
 	text-align: center;
 }
+#splash-container{
+	width: 870px;
+	padding-bottom: 20px;
+	float: left;
+	overflow: hidden;
+}
 #motion-container{
 	width: 870px;
 	padding-bottom: 20px;
 	float: left;
 	overflow: hidden;
+	display: none;
 }
 #print-container{
 	width: 870px;
@@ -199,12 +221,6 @@ p{
 	width: 768px;
 	height: 40px;
 	padding: 5px;
-}
-.shadow-box{
-	background-color: rgba(0,0,0,.5);
-	padding: 10px 0;
-	margin: 0 auto;
-	text-align: center;
 }
 .words{
 	background-color: rgba(0,0,0,.5);
@@ -245,7 +261,12 @@ p{
 /* ==========================================================================
    Motion specific
    ========================================================================== */
-
+.motion-title{
+	background-color: rgba(0,0,0,.5);
+	padding: 10px 0;
+	margin: 0 auto;
+	text-align: center;
+}
 .playback{
 	background-color: rgba(0,0,0,.5);
 	margin: 10px auto 10px auto;
@@ -319,7 +340,12 @@ p{
 /* ==========================================================================
    Print specific
    ========================================================================== */
-
+.print-title{
+	background-color: rgba(0,0,0,.5);
+	padding: 10px 0;
+	margin: 0 auto;
+	text-align: center;
+}
 .photo-stage{
 	background-color: rgba(0,0,0,.5);
 	overflow: hidden;
@@ -368,7 +394,35 @@ p{
 /* ==========================================================================
    About specific
    ========================================================================== */
-
+.employee-box{
+	background-color: rgba(0,0,0,.5);
+	margin: 15px auto 0 auto;
+	width: 778px;
+	height: 210px;
+}
+.employee-photo{
+	max-height: 200px;
+	width: 156px;
+	margin: 5px;
+	float: left;
+}
+.employee-name{
+	background-color: rgba(0,0,0,.5);
+	line-height: 30px;
+	width: 608px;
+	height: 30px;
+	margin: 5px 0; 
+	float: left;
+}
+.employee-bio{
+	background-color: rgba(0,0,0,.5);
+	line-height: 20px;
+	width: 578px;
+	height: 135px;
+	padding: 15px;
+	margin: 0;
+	float: left;
+}
 .affiliations-container{
 	/*background-color: rgba(0,0,0,.5);*/
 	width: 778px;
@@ -403,7 +457,7 @@ p{
 	float: left;
 }
 /* set border-box so that percents can be used for width, padding, etc (personal preference) */
-.cycle-slideshow, .cycle-slideshow * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+/*.cycle-slideshow, .cycle-slideshow * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }*/
 
 
 /* in case script does not load */

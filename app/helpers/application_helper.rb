@@ -12,6 +12,13 @@ module ApplicationHelper
   	  end
   	  images[rand(images.size)]
 	end
+  @affiliates = []
+  def affiliation_population
+    @affiliation = flickr.photosets.getPhotos(:photoset_id => "72157643215739244") 
+      @affiliation.photo{}.each do |url|
+        i = FlickRaw.url_b(url).to_s 
+        @affiliates << i
+      end
+      @affiliates[]
+  end
 end
-
-@background 

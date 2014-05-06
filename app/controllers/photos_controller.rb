@@ -11,6 +11,9 @@ class PhotosController < ApplicationController
     @packaging = flickr.photosets.getPhotos(:photoset_id => "72157644043465101")
     @poster = flickr.photosets.getPhotos(:photoset_id => "72157635482932841")
     @posterInfo = flickr.photosets.getInfo(:photoset_id => "72157635482932841")
+    #About sub categories
+    @affiliation = flickr.photosets.getPhotos(:photoset_id => "72157643215739244")
+    @client = flickr.photosets.getPhotos(:photoset_id => "72157643680136583")
 
     render :layout => false
   end

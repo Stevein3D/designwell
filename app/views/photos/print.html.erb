@@ -5,9 +5,9 @@
 		<link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-
+			<div id="print-container">
 				<div class='category-title'>
-					<div class="shadow-box">
+					<div class="print-title">
 						<h3><%= @poster.photo{}.first["title"]%></h3>
 					</div>
 				</div>
@@ -97,7 +97,8 @@
 						<a href=# class ='nav-arrow-right' id='collateral-next'></a>
 					</div>					
 				</div>
-
+			</div>
+			
 				<script type="text/javascript">
 						$(".slideshow").cycle();
 
@@ -108,7 +109,7 @@
 
       						$('.dark-box img').attr('src',$url);
       						$('div.photo-brief p').text($brief);
-      						$('div.shadow-box h3').text($title);
+      						$('div.print-title h3').text($title);
   						});
 					</script>
 

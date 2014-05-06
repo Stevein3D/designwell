@@ -21,9 +21,9 @@ $(document).ready(function(){
 
   });
 
-$('.splash').click(function(){
-  $('#slideshow').cycle('toggle');
-});
+// $('.splash').click(function(){
+//   $('#slideshow').cycle('toggle');
+// });
 
 //Add Title to images with only "alt"
 
@@ -77,15 +77,15 @@ $('#titles-button').click(function(){
     $('#montage').delay(300).fadeIn(600);
   });
 
-  $('#posters-button').click(function(){
+  $('.posters-button').click(function(){
     $('#posters, #packaging, #collateral').fadeOut(300);
     $('#posters').delay(300).fadeIn(600);
   });  
-  $('#packaging-button').click(function(){
+  $('.packaging-button').click(function(){
     $('#posters, #packaging, #collateral').fadeOut(300);
     $('#packaging').delay(300).fadeIn(600);
   });
-  $('#collateral-button').click(function(){
+  $('.collateral-button').click(function(){
     $('#posters, #packaging, #collateral').fadeOut(300);
     $('#collateral').delay(300).fadeIn(600);
   });
@@ -110,7 +110,7 @@ $('#titles-button').click(function(){
 
       $('iframe').attr('src',"http://player.vimeo.com/video/" + $url + "?autoplay=1");
       $('div.video-brief p').text($brief);
-      $('div.shadow-box h3').text($title);
+      $('div.motion-title h3').text($title);
   });
 
 
@@ -118,22 +118,23 @@ $('#titles-button').click(function(){
 /* ==========================================================================
    Change category view
    ========================================================================== */
-
-  $('#print').click(function(){
-    $('iframe#nowPlaying').attr('src',''); 
-    $('#motion-container, #about-container').fadeOut(300);
+  $('.print').click(function(){
+    // $('iframe#nowPlaying').attr('src',''); 
+    $('#splash-container, #motion-container, #about-container').fadeOut(300);
     $('#print-container').delay(300).fadeIn(600);
   });
 
-  $('#motion').click(function(){
-    $('#print-container, #about-container').fadeOut(300);
+  $('.motion').click(function(){
+    // $('iframe#nowPlaying').attr('src',''); 
+    $('#splash-container, #print-container, #about-container').fadeOut(300);
     $('#motion-container').delay(300).fadeIn(600);
   });
 
-  $('#about').click(function(){
-    $('iframe#nowPlaying').attr('src',''); 
-    $('#print-container, #motion-container').fadeOut(300);
+  $('.about').click(function(){
+    // $('iframe#nowPlaying').attr('src',''); 
+    $('#splash-container, #print-container, #motion-container').fadeOut(300);
     $('#about-container').delay(300).fadeIn(600);
   });
   
+
 });
