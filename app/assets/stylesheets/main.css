@@ -23,7 +23,7 @@ h2{
 }
 h3{
 	font-family: 'Crete Round', serif;
-	font-size: 18px;
+	font-size: 22px;
 	line-height: 20px;
 	color: white;
 	margin: 0 auto;
@@ -50,7 +50,8 @@ h5{
 p{
 	font-family: 'Crete Round', serif;
 	color: white;
-	font-size: 15px;
+	font-size: 16px;
+	line-height: 18px;
 	letter-spacing: 1px;
 }
 .splash-box{
@@ -231,10 +232,10 @@ p{
 	/*border: solid rgba(0,0,0,.4) 5px;*/
 }
 .overlay{
-	width: 192px;
+	width: 172px;
 	text-align: center;
 	top: 20px;
-	/*margin: -75px auto 0 auto;*/
+	padding: 0 10px;
 	position: absolute;
 	white-space: pre-line;
 }
@@ -278,8 +279,10 @@ p{
 	background-color: rgba(0,0,0,.5);
 	margin: 0 auto;
 	width: 718px;
-	height: 65px;
-	padding: 10px 25px 0 25px;
+	height: 75px;
+	padding: 0 25px;
+	display:inline-block; 
+	vertical-align:middle;
 }
 .thumbs-container{
 	background-color: rgba(0,0,0,.5);
@@ -359,8 +362,10 @@ p{
 	background-color: rgba(0,0,0,.5);
 	margin: 0 auto;
 	width: 718px;
-	height: 65px;
-	padding: 10px 25px 0 25px;
+	height: 75px;
+	padding: 0 25px;
+	display:inline-block; 
+	vertical-align:middle;
 }
 .dark-box{
 	background-color: rgba(0,0,0,.5);
@@ -409,14 +414,17 @@ p{
 .employee-name{
 	background-color: rgba(0,0,0,.5);
 	line-height: 30px;
-	width: 608px;
+	text-align: left;
+	width: 593px;
 	height: 30px;
+	padding-left: 15px;
 	margin: 5px 0; 
 	float: left;
 }
 .employee-bio{
 	background-color: rgba(0,0,0,.5);
 	line-height: 20px;
+	text-align: left;
 	width: 578px;
 	height: 135px;
 	padding: 15px;
@@ -473,7 +481,7 @@ p{
     width: 15px; height: 15px; 
     display: inline-block; background-color: rgba(255,255,255,.8); border: 2px solid rgba(0,0,0,.5); cursor: pointer; margin:20px 2px 0 2px; 
 }
-.cycle-pager span.cycle-pager-active {background-color: rgba(0,0,0,.5);}
+.cycle-pager span.cycle-pager-active {background-color: rgba(0,0,0,.5); border: 2px solid rgba(255,255,255,.8);}
 .cycle-pager > * { cursor: pointer;}
 
 
