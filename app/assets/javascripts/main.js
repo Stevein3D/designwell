@@ -64,15 +64,15 @@ $(function() {
    Update thumbnails for selected subcategory
    ========================================================================== */
 
-$('#titles-button').click(function(){
+$('.titles-button').click(function(){
     $('#titles, #animation, #montage').fadeOut(300);
     $('#titles').delay(300).fadeIn(600);
   });
-  $('#animation-button').click(function(){
+  $('.animation-button').click(function(){
     $('#titles, #animation, #montage').fadeOut(300);
     $('#animation').delay(300).fadeIn(600);
   });
-  $('#montage-button').click(function(){
+  $('.montage-button').click(function(){
     $('#titles, #animation, #montage').fadeOut(300);
     $('#montage').delay(300).fadeIn(600);
   });
@@ -90,11 +90,11 @@ $('#titles-button').click(function(){
     $('#collateral').delay(300).fadeIn(600);
   });
 
-  $('#clients-button').click(function(){
+  $('.clients-button').click(function(){
     $('#blog, #staff, #clients, #affiliations').fadeOut(300);
     $('#clients').delay(300).fadeIn(600);
   });
-  $('#affiliations-button').click(function(){
+  $('.affiliations-button').click(function(){
     $('#blog, #staff, #clients, #affiliations').fadeOut(300);
     $('#affiliations').delay(300).fadeIn(600);
   });

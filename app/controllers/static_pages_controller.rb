@@ -5,6 +5,8 @@ class StaticPagesController < ApplicationController
   	FlickRaw.shared_secret="cd47d71ba69e9219"
 
   def index
+    #Splash images
+    @splash = flickr.photosets.getPhotos(:photoset_id => "72157644439600462")
 
   	#Motion Related 
   	@user = Vimeo::Simple::User.info("designwell")
