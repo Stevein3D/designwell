@@ -8,28 +8,28 @@ body{
 	/*background-size: 100%;*/
 }
 h1{
-	font-family: 'Crete Round', serif;
+	font-family: 'Arvo', serif;
 	color: white;
 	font-size: 18px;
 	line-height: 30px;
 	cursor: pointer;
 }
 h2{
-	font-family: 'Crete Round', serif;
+	font-family: 'Arvo', serif;
 	font-size: 14px;
 	color: auto;
 	cursor: pointer;
 	
 }
 h3{
-	font-family: 'Crete Round', serif;
+	font-family: 'Arvo', serif;
 	font-size: 22px;
-	line-height: 20px;
+	line-height: 40px;
+	margin-top: 0;
 	color: white;
-	margin: 0 auto;
 }
 h4{
-	font-family: 'Crete Round', serif;
+	font-family: 'Arvo', serif;
 	font-size: 4px;
 	letter-spacing: 1px;
 	color: rgba(255,255,255,0);
@@ -41,14 +41,14 @@ h4{
   	transition: opacity .2s ease-in-out;
 }
 h5{
-	font-family: 'Crete Round', serif;
+	font-family: 'Arvo', serif;
 	font-size: 16px;
 	line-height: 20px;
 	color: white;
 	margin: 0 auto;
 }
 p{
-	font-family: 'Crete Round', serif;
+	font-family: 'Arvo', serif;
 	color: white;
 	font-size: 16px;
 	line-height: 18px;
@@ -61,7 +61,7 @@ p{
 }
 .splash{
 	background-color: rgba(0,0,0,.5);
-	margin: 10px auto;
+	/*margin: 10px auto 0 auto;*/
 	width: 768px;
 	height: 432px;
 	cursor: pointer;
@@ -70,6 +70,18 @@ p{
 .splash img{
 	max-width: 768px;
 	max-height: 432px;
+}
+.splash-pager{
+	width: 100%;
+}
+.splash-brief{
+	background-color: rgba(0,0,0,.5);
+	margin: 0 auto;
+	width: 718px;
+	height: 40px;
+	padding: 10px 25px;
+	display:inline-block; 
+	vertical-align:middle;
 }
 /* ==========================================================================
    Side Nav Bar
@@ -191,27 +203,27 @@ p{
 }
 #splash-container{
 	width: 870px;
-	padding-bottom: 20px;
+	padding-bottom: 40px;
 	float: left;
 	overflow: hidden;
 }
 #motion-container{
 	width: 870px;
-	padding-bottom: 20px;
+	padding-bottom: 40px;
 	float: left;
 	overflow: hidden;
 	display: none;
 }
 #print-container{
 	width: 870px;
-	padding-bottom: 20px;
+	padding-bottom: 40px;
 	float: left;
 	overflow: hidden;
 	display: none;
 }
 #about-container{
 	width: 870px;
-	padding-bottom: 20px;
+	padding-bottom: 40px;
 	float: left;
 	overflow: hidden;
 	display: none;
@@ -227,9 +239,8 @@ p{
 	background-color: rgba(0,0,0,.5);
 	margin: 10px auto 0 auto;
 	width: 768px;
-	height: 70px;
+	height: 60px;
 	padding: 5px;
-	/*border: solid rgba(0,0,0,.4) 5px;*/
 }
 .overlay{
 	width: 172px;
@@ -264,7 +275,7 @@ p{
    ========================================================================== */
 .motion-title{
 	background-color: rgba(0,0,0,.5);
-	padding: 10px 0;
+	/*padding: 10px 0;*/
 	margin: 0 auto;
 	text-align: center;
 }
@@ -279,7 +290,7 @@ p{
 	background-color: rgba(0,0,0,.5);
 	margin: 0 auto;
 	width: 718px;
-	height: 75px;
+	height: 65px;
 	padding: 0 25px;
 	display:inline-block; 
 	vertical-align:middle;
@@ -287,7 +298,8 @@ p{
 .thumbs-container{
 	background-color: rgba(0,0,0,.5);
 	display: inline-block;
-	margin: 10px auto;
+	margin: 0px auto;
+	/*margin: 10px auto;*/
 	width: 778px;
 	height: 128px;
 }
@@ -362,7 +374,7 @@ p{
 	background-color: rgba(0,0,0,.5);
 	margin: 0 auto;
 	width: 718px;
-	height: 75px;
+	height: 65px;
 	padding: 0 25px;
 	display:inline-block; 
 	vertical-align:middle;
@@ -478,10 +490,17 @@ p{
     text-align: center; width: 100%; z-index: 500; position: absolute; top: 100px; overflow: hidden;
 }*/
 .cycle-pager span { 
-    width: 15px; height: 15px; 
+    width: 15px; height: 15px;
     display: inline-block; background-color: rgba(255,255,255,.8); border: 2px solid rgba(0,0,0,.5); cursor: pointer; margin:20px 2px 0 2px; 
 }
 .cycle-pager span.cycle-pager-active {background-color: rgba(0,0,0,.5); border: 2px solid rgba(255,255,255,.8);}
 .cycle-pager > * { cursor: pointer;}
+
+.splash-pager span { 
+    width: 15px; height: 15px;
+    display: inline-block; background-color: rgba(255,255,255,.8); border: 2px solid rgba(0,0,0,.5); cursor: pointer; margin:20px 2px 0 2px; 
+}
+.splash-pager span.cycle-pager-active {background-color: rgba(0,0,0,.5); border: 2px solid rgba(255,255,255,.8);}
+.splash-pager > * { cursor: pointer;}
 
 

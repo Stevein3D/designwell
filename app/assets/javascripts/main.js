@@ -90,6 +90,10 @@ $('.titles-button').click(function(){
     $('#collateral').delay(300).fadeIn(600);
   });
 
+  $('.staff-button').click(function(){
+    $('#blog, #staff, #clients, #affiliations').fadeOut(300);
+    $('#staff').delay(300).fadeIn(600);
+  });
   $('.clients-button').click(function(){
     $('#blog, #staff, #clients, #affiliations').fadeOut(300);
     $('#clients').delay(300).fadeIn(600);
