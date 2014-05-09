@@ -7,13 +7,16 @@ class PhotosController < ApplicationController
 
   def print
   	#Print sub-categories
-	  @collateral = flickr.photosets.getPhotos(:photoset_id => "72157641487232383")
-    @packaging = flickr.photosets.getPhotos(:photoset_id => "72157644043465101")
-    @poster = flickr.photosets.getPhotos(:photoset_id => "72157635482932841")
-    @posterInfo = flickr.photosets.getInfo(:photoset_id => "72157635482932841")
+	  #@collateral = flickr.photosets.getPhotos(:photoset_id => "72157641487232383")
+    #@packaging = flickr.photosets.getPhotos(:photoset_id => "72157644043465101")
+    #@poster = flickr.photosets.getPhotos(:photoset_id => "72157635482932841")
+    #@posterInfo = flickr.photosets.getInfo(:photoset_id => "72157635482932841")
+
     #About sub categories
     @affiliation = flickr.photosets.getPhotos(:photoset_id => "72157643215739244")
     @client = flickr.photosets.getPhotos(:photoset_id => "72157643680136583")
+    @staff = flickr.photosets.getPhotos(:photoset_id => "72157644536402675")
+    @blog = flickr.photosets.getPhotos(:photoset_id => "72157644123095188")
 
     render :layout => false
   end

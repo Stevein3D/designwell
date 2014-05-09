@@ -42,7 +42,7 @@ h4{
 }
 h5{
 	font-family: 'Arvo', serif;
-	font-size: 16px;
+	font-size: 15px;
 	line-height: 20px;
 	color: white;
 	margin: 0 auto;
@@ -50,8 +50,10 @@ h5{
 p{
 	font-family: 'Arvo', serif;
 	color: white;
-	font-size: 16px;
-	line-height: 18px;
+	font-size: 14px;
+	line-height: 20px;
+	display:inline-block; 
+	vertical-align:middle;
 	letter-spacing: 1px;
 }
 .splash-box{
@@ -179,6 +181,7 @@ p{
 .thumbnail:hover h4{
 	color: rgba(255,255,255,1);
 	font-size: 14px;
+	line-height: 18px;
 }
 .thumb-box:hover img{
   	opacity: .1;
@@ -188,7 +191,7 @@ p{
 	font-size: 14px;
 }
 .company:hover{
-	border: 2px solid rgba(0,0,0,.5);
+	/*border: 2px solid rgba(0,0,0,.5);*/
 }
 /* ==========================================================================
    Main Stage
@@ -250,7 +253,7 @@ p{
 	position: absolute;
 	white-space: pre-line;
 }
-#animation, #montage, #collateral, #packaging, #affiliations{
+#animation, #montage, #collateral, #packaging, #staff, #affiliations, #clients{
 	display: none;
 }
 .nav-arrow-left{
@@ -357,8 +360,8 @@ p{
    ========================================================================== */
 .print-title{
 	background-color: rgba(0,0,0,.5);
-	padding: 10px 0;
-	margin: 0 auto;
+	/*padding: 10px 0;
+	margin: 0 auto;*/
 	text-align: center;
 }
 .photo-stage{
@@ -372,7 +375,7 @@ p{
 }
 .photo-brief{
 	background-color: rgba(0,0,0,.5);
-	margin: 0 auto;
+	/*margin: 0 auto;*/
 	width: 718px;
 	height: 65px;
 	padding: 0 25px;
@@ -450,8 +453,8 @@ p{
 }
 .title-box{
 	background-color: rgba(0,0,0,.5);
-	padding: 10px 0;
-	margin: 0 auto;
+	/*padding: 10px 0;*/
+	/*margin: 0 auto;*/
 	text-align: center;
 }
 .company-box{
@@ -461,11 +464,11 @@ p{
 }
 .company{
 	background-color: rgba(0,0,0,.5);
-	width: 379px;
+	width: 383px;
 	height: 70px;
 	margin: 3px;
 	float: left;
-	border: 2px solid rgba(0,0,0,0);
+	/*border: 2px solid rgba(0,0,0,0);*/
 }
 .company-logo{
 	width: 60px;
@@ -473,7 +476,7 @@ p{
 	float: left;
 }
 .company-description{
-	margin: 25px 0 0 15px;
+	margin: 25px 0 0 10px;
 	float: left;
 }
 /* set border-box so that percents can be used for width, padding, etc (personal preference) */

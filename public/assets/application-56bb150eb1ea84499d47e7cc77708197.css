@@ -23,28 +23,28 @@ body{
 	/*background-size: 100%;*/
 }
 h1{
-	font-family: 'Crete Round', serif;
+	font-family: 'Arvo', serif;
 	color: white;
 	font-size: 18px;
 	line-height: 30px;
 	cursor: pointer;
 }
 h2{
-	font-family: 'Crete Round', serif;
+	font-family: 'Arvo', serif;
 	font-size: 14px;
 	color: auto;
 	cursor: pointer;
 	
 }
 h3{
-	font-family: 'Crete Round', serif;
-	font-size: 18px;
-	line-height: 20px;
+	font-family: 'Arvo', serif;
+	font-size: 22px;
+	line-height: 40px;
+	margin-top: 0;
 	color: white;
-	margin: 0 auto;
 }
 h4{
-	font-family: 'Crete Round', serif;
+	font-family: 'Arvo', serif;
 	font-size: 4px;
 	letter-spacing: 1px;
 	color: rgba(255,255,255,0);
@@ -56,16 +56,19 @@ h4{
   	transition: opacity .2s ease-in-out;
 }
 h5{
-	font-family: 'Crete Round', serif;
-	font-size: 16px;
+	font-family: 'Arvo', serif;
+	font-size: 15px;
 	line-height: 20px;
 	color: white;
 	margin: 0 auto;
 }
 p{
-	font-family: 'Crete Round', serif;
+	font-family: 'Arvo', serif;
 	color: white;
-	font-size: 15px;
+	font-size: 14px;
+	line-height: 20px;
+	display:inline-block; 
+	vertical-align:middle;
 	letter-spacing: 1px;
 }
 .splash-box{
@@ -75,7 +78,7 @@ p{
 }
 .splash{
 	background-color: rgba(0,0,0,.5);
-	margin: 10px auto;
+	/*margin: 10px auto 0 auto;*/
 	width: 768px;
 	height: 432px;
 	cursor: pointer;
@@ -84,6 +87,18 @@ p{
 .splash img{
 	max-width: 768px;
 	max-height: 432px;
+}
+.splash-pager{
+	width: 100%;
+}
+.splash-brief{
+	background-color: rgba(0,0,0,.5);
+	margin: 0 auto;
+	width: 718px;
+	height: 40px;
+	padding: 10px 25px;
+	display:inline-block; 
+	vertical-align:middle;
 }
 /* ==========================================================================
    Side Nav Bar
@@ -181,6 +196,7 @@ p{
 .thumbnail:hover h4{
 	color: rgba(255,255,255,1);
 	font-size: 14px;
+	line-height: 18px;
 }
 .thumb-box:hover img{
   	opacity: .1;
@@ -190,7 +206,7 @@ p{
 	font-size: 14px;
 }
 .company:hover{
-	border: 2px solid rgba(0,0,0,.5);
+	/*border: 2px solid rgba(0,0,0,.5);*/
 }
 /* ==========================================================================
    Main Stage
@@ -205,27 +221,27 @@ p{
 }
 #splash-container{
 	width: 870px;
-	padding-bottom: 20px;
+	padding-bottom: 40px;
 	float: left;
 	overflow: hidden;
 }
 #motion-container{
 	width: 870px;
-	padding-bottom: 20px;
+	padding-bottom: 40px;
 	float: left;
 	overflow: hidden;
 	display: none;
 }
 #print-container{
 	width: 870px;
-	padding-bottom: 20px;
+	padding-bottom: 40px;
 	float: left;
 	overflow: hidden;
 	display: none;
 }
 #about-container{
 	width: 870px;
-	padding-bottom: 20px;
+	padding-bottom: 40px;
 	float: left;
 	overflow: hidden;
 	display: none;
@@ -241,19 +257,18 @@ p{
 	background-color: rgba(0,0,0,.5);
 	margin: 10px auto 0 auto;
 	width: 768px;
-	height: 70px;
+	height: 60px;
 	padding: 5px;
-	/*border: solid rgba(0,0,0,.4) 5px;*/
 }
 .overlay{
-	width: 192px;
+	width: 172px;
 	text-align: center;
 	top: 20px;
-	/*margin: -75px auto 0 auto;*/
+	padding: 0 10px;
 	position: absolute;
 	white-space: pre-line;
 }
-#animation, #montage, #collateral, #packaging, #affiliations{
+#animation, #montage, #collateral, #packaging, #staff, #affiliations, #clients{
 	display: none;
 }
 .nav-arrow-left{
@@ -278,7 +293,7 @@ p{
    ========================================================================== */
 .motion-title{
 	background-color: rgba(0,0,0,.5);
-	padding: 10px 0;
+	/*padding: 10px 0;*/
 	margin: 0 auto;
 	text-align: center;
 }
@@ -294,12 +309,15 @@ p{
 	margin: 0 auto;
 	width: 718px;
 	height: 65px;
-	padding: 10px 25px 0 25px;
+	padding: 0 25px;
+	display:inline-block; 
+	vertical-align:middle;
 }
 .thumbs-container{
 	background-color: rgba(0,0,0,.5);
 	display: inline-block;
-	margin: 10px auto;
+	margin: 0px auto;
+	/*margin: 10px auto;*/
 	width: 778px;
 	height: 128px;
 }
@@ -357,8 +375,8 @@ p{
    ========================================================================== */
 .print-title{
 	background-color: rgba(0,0,0,.5);
-	padding: 10px 0;
-	margin: 0 auto;
+	/*padding: 10px 0;
+	margin: 0 auto;*/
 	text-align: center;
 }
 .photo-stage{
@@ -372,10 +390,12 @@ p{
 }
 .photo-brief{
 	background-color: rgba(0,0,0,.5);
-	margin: 0 auto;
+	/*margin: 0 auto;*/
 	width: 718px;
 	height: 65px;
-	padding: 10px 25px 0 25px;
+	padding: 0 25px;
+	display:inline-block; 
+	vertical-align:middle;
 }
 .dark-box{
 	background-color: rgba(0,0,0,.5);
@@ -424,14 +444,17 @@ p{
 .employee-name{
 	background-color: rgba(0,0,0,.5);
 	line-height: 30px;
-	width: 608px;
+	text-align: left;
+	width: 593px;
 	height: 30px;
+	padding-left: 15px;
 	margin: 5px 0; 
 	float: left;
 }
 .employee-bio{
 	background-color: rgba(0,0,0,.5);
 	line-height: 20px;
+	text-align: left;
 	width: 578px;
 	height: 135px;
 	padding: 15px;
@@ -445,8 +468,8 @@ p{
 }
 .title-box{
 	background-color: rgba(0,0,0,.5);
-	padding: 10px 0;
-	margin: 0 auto;
+	/*padding: 10px 0;*/
+	/*margin: 0 auto;*/
 	text-align: center;
 }
 .company-box{
@@ -456,11 +479,11 @@ p{
 }
 .company{
 	background-color: rgba(0,0,0,.5);
-	width: 379px;
+	width: 383px;
 	height: 70px;
 	margin: 3px;
 	float: left;
-	border: 2px solid rgba(0,0,0,0);
+	/*border: 2px solid rgba(0,0,0,0);*/
 }
 .company-logo{
 	width: 60px;
@@ -468,7 +491,7 @@ p{
 	float: left;
 }
 .company-description{
-	margin: 25px 0 0 15px;
+	margin: 25px 0 0 10px;
 	float: left;
 }
 /* set border-box so that percents can be used for width, padding, etc (personal preference) */
@@ -485,11 +508,18 @@ p{
     text-align: center; width: 100%; z-index: 500; position: absolute; top: 100px; overflow: hidden;
 }*/
 .cycle-pager span { 
-    width: 15px; height: 15px; 
+    width: 15px; height: 15px;
     display: inline-block; background-color: rgba(255,255,255,.8); border: 2px solid rgba(0,0,0,.5); cursor: pointer; margin:20px 2px 0 2px; 
 }
-.cycle-pager span.cycle-pager-active {background-color: rgba(0,0,0,.5);}
+.cycle-pager span.cycle-pager-active {background-color: rgba(0,0,0,.5); border: 2px solid rgba(255,255,255,.8);}
 .cycle-pager > * { cursor: pointer;}
+
+.splash-pager span { 
+    width: 15px; height: 15px;
+    display: inline-block; background-color: rgba(255,255,255,.8); border: 2px solid rgba(0,0,0,.5); cursor: pointer; margin:20px 2px 0 2px; 
+}
+.splash-pager span.cycle-pager-active {background-color: rgba(0,0,0,.5); border: 2px solid rgba(255,255,255,.8);}
+.splash-pager > * { cursor: pointer;}
 
 
 /*! normalize.css v1.1.0 | MIT License | git.io/normalize */

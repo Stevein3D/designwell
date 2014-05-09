@@ -76,7 +76,7 @@
 					</div>
 					<div class='words'>
 						<div class="splash-brief">
-							<h3>graphics for moving pictures</h3>
+							<h3>Graphics for moving pictures</h3>
 						</div>
 					</div>
 					<div class="splash-pager"></div>
@@ -177,43 +177,115 @@
 					</div>
 				</div>
 			</div>
-			<div id="about-container">
-				<div class="staff-container" id="staff">
-					<div class='category-title'>
-						<div class="title-box">
-							<h3>Meet some of the team at designWELL</h3>
-						</div>
+			<div id="print-container">
+				<div class='category-title'>
+					<div class="print-title">
+						<h3><%= @poster.photo{}.first["title"]%></h3>
 					</div>
-					<div class="employee-box">
-						<%= image_tag "joe_sikoryak.jpg", :class => "employee-photo",:alt => "Joe Sikoryak (creative director)" %>
-						<h1 class="employee-name">Joe Sikoryak (creative director)</h1>
-						<p class="employee-bio">...has roots in NYC but lives in San Francisco, with a sensibility that spans east and west coasts, as well as traditional and digital media. His career began in journalism and graphic design, but moving pictures remain his passion. A graduate of SFSU with a BA in animation, he has directed several short films and contributed to many more. He also moderates the Documentary Filmmakers' Collective, a group formed in 2013.
-					</div>
-					<div class="employee-box">
-						<%= image_tag "kay_marshall.jpg", :class => "employee-photo",:alt => "Kay Marshall (graphic designer)" %>
-						<h1 class="employee-name">Kay Marshall (graphic designer)</h1>
-						<p class="employee-bio">...has worked for a variety of businesses and non-profits as an independent as well as a corporate art director. Her specialties include print and digital publications such as magazines, books, catalogs and media kits. She has a fine arts degree from the University of Wisconsin, Madison and continues to produce monoprints and abstract paintings in her home studio.
-					</div>
-					<div class="employee-box">
-						<%= image_tag "frank_dewald.jpg", :class => "employee-photo",:alt => "Frank DeWald (editorial consultant)" %>
-						<h1 class="employee-name">Frank DeWald (editorial consultant)</h1>
-						<p class="employee-bio">... is a choral conductor, composer and former educator who has devoted himself to working as a writer, copyeditor and proofreader in the music industry. He’s thus been able to build on a love for films and their music that started in his pre-teen years and has grown (along with his recording collection!) ever since.
-					</div>
-					
 				</div>
-				<div class="affiliation-container" id="affiliations">
-					<div class="affiliations-container" id="affiliations">
-						<div class='category-title'>
-							<div class="title-box">
-								<h3>Affiliations</h3>
+				<div class='photo-stage'>
+					<div class='dark-box'>
+						<img src="<%= FlickRaw.url_b(@poster.photo{}.first) %>" style="max-height: 432px;"/>
+					</div>
+				</div>
+
+				<div class='words'>
+					<div class="photo-brief">
+						<p><%= @posterInfo.description%></p>
+					</div>
+				</div>
+
+				<div class='thumbs-container'>
+
+					<div class='thumbs-category' id='posters'>
+						<a href=# class ='nav-arrow-left' id='posters-prev'></a>
+						<div class="thumbs">
+							<div class='slideshow'
+							data-cycle-fx=carousel
+							data-cycle-carousel-visible=3
+							data-cycle-slides=".thumb-box"
+							data-cycle-timeout=0
+							data-cycle-pager-template="<span></span>"
+							data-cycle-next="#posters-next"
+							data-cycle-prev="#posters-prev">
+								<div class="cycle-pager"></div>
+
+								<% @poster.photo{}.each do |photo| %>
+									<div class='thumb-box'>
+										<%= image_tag FlickRaw.url_b(photo), {:class => "photo-thumb", :id => photo["id"],:title => photo["title"], :description => flickr.photos.getInfo(:photo_id => photo["id"]).description, :alt => photo["title"]}%>
+										<h4 class="overlay"><%=photo["title"]%></h4>
+									</div>
+								<% end %>
 							</div>
 						</div>
-						
-					
+						<a href=# class ='nav-arrow-right' id='posters-next'></a>
 					</div>
+					
+					<div class='thumbs-category' id='packaging'>
+						<a href=# class ='nav-arrow-left' id='packaging-prev'></a>
+						<div class="thumbs">
+							<div class='slideshow'
+							data-cycle-fx=carousel
+							data-cycle-carousel-visible=3
+							data-cycle-slides=".thumb-box"
+							data-cycle-timeout=0
+							data-cycle-pager-template="<span></span>"
+							data-cycle-next="#packaging-next"
+							data-cycle-prev="#packaging-prev">
+								<div class="cycle-pager"></div>
+
+								<% @packaging.photo{}.each do |photo| %>
+									<div class='thumb-box'>
+										<%= image_tag FlickRaw.url_b(photo), {:class => "photo-thumb", :id => photo["id"],:title => photo["title"], :description => flickr.photos.getInfo(:photo_id => photo["id"]).description, :alt => photo["title"]}%>
+										<h4 class="overlay"><%=photo["title"]%></h4>
+									</div>
+								<% end %>
+							</div>
+						</div>
+						<a href=# class ='nav-arrow-right' id='packaging-next'></a>
+					</div>
+
+					<div class='thumbs-category' id='collateral'>
+						<a href=# class ='nav-arrow-left' id='collateral-prev'></a>
+						<div class="thumbs">
+							<div class='slideshow'
+							data-cycle-fx=carousel
+							data-cycle-carousel-visible=3
+							data-cycle-slides=".thumb-box"
+							data-cycle-timeout=0
+							data-cycle-pager-template="<span></span>"
+							data-cycle-next="#collateral-next"
+							data-cycle-prev="#collateral-prev">
+								<div class="cycle-pager"></div>
+
+								<% @collateral.photo{}.each do |photo| %>
+									<div class='thumb-box'>
+										<%= image_tag FlickRaw.url(photo), {:class => "photo-thumb", :id => photo["id"],:title => photo["title"], :description => flickr.photos.getInfo(:photo_id => photo["id"]).description, :alt => photo["title"]}%>
+										<h4 class="overlay"><%=photo["title"]%></h4>
+									</div>
+								<% end %>
+							</div>
+						</div>
+						<a href=# class ='nav-arrow-right' id='collateral-next'></a>
+					</div>					
 				</div>
 			</div>
-		</div>
+		</div>	
+				<script type="text/javascript">
+						$(".slideshow").cycle();
+
+						$('.thumb-box').click(function(){
+      						var $url = $(this).children('img').attr('src');
+      						var $brief = $(this).children('img').attr('description');
+      						var $title = $(this).children('img').attr('title');
+
+      						$('.dark-box img').attr('src',$url);
+      						$('div.photo-brief p').text($brief);
+      						$('div.print-title h3').text($title);
+  						});
+					</script>
+			
+		
 			
 
 				<script type="text/javascript">
