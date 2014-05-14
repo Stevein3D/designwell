@@ -3,6 +3,7 @@
 		<TITLE>Design Well</TITLE>
 		<%= favicon_link_tag 'favicon.ico' %>
 		<link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 
@@ -13,7 +14,7 @@
 		<div id='container'>
 			<div class='sidebar'>
 
-				<%= image_tag "logo.jpg",:id => 'logo', :alt => 'Design Well'%>
+				<%= link_to image_tag("logo.jpg",:id => 'logo', :alt => 'Design Well'), "http://www.designwell.com", :target => "_blank" %>
 
 				<nav id='links'>
 					<div class='category'>
@@ -42,7 +43,7 @@
 						</div>
 					</div>
 					<div class='category'>
-						<h1 class='nav-button reel'>reel</h1>
+						<h1 class='nav-button reel reel-button'>reel</h1>
 					</div>
 					<div class='category'>
 						<h1 class='nav-button contact'>contact</h1>
@@ -86,7 +87,7 @@
 			<div id='motion-container'>
 				<div class='category-title'>
 					<div class="motion-title">
-						<h3><%= @title.first["title"]%></h3>
+						<h3>designWell</h3>
 					</div>
 				</div>
 				<div class='playback'>
@@ -94,11 +95,12 @@
 						width="768" height="432" style="border: 0px;" 
 						webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
 					</iframe>
+					<div class="choiceText"><h5>Select a category of motion graphics to see examples</h5></div>
 				</div>
 
 				<div class='words'>
 					<div class="video-brief">
-						<p><%= @title.first["description"] %></p>
+						<p><%= @titleInfo["description"] %></p>
 					</div>
 				</div>
 
@@ -177,16 +179,18 @@
 					</div>
 				</div>
 			</div>
+
 			<div id="print-container">
 				<div class='category-title'>
 					<div class="print-title">
-						<h3><%= @poster.photo{}.first["title"]%></h3>
+						<h3>designWell</h3>
 					</div>
 				</div>
 				<div class='photo-stage'>
 					<div class='dark-box'>
-						<img src="<%= FlickRaw.url_b(@poster.photo{}.first) %>" style="max-height: 432px;"/>
+						<img src=" " style="max-height: 432px;"/>
 					</div>
+					<div class="choiceText"><h6>Select a category of print graphics to see examples</h6></div>
 				</div>
 
 				<div class='words'>
@@ -270,30 +274,35 @@
 					</div>					
 				</div>
 			</div>
+			<div id="reel-container">
+				<div class="reel-box">
+				</div>
+					<div class='words'>
+						<div class="reel-brief">
+							<h3 class="shit" description="<%= @reel.first["description"]%>"><%= @reel.first["description"]%></h3>
+						</div>
+					</div>
+			</div>
 		</div>	
-				<script type="text/javascript">
-						$(".slideshow").cycle();
-
-						$('.thumb-box').click(function(){
-      						var $url = $(this).children('img').attr('src');
-      						var $brief = $(this).children('img').attr('description');
-      						var $title = $(this).children('img').attr('title');
-
-      						$('.dark-box img').attr('src',$url);
-      						$('div.photo-brief p').text($brief);
-      						$('div.print-title h3').text($title);
-  						});
-					</script>
-			
 		
-			
-
 				<script type="text/javascript">
+					$(".slideshow").cycle();
+
 					$.ajax({
 				    url: "/print",
 				    cache: false,
 				    success: function(html){$("#container").append(html)}
 					});
+
+					$('.collateral-button').click(function(){
+						$('div.photo-brief p').html("<%= @collateralInfo["description"] %>").nl2br();
+    				});  
+    				$('.posters-button').click(function(){
+						$('div.photo-brief p').html("<%= @posterInfo["description"] %>").nl2br();
+    				});  
+    				$('.packaging-button').click(function(){
+						$('div.photo-brief p').html("<%= @packagingInfo["description"] %>").nl2br();
+    				});  
 				</script>
 
 			
