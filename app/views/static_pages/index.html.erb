@@ -87,7 +87,7 @@
 			<div id='motion-container'>
 				<div class='category-title'>
 					<div class="motion-title">
-						<h3>designWell</h3>
+						<h3><%= @titleInfo["name"] %></h3>
 					</div>
 				</div>
 				<div class='playback'>
@@ -95,7 +95,7 @@
 						width="768" height="432" style="border: 0px;" 
 						webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
 					</iframe>
-					<div class="choiceText"><h5>Select a category of motion graphics to see examples</h5></div>
+					<div class="choiceText motionOverlay"><h5>Select a category of motion graphics to see examples</h5></div>
 				</div>
 
 				<div class='words'>
@@ -183,14 +183,14 @@
 			<div id="print-container">
 				<div class='category-title'>
 					<div class="print-title">
-						<h3>designWell</h3>
+						<h3><%= @posterInfo["title"] %></h3>
 					</div>
 				</div>
 				<div class='photo-stage'>
 					<div class='dark-box'>
 						<img src=" " style="max-height: 432px;"/>
 					</div>
-					<div class="choiceText"><h6>Select a category of print graphics to see examples</h6></div>
+					<div class="choiceText printOverlay"><h5>Select a category of print graphics to see examples</h5></div>
 				</div>
 
 				<div class='words'>
@@ -276,10 +276,14 @@
 			</div>
 			<div id="reel-container">
 				<div class="reel-box">
+					<iframe src="http://player.vimeo.com/video/<%= @reel.first["id"] %>"
+						width="768" height="432" style="border: 0px;" 
+						webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
+					</iframe>
 				</div>
 					<div class='words'>
 						<div class="reel-brief">
-							<h3 class="shit" description="<%= @reel.first["description"]%>"><%= @reel.first["description"]%></h3>
+							<h5 class="shit" description="<%= @reel.first["description"]%>"><%= @reel.first["description"].html_safe%></h5>
 						</div>
 					</div>
 			</div>
@@ -294,13 +298,29 @@
 				    success: function(html){$("#container").append(html)}
 					});
 
+					$('.titles-button').click(function(){
+						$('div.motion-title h3').html("<%= @titleInfo["name"] %>").nl2br();
+						$('div.video-brief p').html("<%= @titleInfo["description"] %>").nl2br();
+    				});  
+    				$('.animation-button').click(function(){
+    					$('div.motion-title h3').html("<%= @animationInfo["name"] %>").nl2br();
+						$('div.video-brief p').html("<%= @animationInfo["description"] %>").nl2br();
+    				});  
+    				$('.montage-button').click(function(){
+    					$('div.motion-title h3').html("<%= @montageInfo["name"] %>").nl2br();
+						$('div.video-brief p').html("<%= @montageInfo["description"] %>").nl2br();
+    				});  
+
 					$('.collateral-button').click(function(){
+						$('div.print-title h3').html("<%= @collateralInfo["title"] %>").nl2br();
 						$('div.photo-brief p').html("<%= @collateralInfo["description"] %>").nl2br();
     				});  
     				$('.posters-button').click(function(){
+    					$('div.print-title h3').html("<%= @posterInfo["title"] %>").nl2br();
 						$('div.photo-brief p').html("<%= @posterInfo["description"] %>").nl2br();
     				});  
     				$('.packaging-button').click(function(){
+    					$('div.print-title h3').html("<%= @packagingInfo["title"] %>").nl2br();
 						$('div.photo-brief p').html("<%= @packagingInfo["description"] %>").nl2br();
     				});  
 				</script>

@@ -65,29 +65,29 @@ jQuery.fn.nl2br = function(){
 /* ==========================================================================
    Update thumbnails for selected subcategory
    ========================================================================== */
-$('.sub-cat').click(function(){
-  $('#titles, #animation, #montage').fadeOut(300);
+// $('.sub-cat').click(function(){
+//   $('#titles, #animation, #montage').fadeOut(300);
 
-  if ($(this).hasClass("titles-button")) {
-      $('#titles').delay(300).fadeIn(600);
-  } else if ($(this).hasClass("animation-button")) {
-      $('#animation').delay(300).fadeIn(600);
-  } else if ($(this).hasClass("montage-button")) {
-      $('#montage').delay(300).fadeIn(600);
-  };
-})
-  // $('.titles-button').click(function(){
-  //   $('#titles, #animation, #montage').fadeOut(300);
-  //   $('#titles').delay(300).fadeIn(600);
-  // });
-  // $('.animation-button').click(function(){
-  //   $('#titles, #animation, #montage').fadeOut(300);
-  //   $('#animation').delay(300).fadeIn(600);
-  // });
-  // $('.montage-button').click(function(){
-  //   $('#titles, #animation, #montage').fadeOut(300);
-  //   $('#montage').delay(300).fadeIn(600);
-  // });
+//   if ($(this).hasClass("titles-button")) {
+//       $('#titles').delay(300).fadeIn(600);
+//   } else if ($(this).hasClass("animation-button")) {
+//       $('#animation').delay(300).fadeIn(600);
+//   } else if ($(this).hasClass("montage-button")) {
+//       $('#montage').delay(300).fadeIn(600);
+//   };
+// })
+  $('.titles-button').click(function(){
+    $('#titles, #animation, #montage').fadeOut(300);
+    $('#titles').delay(300).fadeIn(600);
+  });
+  $('.animation-button').click(function(){
+    $('#titles, #animation, #montage').fadeOut(300);
+    $('#animation').delay(300).fadeIn(600);
+  });
+  $('.montage-button').click(function(){
+    $('#titles, #animation, #montage').fadeOut(300);
+    $('#montage').delay(300).fadeIn(600);
+  });
 
   $('.posters-button').click(function(){
     $('#posters, #packaging, #collateral').fadeOut(300);
@@ -118,7 +118,6 @@ $('.sub-cat').click(function(){
     $('#blog, #staff, #clients, #affiliations').fadeOut(300);
     $('#affiliations').delay(300).fadeIn(600);
   });
-
 /* ==========================================================================
    Update stage with selected video or picture
    ========================================================================== */
@@ -129,9 +128,9 @@ $('.sub-cat').click(function(){
       var $title = $(this).children('img').attr('title');
 
       if ($("iframe#nowPlaying").attr('src') == ""){
-        $("h5").css("color","white");
+        $("div.motionOverlay h5").css("color","white");
       } else{
-        $("h5").css("color","black");
+        $("div.motionOverlay h5").css("color","black");
       };
 
       $('iframe').attr('src',"http://player.vimeo.com/video/" + $url + "?autoplay=1");
@@ -144,9 +143,9 @@ $('.sub-cat').click(function(){
       var $title = $(this).children('img').attr('title');
 
       if ($(".dark-box img").attr('src') == ""){
-        $("h6").css("color","white");
+        $("div.printOverlay h5").css("color","white");
       } else{
-        $("h6").css("opacity", 0);
+        $("div.printOverlay h5").css("opacity", 0);
       };
 
       $('.dark-box img').attr('src',$url);
@@ -168,9 +167,9 @@ $('.sub-cat').click(function(){
   $('.motion').click(function(){
     $('iframe#nowPlaying').attr('src','');
     if ($("iframe#nowPlaying").attr('src') == ""){
-        $("h5").css("color","white");
+        $("div.motionOverlay h5").css("color","white");
       } else{
-        $("h5").css("color","black");
+        $("div.motionOverlay h5").css("color","black");
       };  
     $('#splash-container, #print-container, #about-container, #reel-container').fadeOut(300);
     $('#motion-container').delay(300).fadeIn(600);
@@ -185,7 +184,7 @@ $('.sub-cat').click(function(){
     var $poop = $('.reel-brief h5').attr('description');
     $('iframe#nowPlaying').attr('src','');
     $('.reel-brief h5').html($poop).nl2br();
-    $('#splash-container, #print-container, #motion-container, #reel-container').fadeOut(300);
+    $('#splash-container, #print-container, #motion-container, #about-container').fadeOut(300);
     $('#reel-container').delay(300).fadeIn(600);
   });
   
