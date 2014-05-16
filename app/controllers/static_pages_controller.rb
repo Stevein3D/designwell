@@ -32,7 +32,11 @@ class StaticPagesController < ApplicationController
   def about
     #About
     @affiliation = flickr.photosets.getPhotos(:photoset_id => "72157643215739244")
-    @client = flickr.photosets.getPhotos(:photoset_id => "72157643680136583")
+    @client = flickr.photosets.getPhotos(:photoset_id => "72157644278561899")
+    @staff = flickr.photosets.getPhotos(:photoset_id => "72157644536402675")
+    @staffInfo = flickr.photosets.getInfo(:photoset_id => "72157644536402675")
+    @blog = flickr.photosets.getPhotos(:photoset_id => "72157644123095188")
+    @blogInfo = flickr.photosets.getInfo(:photoset_id => "72157644123095188")
   end
 
 

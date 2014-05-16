@@ -281,53 +281,48 @@
 						webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
 					</iframe>
 				</div>
-					<div class='words'>
-						<div class="reel-brief">
-							<h5 class="shit" description="<%= @reel.first["description"]%>"><%= @reel.first["description"].html_safe%></h5>
-						</div>
+				<div class='words'>
+					<div class="reel-brief">
+						<h5 class="shit" description="<%= @reel.first["description"]%>"><%= @reel.first["description"].html_safe%></h5>
 					</div>
+				</div>
 			</div>
-		</div>	
-		
-				<script type="text/javascript">
-					$(".slideshow").cycle();
+		</div>
+		<script type="text/javascript">
+			$(".slideshow").cycle();
 
-					$.ajax({
+			$.ajax({
 				    url: "/print",
 				    cache: false,
 				    success: function(html){$("#container").append(html)}
-					});
+			});
+			$(".titles-button").click(function(){
+				$("div.motion-title h3").html("<%=@titleInfo['name']%>").nl2br();
+				$("div.video-brief p").html("<%=@titleInfo['description']%>").html_safe.nl2br();
+			});
+			$(".animation-button").click(function(){
+				$("div.motion-title h3").html("<%=@animationInfo['name']%>").nl2br();
+				$("div.video-brief p").html("<%=@animationInfo['description']%>").html_safe.nl2br();
+			});
+			$(".montage-button").click(function(){
+				$("div.motion-title h3").html("<%=@montageInfo['name']%>").nl2br();
+				$("div.video-brief p").html("<%=@montageInfo['description']%>").html_safe.nl2br();
+			});
 
-					$('.titles-button').click(function(){
-						$('div.motion-title h3').html("<%= @titleInfo["name"] %>").nl2br();
-						$('div.video-brief p').html("<%= @titleInfo["description"] %>").nl2br();
-    				});  
-    				$('.animation-button').click(function(){
-    					$('div.motion-title h3').html("<%= @animationInfo["name"] %>").nl2br();
-						$('div.video-brief p').html("<%= @animationInfo["description"] %>").nl2br();
-    				});  
-    				$('.montage-button').click(function(){
-    					$('div.motion-title h3').html("<%= @montageInfo["name"] %>").nl2br();
-						$('div.video-brief p').html("<%= @montageInfo["description"] %>").nl2br();
-    				});  
+			$(".packaging-button").click(function(){
+				$("div.print-title h3").html("<%= @packagingInfo['title']%>").nl2br();
+				$("div.photo-brief p").html("<%= @packagingInfo['description']%>").html_safe.nl2br();
+			});
+			$(".collateral-button").click(function(){
+				$("div.print-title h3").html("<%= @collateralInfo['title']%>").nl2br();
+				$("div.photo-brief p").html("<%= @collateralInfo['description']%>").html_safe.nl2br();
+			});
+    		$(".posters-button").click(function(){
+				$("div.print-title h3").html("<%= @posterInfo['title']%>").nl2br();
+				$("div.photo-brief p").html("<%= @posterInfo['description']%>").html_safe.nl2br();
+			});
 
-					$('.collateral-button').click(function(){
-						$('div.print-title h3').html("<%= @collateralInfo["title"] %>").nl2br();
-						$('div.photo-brief p').html("<%= @collateralInfo["description"] %>").nl2br();
-    				});  
-    				$('.posters-button').click(function(){
-    					$('div.print-title h3').html("<%= @posterInfo["title"] %>").nl2br();
-						$('div.photo-brief p').html("<%= @posterInfo["description"] %>").nl2br();
-    				});  
-    				$('.packaging-button').click(function(){
-    					$('div.print-title h3').html("<%= @packagingInfo["title"] %>").nl2br();
-						$('div.photo-brief p').html("<%= @packagingInfo["description"] %>").nl2br();
-    				});  
-				</script>
-
-			
-
-
+		</script>	
 	</body>
 </html>
 
