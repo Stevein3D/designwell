@@ -22,33 +22,44 @@ body{
 	background-color: rgb(100,100,100);
 	/*background-size: 100%;*/
 }
+
+/*nav button text*/
 h1{
 	font-family: 'Arvo', serif;
 	color: white;
+	margin-top: 0;
 	font-size: 18px;
 	line-height: 30px;
 	cursor: pointer;
 }
+
+/*sub category nav buttons*/
 h2{
 	font-family: 'Arvo', serif;
 	font-size: 14px;
+	line-height: 20px;
 	color: auto;
 	cursor: pointer;
 	
 }
+/*titles / category instructions / splash text*/
 h3{
-	font-family: 'Arvo', serif;
+	font-family: 'Droid Serif', serif;
+	font-style: italic;
+	font-weight: 400;
 	font-size: 22px;
 	line-height: 40px;
 	margin-top: 0;
+	margin-bottom: 5px;
 	color: white;
 }
+
+/*thumbnail overlays*/
 h4{
 	font-family: 'Arvo', serif;
 	font-size: 4px;
 	letter-spacing: 1px;
 	color: rgba(255,255,255,0);
-	/*padding-top: 20px;*/
 	-webkit-transition: opacity .2s ease-in-out;
   	-moz-transition: opacity .2s ease-in-out;
   	-ms-transition: opacity .2s ease-in-out;
@@ -56,11 +67,20 @@ h4{
   	transition: opacity .2s ease-in-out;
 }
 h5{
-	font-family: 'Arvo', serif;
-	font-size: 15px;
-	line-height: 20px;
+	font-family: 'Droid Serif', serif;
+	font-style: italic;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 30px;
 	color: white;
 	margin: 0 auto;
+}
+h7{
+	font-family: 'Arvo', serif;
+	font-size: 16px;
+	line-height: 60px;
+	color: white;
+	margin: 0 auto;	
 }
 p{
 	font-family: 'Arvo', serif;
@@ -70,28 +90,46 @@ p{
 	display:inline-block; 
 	vertical-align:middle;
 	letter-spacing: 1px;
+	/*margin-top: 0;*/
 }
-.splash-box{
-	margin: 60px auto 0 auto;
-	width: 778px;
-	height: 802px;
-}
-.splash{
+
+.reel-box{
 	background-color: rgba(0,0,0,.5);
-	/*margin: 10px auto 0 auto;*/
+	margin: 60px auto 10px auto;
 	width: 768px;
 	height: 432px;
-	cursor: pointer;
 	padding: 5px;
 }
-.splash img{
-	max-width: 768px;
-	max-height: 432px;
+.reel-brief{
+	background-color: rgba(0,0,0,.5);
+	margin: 0 auto;
+	width: 718px;
+	height: 60px;
+	padding: 0 25px;
+	display:inline-block; 
+	vertical-align:middle;
 }
-.splash-pager{
-	width: 100%;
+.contact-box{
+	background-color: rgba(0,0,0,.5);
+	margin: 60px auto 10px auto;
+	width: 768px;
+	height: 432px;
+	padding: 5px;
 }
-.splash-brief{
+.form-box{
+	/*background-color: rgba(0,0,0,.5);*/
+	/*margin: 10px auto 0 auto;*/
+	width: 758px;
+	height: 422px;
+	padding: 5px;
+}
+.address{
+	background-color: rgba(0,0,0,.5);
+	width: 250px;
+	padding: 10px; 
+	margin: 130px auto 0 auto;
+}
+.contact-brief{
 	background-color: rgba(0,0,0,.5);
 	margin: 0 auto;
 	width: 718px;
@@ -246,6 +284,20 @@ p{
 	overflow: hidden;
 	display: none;
 }
+#reel-container{
+	width: 870px;
+	padding-bottom: 40px;
+	float: left;
+	overflow: hidden;
+	display: none;
+}
+#contact-container{
+	width: 870px;
+	padding-bottom: 40px;
+	float: left;
+	overflow: hidden;
+	display: none;
+}
 .category-title{
 	background-color: rgba(0,0,0,.5);
 	margin: 15px auto 0 auto;
@@ -268,7 +320,7 @@ p{
 	position: absolute;
 	white-space: pre-line;
 }
-#animation, #montage, #collateral, #packaging, #staff, #affiliations, #clients{
+#animation, #montage, #collateral, #packaging, #staff, #affiliations, #clients, #reel, #contact{
 	display: none;
 }
 .nav-arrow-left{
@@ -289,6 +341,38 @@ p{
 	float: left;
 }
 /* ==========================================================================
+   Splash stuff
+   ========================================================================== */
+.splash-box{
+	margin: 60px auto 0 auto;
+	width: 778px;
+	height: 700px;
+}
+.splash{
+	background-color: rgba(0,0,0,.5);
+	/*margin: 10px auto 0 auto;*/
+	width: 768px;
+	height: 432px;
+	cursor: pointer;
+	padding: 5px;
+}
+.splash img{
+	max-width: 768px;
+	max-height: 432px;
+}
+.splash-pager{
+	width: 100%;
+}
+.splash-brief{
+	background-color: rgba(0,0,0,.5);
+	margin: 0 auto;
+	width: 718px;
+	height: 40px;
+	padding: 10px 25px;
+	display:inline-block; 
+	vertical-align:middle;
+}
+/* ==========================================================================
    Motion specific
    ========================================================================== */
 .motion-title{
@@ -296,6 +380,13 @@ p{
 	/*padding: 10px 0;*/
 	margin: 0 auto;
 	text-align: center;
+}
+.choiceText{
+	margin-top: -240px;
+	z-index: 100;
+}
+#nowPlaying{
+	background-color: black;
 }
 .playback{
 	background-color: rgba(0,0,0,.5);
@@ -429,6 +520,56 @@ p{
 /* ==========================================================================
    About specific
    ========================================================================== */
+.blog-container{
+	overflow: auto;
+	height: 800px;
+	padding-bottom: 20px;
+}
+.blog-box{
+	background-color: rgba(0,0,0,.5);
+	margin: 15px auto 0 auto;
+	width: 778px;
+	height: 255px;
+}
+.blog-photo{
+	/*max-height: 200px;*/
+	width: 280px;
+	margin-left: 5px;
+	float: left;
+}
+.blog-title{
+	background-color: rgba(0,0,0,.5);
+	line-height: 30px;
+	text-align: left;
+	width: 753px;
+	height: 30px;
+	padding-left: 15px;
+	margin: 5px; 
+	float: left;
+}
+.blog-text{
+	background-color: rgba(0,0,0,.5);
+	/*line-height: 20px;*/
+	text-align: left;
+	width: 463px;
+	height: 200px;
+	padding: 5px 5px 5px 15px;
+	margin-left: 5px;
+	float: left;
+}
+.blog-text p{
+	margin-top: 5px;
+}
+.employee-text{
+	background-color: rgba(0,0,0,.5);
+	line-height: 20px;
+	text-align: left;
+	width: 530px;
+	height: 135px;
+	padding: 15px;
+	margin: 0;
+	float: left;
+}
 .employee-box{
 	background-color: rgba(0,0,0,.5);
 	margin: 15px auto 0 auto;
@@ -491,7 +632,7 @@ p{
 	float: left;
 }
 .company-description{
-	margin: 25px 0 0 10px;
+	margin: 5px 0 0 10px;
 	float: left;
 }
 /* set border-box so that percents can be used for width, padding, etc (personal preference) */

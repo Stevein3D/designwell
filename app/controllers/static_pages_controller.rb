@@ -39,6 +39,5 @@ class StaticPagesController < ApplicationController
     @blogInfo = flickr.photosets.getInfo(:photoset_id => "72157644123095188")
   end
 
-
   
 end
