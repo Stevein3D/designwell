@@ -181,98 +181,10 @@
 			</div>
 
 			<div id="print-container">
-				<div class='category-title'>
-					<div class="print-title">
-						<h3><%= @posterInfo["title"] %></h3>
-					</div>
-				</div>
-				<div class='photo-stage'>
-					<div class='dark-box'>
-						<img src=" " style="max-height: 432px;"/>
-					</div>
-					<div class="choiceText printOverlay"><h5>Select a category of print graphics to see examples</h5></div>
-				</div>
-
-				<div class='words'>
-					<div class="photo-brief">
-						<p><%= @posterInfo.description%></p>
-					</div>
-				</div>
-
-				<div class='thumbs-container'>
-
-					<div class='thumbs-category' id='posters'>
-						<a href=# class ='nav-arrow-left' id='posters-prev'></a>
-						<div class="thumbs">
-							<div class='slideshow'
-							data-cycle-fx=carousel
-							data-cycle-carousel-visible=3
-							data-cycle-slides=".thumb-box"
-							data-cycle-timeout=0
-							data-cycle-pager-template="<span></span>"
-							data-cycle-next="#posters-next"
-							data-cycle-prev="#posters-prev">
-								<div class="cycle-pager"></div>
-
-								<% @poster.photo{}.each do |photo| %>
-									<div class='thumb-box'>
-										<%= image_tag FlickRaw.url_b(photo), {:class => "photo-thumb", :id => photo["id"],:title => photo["title"], :description => flickr.photos.getInfo(:photo_id => photo["id"]).description, :alt => photo["title"]}%>
-										<h4 class="overlay"><%=photo["title"]%></h4>
-									</div>
-								<% end %>
-							</div>
-						</div>
-						<a href=# class ='nav-arrow-right' id='posters-next'></a>
-					</div>
-					
-					<div class='thumbs-category' id='packaging'>
-						<a href=# class ='nav-arrow-left' id='packaging-prev'></a>
-						<div class="thumbs">
-							<div class='slideshow'
-							data-cycle-fx=carousel
-							data-cycle-carousel-visible=3
-							data-cycle-slides=".thumb-box"
-							data-cycle-timeout=0
-							data-cycle-pager-template="<span></span>"
-							data-cycle-next="#packaging-next"
-							data-cycle-prev="#packaging-prev">
-								<div class="cycle-pager"></div>
-
-								<% @packaging.photo{}.each do |photo| %>
-									<div class='thumb-box'>
-										<%= image_tag FlickRaw.url_b(photo), {:class => "photo-thumb", :id => photo["id"],:title => photo["title"], :description => flickr.photos.getInfo(:photo_id => photo["id"]).description, :alt => photo["title"]}%>
-										<h4 class="overlay"><%=photo["title"]%></h4>
-									</div>
-								<% end %>
-							</div>
-						</div>
-						<a href=# class ='nav-arrow-right' id='packaging-next'></a>
-					</div>
-
-					<div class='thumbs-category' id='collateral'>
-						<a href=# class ='nav-arrow-left' id='collateral-prev'></a>
-						<div class="thumbs">
-							<div class='slideshow'
-							data-cycle-fx=carousel
-							data-cycle-carousel-visible=3
-							data-cycle-slides=".thumb-box"
-							data-cycle-timeout=0
-							data-cycle-pager-template="<span></span>"
-							data-cycle-next="#collateral-next"
-							data-cycle-prev="#collateral-prev">
-								<div class="cycle-pager"></div>
-
-								<% @collateral.photo{}.each do |photo| %>
-									<div class='thumb-box'>
-										<%= image_tag FlickRaw.url(photo), {:class => "photo-thumb", :id => photo["id"],:title => photo["title"], :description => flickr.photos.getInfo(:photo_id => photo["id"]).description, :alt => photo["title"]}%>
-										<h4 class="overlay"><%=photo["title"]%></h4>
-									</div>
-								<% end %>
-							</div>
-						</div>
-						<a href=# class ='nav-arrow-right' id='collateral-next'></a>
-					</div>					
-				</div>
+				
+			</div>
+			<div id="about-container">
+				<div id="loading-image"></div>
 			</div>
 			<div id="reel-container">
 				<div class="reel-box">
@@ -308,11 +220,24 @@
 		<script type="text/javascript">
 			$(".slideshow").cycle();
 
-			$.ajax({
-				    url: "/print",
-				    cache: false,
-				    success: function(html){$("#container").append(html)}
+			$(document).ajaxStart(function() {
+  				$("#loading-image").show();
 			});
+			$(document).ajaxStop(function() {
+  				$("#loading-image").hide();
+			});
+			$.ajax({
+            	url: "/print",
+            	cache: false,
+            	success: function(html){$("#print-container").append(html)}
+      		});
+
+      		$.ajax({
+            	url: "/about",
+            	cache: false,
+            	success: function(html){$("#about-container").append(html)}
+      		});
+
 			$(".titles-button").click(function(){
 				$("div.motion-title h3").html("<%=@titleInfo['name']%>").nl2br();
 				$("div.video-brief p").html("<%=@titleInfo['description']%>").html_safe.nl2br();
@@ -326,18 +251,7 @@
 				$("div.video-brief p").html("<%=@montageInfo['description']%>").html_safe.nl2br();
 			});
 
-			$(".packaging-button").click(function(){
-				$("div.print-title h3").html("<%= @packagingInfo['title']%>").nl2br();
-				$("div.photo-brief p").html("<%= @packagingInfo['description']%>").html_safe.nl2br();
-			});
-			$(".collateral-button").click(function(){
-				$("div.print-title h3").html("<%= @collateralInfo['title']%>").nl2br();
-				$("div.photo-brief p").html("<%= @collateralInfo['description']%>").html_safe.nl2br();
-			});
-    		$(".posters-button").click(function(){
-				$("div.print-title h3").html("<%= @posterInfo['title']%>").nl2br();
-				$("div.photo-brief p").html("<%= @posterInfo['description']%>").html_safe.nl2br();
-			});
+			
 
 		</script>	
 	</body>

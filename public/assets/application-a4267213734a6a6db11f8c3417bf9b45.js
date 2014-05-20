@@ -12417,9 +12417,7 @@ $(document).ready(function(){
 
   });
 
-// $('.splash').click(function(){
-//   $('#slideshow').cycle('toggle');
-// });
+
 
 //Add Title to images with only "alt"
 
@@ -12430,10 +12428,12 @@ $(function() {
   });
 });
 
-//Resizes images to fit their container
-
-
-  
+//Replace line breaks
+jQuery.fn.nl2br = function(){
+   return this.each(function(){
+     jQuery(this).val().replace(/(<br>)|(<br \/>)|(<p>)|(<\/p>)/g, "\r\n");
+   });
+};
 
 /* ==========================================================================
    Menu and submenu animations
@@ -12459,8 +12459,18 @@ $(function() {
 /* ==========================================================================
    Update thumbnails for selected subcategory
    ========================================================================== */
+// $('.sub-cat').click(function(){
+//   $('#titles, #animation, #montage').fadeOut(300);
 
-$('.titles-button').click(function(){
+//   if ($(this).hasClass("titles-button")) {
+//       $('#titles').delay(300).fadeIn(600);
+//   } else if ($(this).hasClass("animation-button")) {
+//       $('#animation').delay(300).fadeIn(600);
+//   } else if ($(this).hasClass("montage-button")) {
+//       $('#montage').delay(300).fadeIn(600);
+//   };
+// })
+  $('.titles-button').click(function(){
     $('#titles, #animation, #montage').fadeOut(300);
     $('#titles').delay(300).fadeIn(600);
   });
@@ -12502,7 +12512,6 @@ $('.titles-button').click(function(){
     $('#blog, #staff, #clients, #affiliations').fadeOut(300);
     $('#affiliations').delay(300).fadeIn(600);
   });
-
 /* ==========================================================================
    Update stage with selected video or picture
    ========================================================================== */
@@ -12512,40 +12521,56 @@ $('.titles-button').click(function(){
       var $brief = $(this).children('img').attr('description');
       var $title = $(this).children('img').attr('title');
 
-      $('iframe').attr('src',"http://player.vimeo.com/video/" + $url + "?autoplay=1");
-      $('div.video-brief p').text($brief);
-      $('div.motion-title h3').text($title);
+      if ($("iframe#nowPlaying").attr('src') == ""){
+        $("div.motionOverlay h5").css("color","white");
+      } else{
+        $("div.motionOverlay h5").css("color","black");
+      };
+
+      $('iframe#nowPlaying').attr('src',"http://player.vimeo.com/video/" + $url + "?autoplay=1");
+      $('div.video-brief p').html($brief).nl2br();
+      $('div.motion-title h3').html($title);
   });
-
-
 
 /* ==========================================================================
    Change category view
    ========================================================================== */
   $('.print').click(function(){
-    // $('iframe#nowPlaying').attr('src',''); 
-    $('#splash-container, #motion-container, #about-container').fadeOut(300);
+    $('iframe#nowPlaying').attr('src','');
+    $('#splash-container, #motion-container, #about-container, #reel-container, #contact-container').fadeOut(300);
     $('#print-container').delay(300).fadeIn(600);
   });
 
   $('.motion').click(function(){
-    // $('iframe#nowPlaying').attr('src',''); 
-    $('#splash-container, #print-container, #about-container').fadeOut(300);
+    $('iframe#nowPlaying').attr('src','');
+    if ($("iframe#nowPlaying").attr('src') == ""){
+        $("div.motionOverlay h5").css("color","white");
+      } else{
+        $("div.motionOverlay h5").css("color","black");
+      };  
+    $('#splash-container, #print-container, #about-container, #reel-container, #contact-container').fadeOut(300);
     $('#motion-container').delay(300).fadeIn(600);
   });
 
   $('.about').click(function(){
-    // $('iframe#nowPlaying').attr('src',''); 
-    $('#splash-container, #print-container, #motion-container').fadeOut(300);
+    $('iframe#nowPlaying').attr('src',''); 
+    $('#splash-container, #print-container, #motion-container, #reel-container, #contact-container').fadeOut(300);
     $('#about-container').delay(300).fadeIn(600);
   });
-  
+  $('.reel').click(function(){
+    var $poop = $('.reel-brief h5').attr('description');
+    $('iframe#nowPlaying').attr('src','');
+    $('.reel-brief h5').html($poop).nl2br();
+    $('#splash-container, #print-container, #motion-container, #about-container, #contact-container').fadeOut(300);
+    $('#reel-container').delay(300).fadeIn(600);
+  });
+  $('.contact').click(function(){
+    $('iframe#nowPlaying').attr('src',''); 
+    $('#splash-container, #print-container, #motion-container, #reel-container').fadeOut(300);
+    $('#contact-container').delay(300).fadeIn(600);
+  });
 
 });
-(function() {
-
-
-}).call(this);
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //

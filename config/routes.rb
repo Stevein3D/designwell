@@ -7,6 +7,7 @@ Designwell::Application.routes.draw do
   # get "/index" => "static_pages#index", :as => :index
 
   get "/print" => "photos#print", :as => :print
+  get "/about" => "photos#about", :as => :about
   # get "/about" => "static_pages#about", :as => :about
   
   # The priority is based upon order of creation: first created -> highest priority.

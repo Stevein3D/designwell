@@ -50,6 +50,7 @@ h3{
 	font-size: 22px;
 	line-height: 40px;
 	margin-top: 0;
+	margin-bottom: 5px;
 	color: white;
 }
 
@@ -74,18 +75,9 @@ h5{
 	color: white;
 	margin: 0 auto;
 }
-h6{
-	font-family: 'Droid Serif', serif;
-	font-style: italic;
-	font-weight: 400;
-	font-size: 18px;
-	line-height: 30px;
-	color: white;
-	margin: 0 auto;	
-}
 h7{
 	font-family: 'Arvo', serif;
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 60px;
 	color: white;
 	margin: 0 auto;	
@@ -100,7 +92,11 @@ p{
 	letter-spacing: 1px;
 	/*margin-top: 0;*/
 }
-
+#loading-image{
+	width: 256px;
+	height: 256px;
+	background-image: url('loadingGif.gif');
+}
 .reel-box{
 	background-color: rgba(0,0,0,.5);
 	margin: 60px auto 10px auto;
@@ -117,7 +113,35 @@ p{
 	display:inline-block; 
 	vertical-align:middle;
 }
-
+.contact-box{
+	background-color: rgba(0,0,0,.5);
+	margin: 60px auto 10px auto;
+	width: 768px;
+	height: 432px;
+	padding: 5px;
+}
+.form-box{
+	/*background-color: rgba(0,0,0,.5);*/
+	/*margin: 10px auto 0 auto;*/
+	width: 758px;
+	height: 422px;
+	padding: 5px;
+}
+.address{
+	background-color: rgba(0,0,0,.5);
+	width: 250px;
+	padding: 10px; 
+	margin: 130px auto 0 auto;
+}
+.contact-brief{
+	background-color: rgba(0,0,0,.5);
+	margin: 0 auto;
+	width: 718px;
+	height: 40px;
+	padding: 10px 25px;
+	display:inline-block; 
+	vertical-align:middle;
+}
 /* ==========================================================================
    Side Nav Bar
    ========================================================================== */
@@ -271,6 +295,13 @@ p{
 	overflow: hidden;
 	display: none;
 }
+#contact-container{
+	width: 870px;
+	padding-bottom: 40px;
+	float: left;
+	overflow: hidden;
+	display: none;
+}
 .category-title{
 	background-color: rgba(0,0,0,.5);
 	margin: 15px auto 0 auto;
@@ -293,7 +324,7 @@ p{
 	position: absolute;
 	white-space: pre-line;
 }
-#animation, #montage, #collateral, #packaging, #staff, #affiliations, #clients, #reel{
+#animation, #montage, #collateral, #packaging, #staff, #affiliations, #clients, #reel, #contact{
 	display: none;
 }
 .nav-arrow-left{
@@ -494,18 +525,19 @@ p{
    About specific
    ========================================================================== */
 .blog-container{
-	overflow: scroll;
+	overflow: auto;
 	height: 800px;
+	padding-bottom: 20px;
 }
 .blog-box{
 	background-color: rgba(0,0,0,.5);
 	margin: 15px auto 0 auto;
 	width: 778px;
-	height: 251px;
+	height: 255px;
 }
 .blog-photo{
 	/*max-height: 200px;*/
-	width: 275px;
+	width: 280px;
 	margin-left: 5px;
 	float: left;
 }
@@ -523,14 +555,14 @@ p{
 	background-color: rgba(0,0,0,.5);
 	/*line-height: 20px;*/
 	text-align: left;
-	width: 468px;
-	height: 196px;
+	width: 463px;
+	height: 200px;
 	padding: 5px 5px 5px 15px;
 	margin-left: 5px;
 	float: left;
 }
 .blog-text p{
-	margin-top: 0;
+	margin-top: 5px;
 }
 .employee-text{
 	background-color: rgba(0,0,0,.5);

@@ -21,9 +21,7 @@ $(document).ready(function(){
 
   });
 
-// $('.splash').click(function(){
-//   $('#slideshow').cycle('toggle');
-// });
+
 
 //Add Title to images with only "alt"
 
@@ -133,27 +131,10 @@ jQuery.fn.nl2br = function(){
         $("div.motionOverlay h5").css("color","black");
       };
 
-      $('iframe').attr('src',"http://player.vimeo.com/video/" + $url + "?autoplay=1");
+      $('iframe#nowPlaying').attr('src',"http://player.vimeo.com/video/" + $url + "?autoplay=1");
       $('div.video-brief p').html($brief).nl2br();
       $('div.motion-title h3').html($title);
   });
-  $('.thumb-box').click(function(){
-      var $url = $(this).children('img').attr('src');
-      var $brief = $(this).children('img').attr('description');
-      var $title = $(this).children('img').attr('title');
-
-      if ($(".dark-box img").attr('src') == ""){
-        $("div.printOverlay h5").css("color","white");
-      } else{
-        $("div.printOverlay h5").css("opacity", 0);
-      };
-
-      $('.dark-box img').attr('src',$url);
-      $('div.photo-brief p').html($brief).nl2br();
-      $('div.print-title h3').html($title);
-  });
-
-
 
 /* ==========================================================================
    Change category view

@@ -18,26 +18,15 @@ class StaticPagesController < ApplicationController
     @montageInfo = Vimeo::Simple::Channel.info("682871")
 
     #Print sub-categories
-	  @collateral = flickr.photosets.getPhotos(:photoset_id => "72157641487232383")
-    @collateralInfo = flickr.photosets.getInfo(:photoset_id => "72157641487232383")
-    @packaging = flickr.photosets.getPhotos(:photoset_id => "72157644043465101")
-    @packagingInfo = flickr.photosets.getInfo(:photoset_id => "72157644043465101")
-    @poster = flickr.photosets.getPhotos(:photoset_id => "72157635482932841")
-    @posterInfo = flickr.photosets.getInfo(:photoset_id => "72157635482932841")
+	  # @collateral = flickr.photosets.getPhotos(:photoset_id => "72157641487232383")
+   #  @collateralInfo = flickr.photosets.getInfo(:photoset_id => "72157641487232383")
+   #  @packaging = flickr.photosets.getPhotos(:photoset_id => "72157644043465101")
+   #  @packagingInfo = flickr.photosets.getInfo(:photoset_id => "72157644043465101")
+   #  @poster = flickr.photosets.getPhotos(:photoset_id => "72157635482932841")
+   #  @posterInfo = flickr.photosets.getInfo(:photoset_id => "72157635482932841")
 
     #Reel link
     @reel = Vimeo::Simple::Channel.videos("740653")
   end
 
-  def about
-    #About
-    @affiliation = flickr.photosets.getPhotos(:photoset_id => "72157643215739244")
-    @client = flickr.photosets.getPhotos(:photoset_id => "72157644278561899")
-    @staff = flickr.photosets.getPhotos(:photoset_id => "72157644536402675")
-    @staffInfo = flickr.photosets.getInfo(:photoset_id => "72157644536402675")
-    @blog = flickr.photosets.getPhotos(:photoset_id => "72157644123095188")
-    @blogInfo = flickr.photosets.getInfo(:photoset_id => "72157644123095188")
-  end
-
-  
 end

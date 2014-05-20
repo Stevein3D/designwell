@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+	<head>
+		<TITLE>Design Well</TITLE>
+		<%= favicon_link_tag 'favicon.ico' %>
+		<link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		
+			<div class="blog-container" id="blog">
+			<div class='category-title'>
+					<div class="title-box">
+						<h3><%= @blogInfo.description%></h3>
+					</div>
+				</div>
+			<% @blog.photo{}.each do |photo| %>
+					<div class="blog-box">
+					<h1 class="blog-title"><%= photo["title"]%></h1>
+					<div class="blog-text">
+						<p><%= flickr.photos.getInfo(:photo_id => photo["id"]).description.html_safe %></p>
+					</div>
+						<%= image_tag FlickRaw.url_b(photo), {:class => "blog-photo", :id => photo["id"],:title => photo["title"], :alt => photo["title"]}%>
+					</div>
+				<% end %>
+			</div>
+			<div class="staff-container" id="staff">
+				<div class='category-title'>
+					<div class="title-box">
+						<h3><%= @staffInfo.description%></h3>
+					</div>
+				</div>
+				<% @staff.photo{}.each do |photo| %>
+					<div class="employee-box">
+						<%= image_tag FlickRaw.url_b(photo), {:class => "employee-photo", :id => photo["id"],:title => photo["title"], :alt => photo["title"]}%>
+						<h1 class="employee-name"><%= photo["title"]%></h1>
+							<p class="employee-bio"><%= flickr.photos.getInfo(:photo_id => photo["id"]).description.html_safe %></p>
+					</div>
+				<% end %>
+			</div>		
+			<div class="clients-container" id="clients">
+				<div class='category-title'>
+					<div class="title-box">
+						<h3>Clients</h3>
+					</div>
+				</div>
+				<div class="company-box">
+					<% @client.photo{}.each do |photo| %>
+						<%= link_to "http://www." + flickr.photos.getInfo(:photo_id => photo["id"]).description + "", :target => "_blank"  do%>
+							<div class="company">
+								<%= image_tag FlickRaw.url_m(photo), {:class => "company-logo", :id => photo["id"],:title => photo["title"], :description => flickr.photos.getInfo(:photo_id => photo["id"]).description, :alt => photo["title"]}%>
+								<div class="company-description">
+									<h7><%= photo["title"]%></h7>
+								</div>
+							</div>
+						<% end %>
+					<% end %>
+				</div>
+					
+			</div>
+
+			<div class="affiliations-container" id="affiliations">
+				<div class='category-title'>
+					<div class="title-box">
+						<h3>Affiliations</h3>
+					</div>
+				</div>
+				<div class="company-box">
+					<% @affiliation.photo{}.each do |photo| %>
+						<%= link_to "http://www." + flickr.photos.getInfo(:photo_id => photo["id"]).description + "", :target => "_blank"  do%>
+							<div class="company">
+								<%= image_tag FlickRaw.url_m(photo), {:class => "company-logo", :id => photo["id"],:title => photo["title"], :description => flickr.photos.getInfo(:photo_id => photo["id"]).description, :alt => photo["title"]}%>
+								<div class="company-description">
+									<h7><%= photo["title"]%></h7>
+								</div>
+							</div>
+						<% end %>
+					<% end %>
+				</div>
+			</div>
+
+
+	</body>
+</html>
+
+
