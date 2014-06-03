@@ -19,15 +19,15 @@ Designwell::Application.configure do
   # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
   # config.action_dispatch.rack_cache = true
 
-# config.action_mailer.delivery_method = :smtp
-# config.action_mailer.smtp_settings = {
-#   address: "smtp.sendgrid.net",
-#   port: 587,
-#   authentication: "plain",
-#   user_name: "app16313944@heroku.com",
-#   password: ENV['SMTP_PASSWORD'],
-#   enable_starttls_auto: true
-# }
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  address: "smtp.sendgrid.net",
+  port: 587,
+  authentication: "plain",
+  user_name: "app22210585@heroku.com",
+  password: ENV['SMTP_PASSWORD'],
+  enable_starttls_auto: true
+}
 config.action_mailer.raise_delivery_errors = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this).

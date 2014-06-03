@@ -11,10 +11,30 @@
   			#container{background: url(<%= randomized_background_image %>); background-size: 100%;}
 		</style>
 
+		<!-- <style type="text/css">
+			.nav-arrow-left{
+				width: 40px;
+				height: 108px;
+				background-image: url('left_sprite.png') ;
+				margin-left: 5px;
+				padding: 5px 0;
+				float: left;
+			}
+
+			.nav-arrow-right{
+				width: 40px;
+				height: 108px;
+				background-image: url('right_sprite.png');
+				margin-right: 5px;
+				padding: 5px 0;
+				float: left;
+			}
+		</style> -->
+
 		<div id='container'>
 			<div class='sidebar'>
 
-				<%= link_to image_tag("logo.jpg",:id => 'logo', :alt => 'Design Well'), "http://www.designwell.com", :target => "_blank" %>
+				<%= link_to image_tag("logo.jpg",:id => 'logo', :alt => 'Design Well'), "http://www.designwell.com" %>
 
 				<nav id='links'>
 					<div class='category'>
@@ -184,7 +204,7 @@
 				
 			</div>
 			<div id="about-container">
-				<div id="loading-image"></div>
+				<!-- <div id="loading-image"></div> -->
 			</div>
 			<div id="reel-container">
 				<div class="reel-box">
@@ -220,12 +240,12 @@
 		<script type="text/javascript">
 			$(".slideshow").cycle();
 
-			$(document).ajaxStart(function() {
-  				$("#loading-image").show();
-			});
-			$(document).ajaxStop(function() {
-  				$("#loading-image").hide();
-			});
+			// $(document).ajaxStart(function() {
+  	// 			$("#loading-image").show();
+			// });
+			// $(document).ajaxStop(function() {
+  	// 			$("#loading-image").hide();
+			// });
 			$.ajax({
             	url: "/print",
             	cache: false,
@@ -237,16 +257,22 @@
             	cache: false,
             	success: function(html){$("#about-container").append(html)}
       		});
-
+      		
 			$(".titles-button").click(function(){
+				$('#titles, #animation, #montage').fadeOut(300);
+				$('#titles').delay(300).fadeIn(600);
 				$("div.motion-title h3").html("<%=@titleInfo['name']%>").nl2br();
 				$("div.video-brief p").html("<%=@titleInfo['description']%>").html_safe.nl2br();
 			});
 			$(".animation-button").click(function(){
+				$('#titles, #animation, #montage').fadeOut(300);
+    			$('#animation').delay(300).fadeIn(600);
 				$("div.motion-title h3").html("<%=@animationInfo['name']%>").nl2br();
 				$("div.video-brief p").html("<%=@animationInfo['description']%>").html_safe.nl2br();
 			});
 			$(".montage-button").click(function(){
+				$('#titles, #animation, #montage').fadeOut(300);
+    			$('#montage').delay(300).fadeIn(600);
 				$("div.motion-title h3").html("<%=@montageInfo['name']%>").nl2br();
 				$("div.video-brief p").html("<%=@montageInfo['description']%>").html_safe.nl2br();
 			});
