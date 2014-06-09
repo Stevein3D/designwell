@@ -159,7 +159,7 @@ jQuery.fn.nl2br = function(){
   });
   $('.contact').click(function(){
     $('iframe#nowPlaying').attr('src',''); 
-    $('#splash-container, #print-container, #motion-container, #reel-container').fadeOut(300);
+    $('#splash-container, #print-container, #motion-container, #about-container, #reel-container').fadeOut(300);
     $('#contact-container').delay(300).fadeIn(600);
   });
 
