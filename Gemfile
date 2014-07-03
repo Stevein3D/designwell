@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby "2.0.0"
 
+gem 'active_attr', '0.7.0'
+
 gem 'protected_attributes'
 
 gem 'rails_12factor', group: :production

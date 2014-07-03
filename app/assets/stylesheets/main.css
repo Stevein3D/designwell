@@ -114,9 +114,14 @@ p{
 }
 .address{
 	background-color: rgba(0,0,0,.5);
-	width: 340px;
-	padding: 10px; 
-	margin: 130px auto 0 auto;
+	width: 758px;
+	height: 162px;
+	padding: 130px 0; 
+	/*margin: 130px auto 0 auto;*/
+}
+.field{
+	width: 400px;
+	height: 100px;
 }
 .contact-brief{
 	background-color: rgba(0,0,0,.5);

@@ -2,6 +2,8 @@ class PhotosController < ApplicationController
 
   require 'flickraw'
 
+  FlickRaw.secure = true
+
 	FlickRaw.api_key="7fa0cd18055434599246311abac71dc3"
   FlickRaw.shared_secret="cd47d71ba69e9219"
 
@@ -31,7 +33,7 @@ class PhotosController < ApplicationController
     @staffInfo = flickr.photosets.getInfo(:photoset_id => "72157644536402675")
     @blog = flickr.photosets.getPhotos(:photoset_id => "72157644123095188")
     @blogInfo = flickr.photosets.getInfo(:photoset_id => "72157644123095188")
-    
+
     render :layout => false
   end
 

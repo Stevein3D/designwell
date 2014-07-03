@@ -1,7 +1,9 @@
 class StaticPagesController < ApplicationController
   require 'flickraw'
 
-	FlickRaw.api_key="7fa0cd18055434599246311abac71dc3"
+    FlickRaw.secure = true
+
+	  FlickRaw.api_key="7fa0cd18055434599246311abac71dc3"
   	FlickRaw.shared_secret="cd47d71ba69e9219"
 
   def index

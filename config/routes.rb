@@ -1,7 +1,6 @@
 Designwell::Application.routes.draw do
-  resources :messages
 
-  # resources :messages
+  resources :messages
   root :to => "static_pages#index"
 
   # get "/index" => "static_pages#index", :as => :index
